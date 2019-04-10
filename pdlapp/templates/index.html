@@ -105,6 +105,9 @@
                                 </div>
                             </form>
                         </div>
+                        <div class="card-footer">
+                            <span class="text-muted">Pi Status: </span><em><span class="text-muted" id="status"></span></em>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,21 +124,25 @@
                                     <th scope="row" class="align-middle">On Connect</th>
                                     {% set event = 'connect' %}
                                     <td>{% include '_action_select.html' %}</td>
+                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="align-middle">During Print</th>
                                     {% set event = 'print' %}
                                     <td>{% include '_action_select.html' %}</td>
+                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="align-middle">Print Complete</th>
                                     {% set event = 'complete' %}
                                     <td>{% include '_action_select.html' %}</td>
+                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="align-middle">On Error</th>
                                     {% set event = 'error' %}
                                     <td>{% include '_action_select.html' %}</td>
+                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
                                 </tr>
                             </table>
                         </div>
