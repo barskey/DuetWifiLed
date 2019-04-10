@@ -1,0 +1,2 @@
+FLASK_APP=pdlapp
+FLASK_ENV=development
