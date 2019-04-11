@@ -1,0 +1,9 @@
+<select class="form-control pdl-action form-control-sm" id="action-{{ num }}-{{ event }}">
+    <option value=1 {% if events[event].action == 1 %}selected{% endif %}>No change</option>
+    <option value=2 {% if events[event].action == 2 %}selected{% endif %}>Solid</option>
+    <option value=3 {% if events[event].action == 3 %}selected{% endif %}>Hotend Temp.</option>
+    <option value=4 {% if events[event].action == 4 %}selected{% endif %}>Heatbed Temp.</option>
+    <option value=5 {% if events[event].action == 5 %}selected{% endif %}>Flash</option>
+    <option value=6 {% if events[event].action == 6 %}selected{% endif %}>Breathe</option>
+    <option value=7 {% if events[event].action == 7 %}selected{% endif %}>Chase</option>
+</select>

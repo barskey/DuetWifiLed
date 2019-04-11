@@ -3,12 +3,11 @@
 {% block content %}
 <div class="row justify-content-lg-center">
     <div class="col col-lg-6">
-        <div class="card my-2">
+        <div class="card">
             <div class="card-header clearfix bg-info text-light">
-                <h4 class="float-left">Settings</h4>
-                <a href="#settings" data-toggle="collapse" class="nav-link text-light"><span class="float-right" data-feather="menu"></span></a>
+                <h5 class="float-left">Settings</h5>
             </div>
-            <div class="card-body collapse" id="settings">
+            <div class="card-body">
                 <form id="settingsForm">
                     <div class="form-row mb-2">
                         <h5>Duet Wifi Connection</h5>
@@ -30,7 +29,7 @@
                         <div class="col">
                             <label for="freq" class="custom-label">Polling Frequency</label>
                             <div class="input-group">
-                                <input type="text" class="form-control pdl-setting" name="freq" id="freq" value="{{ settings.freq }}" />
+                                <input type="text" class="form-control pdl-setting" name="interval" id="interval" value="{{ settings.interval }}" />
                                 <div class="input-group-append">
                                     <span class="input-group-text">secs</span>
                                 </div>
@@ -99,4 +98,5 @@
         </div>
     </div>
 </div>
+<script src="{{ url_for('setup.static', filename='js/setup.js') }}"></script>
 {% endblock %}

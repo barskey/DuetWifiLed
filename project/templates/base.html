@@ -9,17 +9,36 @@
         <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <!--<link href="static/css/pdl.css" rel="stylesheet">-->
+        <link href="static/css/pdl.css" rel="stylesheet">
         <link href="static/css/spectrum.css" rel="stylesheet">
     </head>
+    <!-- JS placed above body so page files can be loaded after -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/feather.min.js"></script>
+    <script src="static/js/spectrum.js"></script>
     <body>
+        <div class="navbar fixed-top navbar-expand navbar-dark bg-secondary">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collase navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="setup">
+                        <a class="nav-link" href="{{ url_for('setup.settings') }}">SETUP</a>
+                    </li>
+                    <li class="nav-item" id="led">
+                        <a class="nav-link" href="{{ url_for('ledcontrol.ledcontrol') }}">LEDS</a>
+                    </li>
+                    <li class="nav-item" id="log">
+                        <a class="nav-link" href="#">LOG</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="container">
             {% block content %}
             {% endblock %}
         </div>
     </body>
-    <script src="static/js/jquery-3.3.1.min.js"></script>
-    <script src="static/js/bootstrap.bundle.min.js"></script>
-    <script src="static/js/feather.min.js"></script>
-    <script src="static/js/spectrum.js"></script>
 </html>

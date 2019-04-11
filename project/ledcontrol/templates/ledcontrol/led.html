@@ -41,7 +41,7 @@
                         </div>
                         <div class="col text-center">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control w-25" name="interval" id="interval" />
+                                <input type="text" class="form-control w-25" name="interval" id="interval" value="0" />
                                 <div class="input-group-append">
                                     <span class="input-group-text">s</span>
                                 </div>
@@ -58,150 +58,50 @@
 </div>
 <!-- End Modals -->
 
-<div class="container">
-    <div class="row justify-content-lg-center">
-        <div class="col col-lg-6">
-            <div class="card my-2">
-                <div class="card-header clearfix bg-info text-light">
-                    <h4 class="float-left">Settings</h4>
-                    <a href="#settings" data-toggle="collapse" class="nav-link text-light"><span class="float-right" data-feather="menu"></span></a>
-                </div>
-                <div class="card-body collapse" id="settings">
-                    <form id="settingsForm">
-                        <div class="form-row mb-2">
-                            <h5>Duet Wifi Connection</h5>
-                        </div>
-                        <div class="form-row mb-2">
-                            <label for="hostname" class="control-label">Hostname/IP</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">http://</span>
-                                </div>
-                                <input type="text" class="form-control pdl-setting" name="hostname" id="hostname" placeholder="duettest.local" value="{{ settings.hostname }}" />
-                            </div>
-                        </div>
-                        <div class="form-row mb-2">
-                            <label for="password" class="custom-label">Password</label>
-                            <input type="text" class="form-control pdl-setting" name="password" id="password" value="{{ settings.password }}" />
-                        </div>
-                        <div class="form-row mb-2">
-                            <div class="col">
-                                <label for="freq" class="custom-label">Polling Frequency</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control pdl-setting" name="freq" id="freq" value="{{ settings.freq }}" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">secs</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="order" class="custom-label">RGB Order</label>
-                                <select class="custom-select pdl-setting" id="order" name="order">
-                                    <option {% if settings.order == 'RGB' %}selected{% endif %}>RGB</option>
-                                    <option {% if settings.order == 'GRB' %}selected{% endif %}>GRB</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row mb-2">
-                            <h5>Pi PWM GPIO Pin Numbers</h5>
-                        </div>
-                        <div class="form-row mb-2">
-                            <div class="col text-center">
-                                <div class="input-group input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">1</span>
-                                    </div>
-                                    <select class="custom-select pdl-setting" id="neo1pin" name="neo1pin">
-                                        <option value="">Pin...</option>
-                                        <option value=10 {% if settings.neo1pin == '10' %}selected{% endif %}>10</option>
-                                        <option value=12 {% if settings.neo1pin == '12' %}selected{% endif %}>12</option>
-                                        <option value=18 {% if settings.neo1pin == '18' %}selected{% endif %}>18</option>
-                                        <option value=21 {% if settings.neo1pin == '21' %}selected{% endif %}>21</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col text-center">
-                                <div class="input-group input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">2</span>
-                                    </div>
-                                    <select class="custom-select pdl-setting" id="neo2pin" name="neo2pin">
-                                        <option value="">Pin...</option>
-                                        <option value=10 {% if settings.neo2pin == '10' %}selected{% endif %}>10</option>
-                                        <option value=12 {% if settings.neo2pin == '12' %}selected{% endif %}>12</option>
-                                        <option value=18 {% if settings.neo2pin == '18' %}selected{% endif %}>18</option>
-                                        <option value=21 {% if settings.neo2pin == '21' %}selected{% endif %}>21</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col text-center">
-                                <div class="input-group input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">3</span>
-                                    </div>
-                                    <select class="custom-select pdl-setting" id="neo3pin" name="neo3pin">
-                                        <option value="">Pin...</option>
-                                        <option value=10 {% if settings.neo3pin == '10' %}selected{% endif %}>10</option>
-                                        <option value=12 {% if settings.neo3pin == '12' %}selected{% endif %}>12</option>
-                                        <option value=18 {% if settings.neo3pin == '18' %}selected{% endif %}>18</option>
-                                        <option value=21 {% if settings.neo3pin == '21' %}selected{% endif %}>21</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <span class="text-muted">Pi Status: </span><em><span class="text-muted" id="status"></span></em>
-                </div>
+<div class="row">
+    {% for num,events in rings.items() %}
+    <div class="col">
+        <div class="card mb-2">
+            <div class="card-header bg-success text-light">
+                <h5>NeoPixel Ring {{ num }}</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th scope="row" class="align-middle">Startup</th>
+                        {% set event = 'start' %}
+                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="align-middle">On Idle</th>
+                        {% set event = 'idle' %}
+                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="align-middle">During Print</th>
+                        {% set event = 'print' %}
+                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="align-middle">Print Complete</th>
+                        {% set event = 'complete' %}
+                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="align-middle">On Error</th>
+                        {% set event = 'error' %}
+                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
-    <div class="row">
-        {% for num in [1,2,3] %}
-        <div class="col">
-            <div class="card mb-2">
-                <div class="card-header bg-success text-light">
-                    <h4>NeoPixel Ring {{ num }}</h4>
-                </div>
-                <div class="card-body">
-                    <table class="table table-sm">
-                        <tr>
-                            <th scope="row" class="align-middle">Startup</th>
-                            {% set event = 'start' %}
-                            <td>{% include '_action_select.html' %}</td>
-                            <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="align-middle">On Idle</th>
-                            {% set event = 'idle' %}
-                            <td>{% include '_action_select.html' %}</td>
-                            <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="align-middle">During Print</th>
-                            {% set event = 'print' %}
-                            <td>{% include '_action_select.html' %}</td>
-                            <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="align-middle">Print Complete</th>
-                            {% set event = 'complete' %}
-                            <td>{% include '_action_select.html' %}</td>
-                            <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="align-middle">On Error</th>
-                            {% set event = 'error' %}
-                            <td>{% include '_action_select.html' %}</td>
-                            <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
 </div>
-<script src="static/js/ledcontrol.js"></script>
+<script src="{{ url_for('ledcontrol.static', filename='js/ledcontrol.js') }}"></script>
 {% endblock %}

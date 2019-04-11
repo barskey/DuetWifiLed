@@ -2,6 +2,8 @@ $( document ).ready( function() {
   
     feather.replace()
 
+    $( '#led' ).addClass( 'active' );
+
     var actionDesc = [
         ['', '', ''],
         ['', '', ''],
@@ -27,15 +29,6 @@ $( document ).ready( function() {
             ['#000', '#00f', '#90f', '#f0f']
         ]
     });
-  
-    $( '.pdl-setting' ).change( function() {
-        $( '#status' ).text( 'Saving settings...' );
-        $.post('/update_settings', $( '#settingsForm' ).serialize() )
-        .done( function( response ) {
-            $( '#status' ).text( response.msg );
-            console.log(response.msg);
-        });
-    });
 
     function showActionModal( action, ring, evnt, params ) {
         var $modal = $( '#paramModal' );
@@ -47,9 +40,9 @@ $( document ).ready( function() {
         $modal.find( '#event' ).val( evnt );
         $modal.find( '#action' ).val( action );
 
-        console.log(action < 5);
+        //console.log(action < 5);
         if( action < 5 ) { // disable interval for these
-            $modal.find( '#interval' ).val( '' );
+            $modal.find( '#interval' ).val( '0' );
             $modal.find( '#interval' ).attr( 'readonly', true );
         } else {
             $modal.find( '#interval' ).attr( 'readonly', false );
@@ -101,6 +94,7 @@ $( document ).ready( function() {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             return false;
         }
+        console.log($modal.find('form').serialize());
         $.post( '/update_action', $modal.find('form').serialize() )
         .done( function( response ) {
             $( '#status' ).text( response.msg );

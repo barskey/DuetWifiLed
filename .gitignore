@@ -1,11 +1,21 @@
+# Virtual Environment
 venv/
 
-*.pyc
+# Byte-compiled / optimized / DLL files
+*.py[cod]
 __pycache__/
+*$py.class
 
-instance/
+# Mac custom attributes file
+.DS_Store
 
+instance/*_full.py
+instance/*.db
+
+# pytest files
 .pytest_cache/
+
+# Coverage output
 .coverage
 htmlcov/
 
