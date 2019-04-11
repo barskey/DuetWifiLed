@@ -10,8 +10,66 @@
 
         <!-- Custom styles for this template -->
         <!--<link href="static/css/pdl.css" rel="stylesheet">-->
+        <link href="static/css/spectrum.css" rel="stylesheet">
     </head>
     <body>
+        <!-- Modals -->
+        <div class="modal fade" id="paramModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Select Settings</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <input type="hidden" name="ring" id="ring" />
+                            <input type="hidden" name="event" id="event" />
+                            <input type="hidden" name="action" id="action" />
+                            <div class="form-row">
+                                <p id="action-desc" class="form-text"></p>
+                                <p class="form-text">&nbsp;Use Black for off.</p>
+                            </div>
+                            <hr>
+                            <div class="form-row">
+                                <div class="col text-center">
+                                    <label for="color1" class="custom-label" id="action-color1label">%:</label>
+                                </div>
+                                <div class="col text-center">
+                                    <label for="color2" class="custom-label" id="action-color2label">Background:</label>
+                                </div>
+                                <div class="col text-center">
+                                    <label for="interval" class="custom-label" id="action-intlabel">Interval:</label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col text-center">
+                                    <input type="text" name="color1" id="color1" value="rgb(0, 0, 0)" />
+                                </div>
+                                <div class="col text-center">
+                                    <input type="text" name="color2" id="color2" value="rgb(0, 0, 0)" />
+                                </div>
+                                <div class="col text-center">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control w-25" name="interval" id="interval" />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">s</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id='modalDone'>Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modals -->
+
         <div class="container">
             <div class="row justify-content-lg-center">
                 <div class="col col-lg-6">
@@ -121,28 +179,34 @@
                         <div class="card-body">
                             <table class="table table-sm">
                                 <tr>
-                                    <th scope="row" class="align-middle">On Connect</th>
-                                    {% set event = 'connect' %}
+                                    <th scope="row" class="align-middle">Startup</th>
+                                    {% set event = 'start' %}
                                     <td>{% include '_action_select.html' %}</td>
-                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
+                                    <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="align-middle">On Idle</th>
+                                    {% set event = 'idle' %}
+                                    <td>{% include '_action_select.html' %}</td>
+                                    <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="align-middle">During Print</th>
                                     {% set event = 'print' %}
                                     <td>{% include '_action_select.html' %}</td>
-                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
+                                    <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="align-middle">Print Complete</th>
                                     {% set event = 'complete' %}
                                     <td>{% include '_action_select.html' %}</td>
-                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
+                                    <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="align-middle">On Error</th>
                                     {% set event = 'error' %}
                                     <td>{% include '_action_select.html' %}</td>
-                                    <td class="align-middle"><a href="#" class="pdl-action"><span data-feather="settings"></span></a></td>
+                                    <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                                 </tr>
                             </table>
                         </div>
@@ -155,5 +219,6 @@
     <script src="static/js/jquery-3.3.1.min.js"></script>
     <script src="static/js/bootstrap.bundle.min.js"></script>
     <script src="static/js/feather.min.js"></script>
+    <script src="static/js/spectrum.js"></script>
     <script src="static/js/pdl.js"></script>
 </html>

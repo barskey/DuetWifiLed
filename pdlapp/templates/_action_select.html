@@ -1,9 +1,9 @@
-<select class="form-control" id="action-{{ num }}-{{ event }}">
-    <option value=1>Do nothing</option>
-    <option value=2>Hotend Temp (%)</option>
-    <option value=3>Heatbed Temp (%)</option>
-    <option value=4>Flash</option>
-    <option value=5>Breathe</option>
-    <option value=6>Solid</option>
-    <option value=7>Chase</option>
+<select class="form-control pdl-action" id="action-{{ num }}-{{ event }}">
+    <option value=1 {% if rings[num|string][event]['action'] == "1" %}selected{% endif %}>No change</option>
+    <option value=2 {% if rings[num|string][event]['action'] == "2" %}selected{% endif %}>Solid</option>
+    <option value=3 {% if rings[num|string][event]['action'] == "3" %}selected{% endif %}>Hotend Temp.</option>
+    <option value=4 {% if rings[num|string][event]['action'] == "4" %}selected{% endif %}>Heatbed Temp.</option>
+    <option value=5 {% if rings[num|string][event]['action'] == "5" %}selected{% endif %}>Flash</option>
+    <option value=6 {% if rings[num|string][event]['action'] == "6" %}selected{% endif %}>Breathe</option>
+    <option value=7 {% if rings[num|string][event]['action'] == "7" %}selected{% endif %}>Chase</option>
 </select>
