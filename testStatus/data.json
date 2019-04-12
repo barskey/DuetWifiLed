@@ -1,0 +1,55 @@
+{
+	"status": "I",
+	"coords": {
+		"axesHomed": [0, 0, 0],
+		"extr": [0.0, 0.0],
+		"xyz": [0.0, 0.0, 0.0]
+	},
+	"currentTool":1,
+	"output":{
+		"beepDuration": 3000,
+		"beepFrequency": 2000,
+		"message": ""
+	},
+	"params": {
+		"atxPower": 0,
+		"fanPercent": [100.0, 35.0],
+		"speedFactor": 100.00,
+		"extrFactors": [100.0, 100.0]
+	},
+	"seq":0,
+	"sensors": {
+		"probeValue": 0,
+		"probeSecondary": [0,0],
+		"fanRPM": 0
+	},
+	"temps": {
+		"bed": {
+			"current": 20.0,
+			"active": -273.1,
+			"state": 0
+		},
+		"chamber": {
+			"current": 19.7,
+			"active": 50.0,
+			"state": 2
+		},
+		"heads": {
+			"current": [25.0, 25.0],
+			"active": [0.0, 0.0],
+			"standby": [0.0, 0.0],
+			"state": [2, 1]
+		},
+		"tools": {
+			"active": [[0.0], [0.0]],
+			"standby": [[0.0], [0.0]]
+		}
+	},
+	"seq": 0,
+	"resp": "G-Code response for PanelDue",
+	"time": 435.2,
+	"scanner": {
+		"status": "D",
+		"progress": 95
+	}
+}

@@ -2,10 +2,11 @@
 #### imports ####
 #################
 
-from flask import render_template, request, redirect, url_for, flash, jsonify
+from flask import render_template, request, redirect, url_for, flash, jsonify, current_app
 import json
 from . import setup_blueprint
 from project.models import db, Settings
+from project.tasks import printer
 
 
 ################
@@ -54,3 +55,7 @@ def update_settings():
     db.session.add(s)
     db.session.commit()
     return jsonify({'msg': 'Settings saved.'})
+
+@setup_blueprint.route('/update_status', methods=['GET', 'POST'])
+def update_status():
+    return jsonify({'state': printer.state})
