@@ -17,4 +17,7 @@ def create_app(config_filename=None):
     from project.ledcontrol import ledcontrol_blueprint
     app.register_blueprint(ledcontrol_blueprint)
 
+    from project.comm import comm_blueprint
+    app.register_blueprint(comm_blueprint)
+
     return app

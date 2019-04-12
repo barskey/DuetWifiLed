@@ -22,3 +22,7 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# Visual Studio project settings
+*.code-workspace
+.vscode
