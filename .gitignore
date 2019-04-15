@@ -25,4 +25,4 @@ build/
 
 # Visual Studio project settings
 *.code-workspace
-.vscode
+.vscode/
