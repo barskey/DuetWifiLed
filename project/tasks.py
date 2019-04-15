@@ -43,91 +43,115 @@ def update_rings():
 
 def solid_color(color, order, ringnum):
     # color passed in as 'rgb(#, #, #)'
-    rgb = color[4:-1].split(',')
-    r = rgb[0].strip()
-    g = rgb[1].strip()
-    b = rgb[2].strip()
+    c = tuple(x.strip() for x in color1[4:-1].split(','))
     for i in [0:15]:
         pixnum = i + 16 * (ringnum - 1)
         if order == "RGB":
-            #pixels[pixnum] = (r,g,b)
+            #pixels[pixnum] = c
             pass
         else:
-            #pixels[pixnum] = (g,r,b)
+            #pixels[pixnum] = (c[1],c[0],c[2])
             pass
     #pixels.show()
 
 def temp(percent, color, background, ringnum):
     # color passed in as 'rgb(#, #, #)'
     # percent passed in as % complete
-    rgb = color[4:-1].split(',')
-    c_r = rgb[0].strip()
-    c_g = rgb[1].strip()
-    c_b = rgb[2].strip()
-
-    rgb = background[4:-1].split(',')
-    b_r = rgb[0].strip()
-    b_g = rgb[1].strip()
-    b_b = rgb[2].strip()
+    c = tuple(x.strip() for x in color[4:-1].split(','))
+    b = tuple(x.strip() for x in background[4:-1].split(','))
 
     for i in [0:15]:
         pixnum = i + 16 * (ringnum - 1)
         if order == "RGB":
-            #pixels[pixnum] = (c_r,c_g,c_b) if percent >= (i + 1)/16 else (b_r, b_g, b_b)
+            #pixels[pixnum] = c if percent >= (i + 1)/16 else b
             pass
         else:
-            #pixels[pixnum] = (c_g,c_r,c_b) if percent >= (i + 1)/16 else (b_g, b_r, b_b)
+            #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= (i + 1)/16 else (b[1], b[0], b[2])
             pass
     #pixels.show()
 
 def flash(color1, color2, ringnum, interval):
     # colors passed in as 'rgb(#, #, #)'
-    rgb = color1[4:-1].split(',')
-    r1 = rgb[0].strip()
-    g1 = rgb[1].strip()
-    b1 = rgb[2].strip()
+    c1 = tuple(x.strip() for x in color1[4:-1].split(','))
+    c2 = tuple(x.strip() for x in color2[4:-1].split(','))
 
-    rgb = color2[4:-1].split(',')
-    r2 = rgb[0].strip()
-    g2 = rgb[1].strip()
-    b2 = rgb[2].strip()
-
-    tick = True
     while True:
         for i in range(16):
             pixnum = i + 16 * (ringnum - 1)
             if order == "RGB":
-                #pixels[pixnum] = (r1,g1,b1) if tick else (r2,g2,b2)
+                #pixels[pixnum] = c1
                 pass
             else:
-                #pixels[pixnum] = (g1,r1,b1) if tick else (g2,r2,b2)
+                #pixels[pixnum] = (c1[1],c1[0],c1[2])
                 pass
         #pixels.show()
-        tick = not tick
+        # swap colors
+        c1, c2 = c2, c1
         time.sleep(interval)
 
 def breathe(color1, color2, ringnum, interval):
     # colors passed in as 'rgb(#, #, #)'
-    rgb = color1[4:-1].split(',')
-    r1 = rgb[0].strip()
-    g1 = rgb[1].strip()
-    b1 = rgb[2].strip()
+    c1 = tuple(x.strip() for x in color1[4:-1].split(','))
+    c2 = tuple(x.strip() for x in color2[4:-1].split(','))
 
-    rgb = color2[4:-1].split(',')
-    r2 = rgb[0].strip()
-    g2 = rgb[1].strip()
-    b2 = rgb[2].strip()
+    while True:
+        counter = 1
+        for t in range(0, 1, .01): # use 0.01 increment for color change (100 steps)
+            color = tuple(round(x + (y - x) * t) for x,y in zip(c1, c2)) # lerp between each color channel over increment
+            #rt = r1 + (r2 - r1) * t
+            #gt = g1 + (g2 - g1) * t
+            #bt = b1 + (b2 - b1) * t
+            for i in range(16): # set all pixels in this ring to current color
+                pixnum = i + 16 * (ringnum - 1)
+                if order == "RGB":
+                    #pixels[pixnum] = color
+                    pass
+                else:
+                    #pixels[pixnum] = (color[1],color[0],color[2])
+                    pass
+            #pixels.show()
+            t = sleep_time(counter, interval)
+            print ('sleep:{} color:{}'.format(t, color)) # debug
+            time.sleep(t)
+            counter = counter + 1
+        # swap colors for next loop so it goes back and forth
+        c1, c2 = c2, c1
 
-    for t in range(0, 1, .01):
-        rt = (r2 - r1) * t
-        for i in range(16):
+def chase(color, background, ringnum, interval):
+    # color passed in as 'rgb(#, #, #)'
+    c = tuple(x.strip() for x in color[4:-1].split(','))
+    b = tuple(x.strip() for x in background[4:-1].split(','))
+
+    pos = 1 # highlited pixel position in ring (from 1 to 16)
+    while True:
+        for i in [0:15]:
             pixnum = i + 16 * (ringnum - 1)
             if order == "RGB":
-                #pixels[pixnum] = (r1,g1,b1) if tick else (r2,g2,b2)
+                #pixels[pixnum] = c if i == pos - 1 else b
                 pass
             else:
-                #pixels[pixnum] = (g1,r1,b1) if tick else (g2,r2,b2)
+                #pixels[pixnum] = (c[1], c[0], c[2]) if i == pos - 1 else (b[1], b[0], b[2])
                 pass
         #pixels.show()
-        tick = not tick
-        time.sleep(interval)
+        t = sleep_time(pos, interval, 16)
+        print ('pos:{} sleep:{}'.format(pos, t)) # debug
+        pos = pos + 1 if pos < 16 else 0
+        time.sleep(t)
+
+def sleep_time(num, duration, num_steps=100):
+    # uses quadratic ease in/out to return time to wait/sleep
+    # num is this step number (should go from 0 to num_steps)
+    # duration is total time that will be used
+    # num_steps is number of steps to use over entire duration -- defaults to 100
+    increment = duration / num_steps
+    this_step = ease(increment * num)
+    last_step = ease(increment * (num - 1))
+
+    return this_step - last_step # returns delta change from last step, which is how long to wait this step
+
+def ease(t):
+    # returns quadratic ease in/out of given t -- expected in range bet 0 and 1
+    if t <= 0.5: # use for ease-in half of curve
+        return 2 * t ** 2
+    t = t - 0.5
+    return 2 * t * (1 - t) + 0.5 # use for ease-out half of curve
