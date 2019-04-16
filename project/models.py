@@ -23,7 +23,7 @@ class Param(db.Model):
     event = db.Column(db.String(20))
     color1 = db.Column(db.String(8))
     color2 = db.Column(db.String(8))
-    interval = db.Column(db.Integer, nullable=True)
+    interval = db.Column(db.Float, nullable=True)
 
     def get_obj(self):
         return {

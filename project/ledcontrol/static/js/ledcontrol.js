@@ -88,6 +88,20 @@ $( document ).ready( function() {
         }
     });
 
+    $( '#testEvent' ).click( function() {
+        var $modal = $( '#paramModal' );
+        if( ['5','6','7'].includes( $modal.find( '#action' ).val() ) && $modal.find( '#interval' ).val() == '' ) {
+            $modal.find( '#interval' ).addClass( 'is-invalid' );
+            return false;
+        }
+        console.log($modal.find('form').serialize());
+        $.post( '/test_event', $modal.find('form').serialize() )
+        .done( function( response ) {
+            $( '#status' ).text( response.msg );
+            console.log(response.msg);
+        });
+    });
+
     $( '#modalDone' ).click( function() {
         var $modal = $( '#paramModal' );
         if( ['5','6','7'].includes( $modal.find( '#action' ).val() ) && $modal.find( '#interval' ).val() == '' ) {

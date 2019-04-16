@@ -1,9 +1,10 @@
 import requests
+import time
 from flask import current_app
 from project.models import db, Settings, Param
 from project import scheduler
 from project.printer_status import PrinterStatus
-import time
+from easing_functions import CubicEaseInOut
 #import board
 #import neopixel
 
@@ -42,11 +43,11 @@ def update_rings():
             print ('Ring {}: Do action {}!'.format(ringnum, params['action']))
 
 def solid_color(color, order, ringnum):
-    # color passed in as 'rgb(#, #, #)'
-    c = tuple(x.strip() for x in color1[4:-1].split(','))
-    for i in [0:15]:
+    # color: like 'rgb(#, #, #)'
+    c = tuple(int(x.strip()) for x in color[4:-1].split(','))
+    for i in range(16):
         pixnum = i + 16 * (ringnum - 1)
-        if order == "RGB":
+        if order == 'RGB':
             #pixels[pixnum] = c
             pass
         else:
@@ -54,15 +55,16 @@ def solid_color(color, order, ringnum):
             pass
     #pixels.show()
 
-def temp(percent, color, background, ringnum):
-    # color passed in as 'rgb(#, #, #)'
-    # percent passed in as % complete
-    c = tuple(x.strip() for x in color[4:-1].split(','))
-    b = tuple(x.strip() for x in background[4:-1].split(','))
+def temp(source, color, background, order, ringnum):
+    # color: like 'rgb(#, #, #)'
+    # source: 'h' for hotend 'b' for heatbed
+    c = tuple(int(x.strip()) for x in color[4:-1].split(','))
+    b = tuple(int(x.strip()) for x in background[4:-1].split(','))
 
-    for i in [0:15]:
+    percent = printer.heatbedTemp if source == 'b' else printer.hotendTemp
+    for i in range(16):
         pixnum = i + 16 * (ringnum - 1)
-        if order == "RGB":
+        if order == 'RGB':
             #pixels[pixnum] = c if percent >= (i + 1)/16 else b
             pass
         else:
@@ -70,15 +72,18 @@ def temp(percent, color, background, ringnum):
             pass
     #pixels.show()
 
-def flash(color1, color2, ringnum, interval):
-    # colors passed in as 'rgb(#, #, #)'
-    c1 = tuple(x.strip() for x in color1[4:-1].split(','))
-    c2 = tuple(x.strip() for x in color2[4:-1].split(','))
+def flash(color1, color2, order, ringnum, interval, test=False):
+    # color1,2: like 'rgb(#, #, #)'
+    c1 = tuple(int(x.strip()) for x in color1[4:-1].split(','))
+    c2 = tuple(int(x.strip()) for x in color2[4:-1].split(','))
 
+    loop_counter = 2 # use to run a certain number of loops in when called with test True
     while True:
+        if test is True and loop_counter <= 0:
+            break
         for i in range(16):
             pixnum = i + 16 * (ringnum - 1)
-            if order == "RGB":
+            if order == 'RGB':
                 #pixels[pixnum] = c1
                 pass
             else:
@@ -88,70 +93,68 @@ def flash(color1, color2, ringnum, interval):
         # swap colors
         c1, c2 = c2, c1
         time.sleep(interval)
+        loop_counter = loop_counter - 1
 
-def breathe(color1, color2, ringnum, interval):
+def breathe(color1, color2, order, ringnum, interval, test=False):
     # colors passed in as 'rgb(#, #, #)'
-    c1 = tuple(x.strip() for x in color1[4:-1].split(','))
-    c2 = tuple(x.strip() for x in color2[4:-1].split(','))
+    c1 = tuple(int(x.strip()) for x in color1[4:-1].split(','))
+    c2 = tuple(int(x.strip()) for x in color2[4:-1].split(','))
 
+    num_steps = 100 # convenience for changing number of steps for color change
+    # create easing instance for smoothing animations
+    e = CubicEaseInOut(0, interval, num_steps) # will go from 0 to interval in num_steps steps
+    loop_counter = 2 # use to run a certain number of loops in when called with test True
     while True:
-        counter = 1
-        for t in range(0, 1, .01): # use 0.01 increment for color change (100 steps)
+        if test is True and loop_counter <= 0:
+            break
+        last_sleep = 0
+        for n in range(num_steps): # use 0.01 increment for color change (100 steps)
+            t = n / num_steps if n > 0 else 0
             color = tuple(round(x + (y - x) * t) for x,y in zip(c1, c2)) # lerp between each color channel over increment
             #rt = r1 + (r2 - r1) * t
             #gt = g1 + (g2 - g1) * t
             #bt = b1 + (b2 - b1) * t
             for i in range(16): # set all pixels in this ring to current color
                 pixnum = i + 16 * (ringnum - 1)
-                if order == "RGB":
+                if order == 'RGB':
                     #pixels[pixnum] = color
                     pass
                 else:
                     #pixels[pixnum] = (color[1],color[0],color[2])
                     pass
             #pixels.show()
-            t = sleep_time(counter, interval)
-            print ('sleep:{} color:{}'.format(t, color)) # debug
-            time.sleep(t)
-            counter = counter + 1
+            s = e.ease(n) - last_sleep # gets the sleep time using cubic ease-in/out
+            last_sleep = e.ease(n) # save this sleep time for subtracting from next round
+            print ('step:{} color:{}'.format(n, color)) # debug
+            time.sleep(s)
         # swap colors for next loop so it goes back and forth
         c1, c2 = c2, c1
+        loop_counter = loop_counter - 1
 
-def chase(color, background, ringnum, interval):
+def chase(color, background, order, ringnum, interval, test=False):
     # color passed in as 'rgb(#, #, #)'
-    c = tuple(x.strip() for x in color[4:-1].split(','))
-    b = tuple(x.strip() for x in background[4:-1].split(','))
+    c = tuple(int(x.strip()) for x in color[4:-1].split(','))
+    b = tuple(int(x.strip()) for x in background[4:-1].split(','))
 
-    pos = 1 # highlited pixel position in ring (from 1 to 16)
+    # creates easing instance for smoothing animations
+    e = CubicEaseInOut(0, interval, 16) # will go from 0 to interval in 16 steps
+    loop_counter = 2 # use to run a certain number of loops in when called with test True
     while True:
-        for i in [0:15]:
-            pixnum = i + 16 * (ringnum - 1)
-            if order == "RGB":
-                #pixels[pixnum] = c if i == pos - 1 else b
-                pass
-            else:
-                #pixels[pixnum] = (c[1], c[0], c[2]) if i == pos - 1 else (b[1], b[0], b[2])
-                pass
-        #pixels.show()
-        t = sleep_time(pos, interval, 16)
-        print ('pos:{} sleep:{}'.format(pos, t)) # debug
-        pos = pos + 1 if pos < 16 else 0
-        time.sleep(t)
-
-def sleep_time(num, duration, num_steps=100):
-    # uses quadratic ease in/out to return time to wait/sleep
-    # num is this step number (should go from 0 to num_steps)
-    # duration is total time that will be used
-    # num_steps is number of steps to use over entire duration -- defaults to 100
-    increment = duration / num_steps
-    this_step = ease(increment * num)
-    last_step = ease(increment * (num - 1))
-
-    return this_step - last_step # returns delta change from last step, which is how long to wait this step
-
-def ease(t):
-    # returns quadratic ease in/out of given t -- expected in range bet 0 and 1
-    if t <= 0.5: # use for ease-in half of curve
-        return 2 * t ** 2
-    t = t - 0.5
-    return 2 * t * (1 - t) + 0.5 # use for ease-out half of curve
+        if test is True and loop_counter <= 0:
+            break
+        last_sleep = 0
+        for pos in range(16):
+            for i in range(16): # step through all pixels in this ring
+                pixnum = i + 16 * (ringnum - 1)
+                if order == 'RGB':
+                    #pixels[pixnum] = c if i == pos else b
+                    pass
+                else:
+                    #pixels[pixnum] = (c[1], c[0], c[2]) if i == pos else (b[1], b[0], b[2])
+                    pass
+            #pixels.show()
+            s = e.ease(pos) - last_sleep # gets the sleep time using cubic ease-in/out
+            last_sleep = e.ease(pos) # save this sleep time for subtracting from next round
+            print ('pos:{} sleep:{}'.format(pos, s)) # debug
+            time.sleep(s)
+        loop_counter = loop_counter - 1
