@@ -1,6 +1,6 @@
 # Printer Status class to store current results from status requests
 # Printer States:
-events = {
+state_events = {
     'C': 'config', # (configuration file is being processed)
     'I': 'idle', # (idle, no movement or code is being performed)
     'B': 'print', # (busy, live movement is in progress or a macro file is being run)
@@ -79,7 +79,7 @@ class PrinterStatus:
         self._state = value
     
     def get_event(self):
-        return events[self._state]
+        return state_events[self._state]
     
     def handle_state_change(self, newstate):
         print('State change detected!')

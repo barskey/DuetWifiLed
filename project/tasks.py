@@ -1,12 +1,13 @@
 import requests
 import time
-from flask import current_app
+import threading
 from project.models import db, Settings, Param
 from project import scheduler
 from project.printer_status import PrinterStatus
 from easing_functions import CubicEaseInOut
 #import board
 #import neopixel
+from flask import current_app
 
 printer = PrinterStatus()
 #pixels = neopixel.NeoPixel(board.D18, 48)
@@ -31,16 +32,37 @@ def update_rings():
     with scheduler.app.app_context():
         params = Param.query.all()
         # put results in organized dict object
-        # TODO: Fix this ungly hack for converting param db query to usable dict object
+        # TODO: Fix this double for-loop hack for converting param db query to usable dict object
         rings = {}
         for p in params:
             rings[p.ringnum] = {}
         for p in params:
             rings[p.ringnum][p.event] = p.get_obj()
 
-        for ringnum,events in rings.items():
-            params = events[printer.get_event()] #  get params for action to take for this printer state
-            print ('Ring {}: Do action {}!'.format(ringnum, params['action']))
+        for ring_num,events in rings.items():
+            action_params = events[printer.get_event()] #  get params for action to take for current printer state
+            run_action(ring_num, action_params)
+            #print ('Ring {}: Do action {}!'.format(ring_num, action_num))
+
+def run_action(ring_num, params):
+    action_num = params['action']
+    c1 = params['color1']
+    c2 = params['color2']
+    interval = params['interval']
+    order = 'RGB' # TODO get setting from db for order
+    if action_num == 2:       # solid
+        solid_color(c1, order, ring_num)
+    elif action_num == 3:     # hotened temp
+        temp('h', c1, c2, order, ring_num)
+    elif action_num == 4:     # heatbed temp
+        temp('b', c1, c2, order, ring_num)
+    elif action_num == 5:     # flash
+        flash(c1, c2, order, ring_num, interval, True)
+    elif action_num == 6:     # breathe
+        breathe(c1, c2, order, ring_num, interval, True)
+    elif action_num == 7:     # chase
+        chase(c1, c2, order, ring_num, interval, True)
+
 
 def solid_color(color, order, ringnum):
     # color: like 'rgb(#, #, #)'
@@ -54,6 +76,8 @@ def solid_color(color, order, ringnum):
             #pixels[pixnum] = (c[1],c[0],c[2])
             pass
     #pixels.show()
+    with current_app.app_context():
+        current_app.logger.info('Ring {} is now color {}'.format(ringnum, c))
 
 def temp(source, color, background, order, ringnum):
     # color: like 'rgb(#, #, #)'
@@ -62,15 +86,20 @@ def temp(source, color, background, order, ringnum):
     b = tuple(int(x.strip()) for x in background[4:-1].split(','))
 
     percent = printer.heatbedTemp if source == 'b' else printer.hotendTemp
+    debug1, debug2 = '', ''
     for i in range(16):
         pixnum = i + 16 * (ringnum - 1)
         if order == 'RGB':
-            #pixels[pixnum] = c if percent >= (i + 1)/16 else b
-            pass
+            #pixels[pixnum] = c if percent >= i/16 else b
+            if percent >= i/16:
+                debug1 = debug1 + str(i)
+            else:
+                debug2 = debug2 + str(i)
         else:
-            #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= (i + 1)/16 else (b[1], b[0], b[2])
+            #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= i/16 else (b[1], b[0], b[2])
             pass
     #pixels.show()
+    print ('Ring {} temp pixels {} are color {}. Background pixels {} are color {}'.format(ringnum, debug1, c, debug2, b))
 
 def flash(color1, color2, order, ringnum, interval, test=False):
     # color1,2: like 'rgb(#, #, #)'
@@ -94,6 +123,7 @@ def flash(color1, color2, order, ringnum, interval, test=False):
         c1, c2 = c2, c1
         time.sleep(interval)
         loop_counter = loop_counter - 1
+        print ('Ring {} is now color {}'.format(ringnum, c1))
 
 def breathe(color1, color2, order, ringnum, interval, test=False):
     # colors passed in as 'rgb(#, #, #)'
@@ -125,9 +155,10 @@ def breathe(color1, color2, order, ringnum, interval, test=False):
             #pixels.show()
             s = e.ease(n) - last_sleep # gets the sleep time using cubic ease-in/out
             last_sleep = e.ease(n) # save this sleep time for subtracting from next round
-            print ('step:{} color:{}'.format(n, color)) # debug
+            #print ('step:{} color:{}'.format(n, color)) # debug
             time.sleep(s)
         # swap colors for next loop so it goes back and forth
+        print ('Breathe: Ring {} is now color {}'.format(ringnum, c1))
         c1, c2 = c2, c1
         loop_counter = loop_counter - 1
 
@@ -155,6 +186,7 @@ def chase(color, background, order, ringnum, interval, test=False):
             #pixels.show()
             s = e.ease(pos) - last_sleep # gets the sleep time using cubic ease-in/out
             last_sleep = e.ease(pos) # save this sleep time for subtracting from next round
-            print ('pos:{} sleep:{}'.format(pos, s)) # debug
+            #print ('pos:{} sleep:{}'.format(pos, s)) # debug
             time.sleep(s)
+        print ('Chase: Ring {} loop completed - chase color {}'.format(ringnum, c1))
         loop_counter = loop_counter - 1

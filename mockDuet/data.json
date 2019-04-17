@@ -26,7 +26,7 @@
 	"temps": {
 		"bed": {
 			"current": 20.0,
-			"active": -273.1,
+			"active": 55.1,
 			"state": 0
 		},
 		"chamber": {
@@ -36,7 +36,7 @@
 		},
 		"heads": {
 			"current": [25.0, 25.0],
-			"active": [0.0, 0.0],
+			"active": [250.0, 0.0],
 			"standby": [0.0, 0.0],
 			"state": [2, 1]
 		},

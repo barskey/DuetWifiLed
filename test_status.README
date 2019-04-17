@@ -1,0 +1,11 @@
+teststatus contains a simple flask app to run a server which responds with json
+status resusts similar to the Duet Wifi.
+
+To Run:
+set FLASK_APP=test_status.py
+flask run -p 5001
+
+json rsponse is read from text file teststatus/data.json
+
+TODO:
+add multiple json responses to simulate different queries/conditions

@@ -1,0 +1,1 @@
+from mockDuet import app
