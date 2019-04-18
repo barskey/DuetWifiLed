@@ -3,7 +3,7 @@ $( document ).ready( function() {
     $( '#setup' ).addClass( 'active' );
 
     setTimeout( function () {
-        $.post('/update_status')
+        $.post('/get_status')
         .done( function( response ) {
             $( '#status' ).text( response.state );
         });

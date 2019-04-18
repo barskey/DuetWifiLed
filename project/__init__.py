@@ -17,11 +17,14 @@ def create_app(config_filename=None):
     from project.models import db
     db.init_app(app)
 
+    from project.printer_status import PrinterStatus
+    app.printer = PrinterStatus()
+
     setup_logging(app)
     setup_scheduler(app)
     register_blueprints(app)
 
-    @app.before_first_request
+    @app.before_first_request # this will get called before the first request, hence the start_runner loop to send a dummy request
     def load_tasks():
         from project.tasks import get_status
 
@@ -56,17 +59,17 @@ def start_runner(app):
     def start_loop():
         not_started = True
         while not_started:
-            app.logger.debug('In start loop')
+            app.logger.debug('::__init__:: In start loop')
             try:
-                r = requests.get('http://127.0.0.1:5000/')
+                r = requests.get('http://127.0.0.1:5000/settings')
                 if r.status_code == 200:
-                    app.logger.info('Server started, quiting start_loop')
+                    app.logger.info('::__init__:: Server started, quiting start_loop')
                     not_started = False
-                app.logger.debug(r.status_code)
+                app.logger.debug('::__init__:: Received status code:{}'.format(r.status_code))
             except:
-                app.logger.debug('Server not yet started')
+                app.logger.debug('::__init__:: Server not yet started')
             time.sleep(2)
 
-    app.logger.debug('Started runner')
+    app.logger.debug('::__init__:: Started runner')
     thread = threading.Thread(target=start_loop)
     thread.start()

@@ -1,23 +1,26 @@
 {
     "1": {
-        "start": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
+        "pause": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
         "idle": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)","interval": 0},
         "print": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
         "complete": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
-        "error": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0}
+        "error": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
+        "config": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0}
     },
     "2": {
-        "start": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
+        "pause": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
         "idle": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)","interval": 0},
         "print": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
         "complete": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
-        "error": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0}
+        "error": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
+        "config": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0}
     },
     "3": {
-        "start": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
+        "pause": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
         "idle": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)","interval": 0},
         "print": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
         "complete": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
-        "error": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0}
+        "error": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0},
+        "config": {"action": 1, "color1": "rgb(0, 0, 0)", "color2": "rgb(0, 0, 0)", "interval": 0}
     }
 }

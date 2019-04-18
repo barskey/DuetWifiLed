@@ -69,12 +69,6 @@
             <div class="card-body">
                 <table class="table table-sm">
                     <tr>
-                        <th scope="row" class="align-middle">Startup</th>
-                        {% set event = 'start' %}
-                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
-                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
-                    </tr>
-                    <tr>
                         <th scope="row" class="align-middle">On Idle</th>
                         {% set event = 'idle' %}
                         <td>{% include 'ledcontrol/_action_select.html' %}</td>
@@ -87,8 +81,20 @@
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>
                     <tr>
+                        <th scope="row" class="align-middle">On Pause</th>
+                        {% set event = 'pause' %}
+                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                    </tr>
+                    <tr>
                         <th scope="row" class="align-middle">Print Complete</th>
                         {% set event = 'complete' %}
+                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="align-middle">Config</th>
+                        {% set event = 'config' %}
                         <td>{% include 'ledcontrol/_action_select.html' %}</td>
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>

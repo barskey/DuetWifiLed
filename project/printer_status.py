@@ -21,6 +21,7 @@ class PrinterStatus:
         self._heatbedTarget = -1
         self._percentComplete = -1
         self._state = ''
+        self._tasks = [None for i in range(3)]
 
     # using property so retrieving temp will give percent complete as convenience
     @property
@@ -78,6 +79,12 @@ class PrinterStatus:
             self.handle_state_change(value)
         self._state = value
     
+    def get_task(self, ringnum):
+        return self._tasks[ringnum]
+
+    def set_task(self, ringnum, task):
+        self._tasks[ringnum] = task
+
     def get_event(self):
         return state_events[self._state]
     

@@ -26,9 +26,11 @@ def db_init():
     try:
         Settings.query.all()
     except:
+        current_app.logger.info('Could not query table Settings. Creating all tables on db...')
         db.create_all()
     
     if len(Settings.query.all()) == 0:
+        current_app.logger.info('Setting length zero. Adding default values...')
         defaults = json.load(open('project/settings.default.json'))
         s = Settings(
             hostname = defaults['hostname'],
@@ -54,8 +56,10 @@ def update_settings():
     s.order = request.form.get('order')
     db.session.add(s)
     db.session.commit()
+    current_app.logger.info('::update_settings:: Settings updated.')
     return jsonify({'msg': 'Settings saved.'})
 
-@setup_blueprint.route('/update_status', methods=['GET', 'POST'])
+@setup_blueprint.route('/get_status', methods=['GET', 'POST'])
 def update_status():
+    current_app.logger.info('::get_status:: Returning current printer state:{}.'.format(printer.state))
     return jsonify({'state': printer.state})

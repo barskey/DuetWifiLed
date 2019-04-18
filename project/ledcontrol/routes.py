@@ -30,13 +30,22 @@ def ledcontrol():
     return render_template('ledcontrol/led.html', rings=rings)
 
 def db_init():
+    #  if there's an error when trying to query, Settings hasn't been initialized, hence go to Setup
+    try:
+        Settings.query.all()
+    except:
+        current_app.logger.info('Could not query table Settings. Redirecting to /settings...')
+        return redirect('setup/settings.html')
+
     #  if there's an error when trying to query, the tables probably need to be created
     try:
         Param.query.all()
     except:
+        current_app.logger.info('Could not query table Param. Creating all tables...')
         db.create_all()
     
     if len(Param.query.all()) == 0:
+        current_app.logger.info('Param length zero. Adding default values...')
         defaults = json.load(open('project/params.default.json'))
         for key,events in defaults.items():
             for event,param in events.items():
@@ -65,6 +74,7 @@ def update_action():
     params.interval = float(request.form.get('interval'))
     db.session.add(params)
     db.session.commit()
+    current_app.logger.info('::update_action:: Param updated.')
     return jsonify({'msg': 'Action saved.'})
 
 @ledcontrol_blueprint.route('/test_event', methods=['GET', 'POST'])
@@ -81,11 +91,12 @@ def test_event():
     elif test == 3:     # hotened temp
         temp('h', c1, c2, order, ring)
     elif test == 4:     # heatbed temp
-        temp('b', c1, c2, order, ring)
+        temp('b', c1, c2, order, ring, True)
     elif test == 5:     # flash
         flash(c1, c2, order, ring, interval, True)
     elif test == 6:     # breathe
         breathe(c1, c2, order, ring, interval, True)
     elif test == 7:     # chase
         chase(c1, c2, order, ring, interval, True)
+    current_app.logger.info('::test_event:: Test complete.')
     return jsonify({'msg': 'Test done!'})
