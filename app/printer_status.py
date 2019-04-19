@@ -22,7 +22,7 @@ class PrinterStatus:
         self._percentComplete = -1
         self._state = ''
         self._tasks = [None for i in range(3)]
-
+        
     # using property so retrieving temp will give percent complete as convenience
     @property
     def hotendTemp(self):

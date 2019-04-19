@@ -1,44 +1,35 @@
 import requests
 import time
-import threading
-from project.models import db, Settings, Param
-from project import scheduler
-#from project.printer_status import PrinterStatus
+from threading import Thread
+from app import db, scheduler, logger
+from app.models import Settings, Param
 from easing_functions import CubicEaseInOut
+from flask import current_app
 #import board
 #import neopixel
-from flask import current_app
+
+from app.printer_status import PrinterStatus
+printer = PrinterStatus()
 
 #pixels = neopixel.NeoPixel(board.D18, 48)
 
-class FlaskThread(threading.Thread):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.app = current_app._get_current_object()
-
-    def run(self):
-        with self.app.app_context():
-            super().run()
-
-
 # communication task for duet status
-@scheduler.task('interval', id='duet_status', seconds=5)
 def get_status():
     response = None
-    with scheduler.app.app_context():
+    with current_app.app_context():
         s = Settings.query.first()
         host = 'http://' + s.hostname + '/rr_status'
         #print(host)
         host = 'http://localhost:5001/rr_status'
         args = {'type': '2'}
         response = requests.post(host, json=args)
-    if response.status_code == requests.codes.ok:
-        current_app.app.printer.update_status(response.json())
-        update_rings()
-    #return result.json()
+        if response.status_code == requests.codes.ok:
+            printer.update_status(response.json())
+            update_rings()
+        #return result.json()
 
 def update_rings():
-    with scheduler.app.app_context():
+    with current_app.app_context():
         params = Param.query.all()
         # put results in organized dict object
         # TODO: Fix this double for-loop hack for converting param db query to usable dict object
@@ -65,17 +56,17 @@ def run_action(ring_num, params):
 
     t = None
     if action_num == 2:       # solid
-        t = FlaskThread(target=solid_color, args=(c1, order, ring_num))
+        t = Thread(target=solid_color, args=(c1, order, ring_num))
     elif action_num == 3:     # hotend temp
-        t = FlaskThread(target=temp, args=('h', c1, c2, order, ring_num), name='ring{}'.format(ring_num))
+        t = Thread(target=temp, args=('h', c1, c2, order, ring_num), name='ring{}'.format(ring_num))
     elif action_num == 4:     # heatbed temp
-        t = FlaskThread(target=temp, args=('b', c1, c2, order, ring_num), name='ring{}'.format(ring_num))
+        t = Thread(target=temp, args=('b', c1, c2, order, ring_num), name='ring{}'.format(ring_num))
     elif action_num == 5:     # flash
-        t = FlaskThread(target=flash, args=(c1, c2, order, ring_num, interval), name='ring{}'.format(ring_num))
+        t = Thread(target=flash, args=(c1, c2, order, ring_num, interval), name='ring{}'.format(ring_num))
     elif action_num == 6:     # breathe
-        t = FlaskThread(target=breathe, args=(c1, c2, order, ring_num, interval), name='ring{}'.format(ring_num))
+        t = Thread(target=breathe, args=(c1, c2, order, ring_num, interval), name='ring{}'.format(ring_num))
     elif action_num == 7:     # chase
-        t = FlaskThread(target=chase, args=(c1, c2, order, ring_num, interval), name='ring{}'.format(ring_num))
+        t = Thread(target=chase, args=(c1, c2, order, ring_num, interval), name='ring{}'.format(ring_num))
     t.daemon = True
     t.start()
     printer.set_task(ring_num, t)
@@ -93,7 +84,7 @@ def solid_color(color, order, ringnum):
             #pixels[pixnum] = (c[1],c[0],c[2])
             pass
     #pixels.show()
-    current_app.logger.info('::solid::   Ring:{} color:{}'.format(ringnum, c))
+    logger.info('::solid::   Ring:{} color:{}'.format(ringnum, c))
 
 def temp(source, color, background, order, ringnum, test=False):
     # color: like 'rgb(#, #, #)'
@@ -103,20 +94,21 @@ def temp(source, color, background, order, ringnum, test=False):
 
     loop_counter = 2 # use to run a certain number of loops in when called with test True
     while True:
-        if test is True and loop_counter <= 0:
-            break
-        percent = printer.heatbedTemp if source == 'b' else printer.hotendTemp
-        print(percent)
-        for i in range(16):
-            pixnum = i + 16 * (ringnum - 1)
-            if order == 'RGB':
-                #pixels[pixnum] = c if percent >= i/16 else b
-                pass
-            else:
-                #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= i/16 else (b[1], b[0], b[2])
-                pass
-        #pixels.show()
-        current_app.logger.info('::temp::    Ring:{} color:{} background:{}'.format(ringnum, c, b))
+        with app.app_context():
+            if test is True and loop_counter <= 0:
+                break
+            percent = printer.heatbedTemp if source == 'b' else printer.hotendTemp
+            print('temp:{}'.format(printer.hotendTemp))
+            for i in range(16):
+                pixnum = i + 16 * (ringnum - 1)
+                if order == 'RGB':
+                    #pixels[pixnum] = c if percent >= i/16 else b
+                    pass
+                else:
+                    #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= i/16 else (b[1], b[0], b[2])
+                    pass
+            #pixels.show()
+            logger.info('::temp::    Ring:{} color:{} background:{}'.format(ringnum, c, b))
         loop_counter = loop_counter - 1
         time.sleep(1) # update temp every 1 second
 
@@ -142,7 +134,7 @@ def flash(color1, color2, order, ringnum, interval, test=False):
         c1, c2 = c2, c1
         time.sleep(interval)
         loop_counter = loop_counter - 1
-        current_app.logger.info('::flash::   Ring:{} color:{}'.format(ringnum, c1))
+        logger.info('::flash::   Ring:{} color:{}'.format(ringnum, c1))
 
 def breathe(color1, color2, order, ringnum, interval, test=False):
     # colors passed in as 'rgb(#, #, #)'
@@ -177,7 +169,7 @@ def breathe(color1, color2, order, ringnum, interval, test=False):
             #print ('step:{} color:{}'.format(n, color)) # debug
             time.sleep(s)
         # swap colors for next loop so it goes back and forth
-        current_app.logger.info('::breathe:: Ring:{} color:{}'.format(ringnum, c1))
+        logger.info('::breathe:: Ring:{} color:{}'.format(ringnum, c1))
         c1, c2 = c2, c1
         loop_counter = loop_counter - 1
 
@@ -207,5 +199,5 @@ def chase(color, background, order, ringnum, interval, test=False):
             last_sleep = e.ease(pos) # save this sleep time for subtracting from next round
             #print ('pos:{} sleep:{}'.format(pos, s)) # debug
             time.sleep(s)
-        current_app.logger.info('::chase::   Ring:{} loop completed - chase color:{}'.format(ringnum, c))
+        logger.info('::chase::   Ring:{} loop completed - chase color:{}'.format(ringnum, c))
         loop_counter = loop_counter - 1

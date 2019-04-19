@@ -2,7 +2,7 @@ $( document ).ready( function() {
   
     $( '#setup' ).addClass( 'active' );
 
-    setTimeout( function () {
+    setInterval( function () {
         $.post('/get_status')
         .done( function( response ) {
             $( '#status' ).text( response.state );

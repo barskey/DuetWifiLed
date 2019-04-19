@@ -71,37 +71,37 @@
                     <tr>
                         <th scope="row" class="align-middle">On Idle</th>
                         {% set event = 'idle' %}
-                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td>{% include '_action_select.html' %}</td>
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>
                     <tr>
                         <th scope="row" class="align-middle">During Print</th>
                         {% set event = 'print' %}
-                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td>{% include '_action_select.html' %}</td>
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>
                     <tr>
                         <th scope="row" class="align-middle">On Pause</th>
                         {% set event = 'pause' %}
-                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td>{% include '_action_select.html' %}</td>
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>
                     <tr>
                         <th scope="row" class="align-middle">Print Complete</th>
                         {% set event = 'complete' %}
-                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td>{% include '_action_select.html' %}</td>
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>
                     <tr>
                         <th scope="row" class="align-middle">Config</th>
                         {% set event = 'config' %}
-                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td>{% include '_action_select.html' %}</td>
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>
                     <tr>
                         <th scope="row" class="align-middle">On Error</th>
                         {% set event = 'error' %}
-                        <td>{% include 'ledcontrol/_action_select.html' %}</td>
+                        <td>{% include '_action_select.html' %}</td>
                         <td class="align-middle"><a href="#" class="pdl-action" id='a-{{ num }}-{{ event }}'><span data-feather="settings"></span></a></td>
                     </tr>
                 </table>
@@ -110,5 +110,5 @@
     </div>
     {% endfor %}
 </div>
-<script src="{{ url_for('ledcontrol.static', filename='js/ledcontrol.js') }}"></script>
+<script src="static/js/ledcontrol.js"></script>
 {% endblock %}
