@@ -35,7 +35,7 @@
 			"state": 2
 		},
 		"heads": {
-			"current": [100.0, 25.0],
+			"current": [60.0, 25.0],
 			"active": [120.0, 0.0],
 			"standby": [0.0, 0.0],
 			"state": [2, 1]

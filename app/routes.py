@@ -1,4 +1,4 @@
-from app import app, db, logger
+from app import app, db, logger, printer
 from flask import render_template, redirect, url_for, request, jsonify
 import json
 from app.models import Settings, Param
@@ -30,22 +30,22 @@ def update_settings():
     s.order = request.form.get('order')
     db.session.add(s)
     db.session.commit()
-    logger.info('::update_settings:: Settings updated.')
+    logger.info('<-update_settings-> Settings updated.')
     return jsonify({'msg': 'Settings saved.'})
 
 @app.route('/get_status', methods=['GET', 'POST'])
 def update_status():
-    logger.info('::get_status:: Returning current printer state:{}.'.format(printer.state))
+    logger.debug('<-get_status-> Returning current printer state:{}.'.format(printer.state))
     return jsonify({'state': printer.state})
 
 @app.route('/reset_to_defaults')
 def reset_to_defaults():
-    logger.info('Dropping all db tables...')
+    logger.info('<-reset_to_defaults-> Dropping all db tables...')
     db.drop_all()
-    logger.info('Creating all db tables...')
+    logger.info('<-reset_to_defaults-> Creating all db tables...')
     db.create_all()
     
-    logger.info('Adding default Settings values...')
+    logger.info('<-reset_to_defaults-> Adding default Settings values...')
     defaults = json.load(open('app/settings.default.json'))
     s = Settings(
         hostname = defaults['hostname'],
@@ -58,9 +58,9 @@ def reset_to_defaults():
     )
     db.session.add(s)
     db.session.commit()
-    logger.info('SettingsDone!')
+    logger.info('<-reset_to_defaults-> Settings Done!')
 
-    logger.info('Adding default Param values...')
+    logger.info('<-reset_to_defaults-> Adding default Param values...')
     defaults = json.load(open('app/params.default.json'))
     for key,events in defaults.items():
         for event,param in events.items():
@@ -74,7 +74,7 @@ def reset_to_defaults():
             )
             db.session.add(p)
     db.session.commit()
-    logger.info('Done! Redirecting to /')
+    logger.info('<-reset_to_defaults-> Done! Redirecting to /')
     return redirect('/')
 
 ###########################
@@ -122,7 +122,7 @@ def update_action():
     params.interval = float(request.form.get('interval'))
     db.session.add(params)
     db.session.commit()
-    logger.info('::update_action:: Param updated.')
+    logger.info('<-update_action-> Param updated.')
     return jsonify({'msg': 'Action saved.'})
 
 @app.route('/test_event', methods=['GET', 'POST'])
@@ -135,16 +135,22 @@ def test_event():
     order = 'RGB' # TODO get setting from db for order
 
     if test == 2:       # solid
-        solid_color(c1, order, ring)
-    elif test == 3:     # hotened temp
-        temp('h', c1, c2, order, ring)
+        logger.info('<-test_event-> Running test solid_color...')
+        app.solid_color(c1, order, ring)
+    elif test == 3:     # hotend temp
+        logger.info('<-test_event-> Running test hotend temp...')
+        app.temp('h', c1, c2, order, ring)
     elif test == 4:     # heatbed temp
-        temp('b', c1, c2, order, ring, True)
+        logger.info('<-test_event-> Running test heatbed temp...')
+        app.temp('b', c1, c2, order, ring, True)
     elif test == 5:     # flash
-        flash(c1, c2, order, ring, interval, True)
+        logger.info('<-test_event-> Running test flash...')
+        app.flash(c1, c2, order, ring, interval, True)
     elif test == 6:     # breathe
-        breathe(c1, c2, order, ring, interval, True)
+        logger.info('<-test_event-> Running test breathe...')
+        app.breathe(c1, c2, order, ring, interval, True)
     elif test == 7:     # chase
-        chase(c1, c2, order, ring, interval, True)
-    logger.info('::test_event:: Test complete.')
+        logger.info('<-test_event-> Running test chase...')
+        app.chase(c1, c2, order, ring, interval, True)
+    logger.info('<-test_event-> Test complete.')
     return jsonify({'msg': 'Test done!'})

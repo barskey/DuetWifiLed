@@ -1,32 +1,14 @@
 import requests
 import time
 from threading import Thread
-from app import db, scheduler, logger
+from app import db, logger, scheduler, printer
 from app.models import Settings, Param
 from easing_functions import CubicEaseInOut
 from flask import current_app
 #import board
 #import neopixel
 
-from app.printer_status import PrinterStatus
-printer = PrinterStatus()
-
 #pixels = neopixel.NeoPixel(board.D18, 48)
-
-# communication task for duet status
-def get_status():
-    response = None
-    with current_app.app_context():
-        s = Settings.query.first()
-        host = 'http://' + s.hostname + '/rr_status'
-        #print(host)
-        host = 'http://localhost:5001/rr_status'
-        args = {'type': '2'}
-        response = requests.post(host, json=args)
-        if response.status_code == requests.codes.ok:
-            printer.update_status(response.json())
-            update_rings()
-        #return result.json()
 
 def update_rings():
     with current_app.app_context():
@@ -94,21 +76,20 @@ def temp(source, color, background, order, ringnum, test=False):
 
     loop_counter = 2 # use to run a certain number of loops in when called with test True
     while True:
-        with app.app_context():
-            if test is True and loop_counter <= 0:
-                break
-            percent = printer.heatbedTemp if source == 'b' else printer.hotendTemp
-            print('temp:{}'.format(printer.hotendTemp))
-            for i in range(16):
-                pixnum = i + 16 * (ringnum - 1)
-                if order == 'RGB':
-                    #pixels[pixnum] = c if percent >= i/16 else b
-                    pass
-                else:
-                    #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= i/16 else (b[1], b[0], b[2])
-                    pass
-            #pixels.show()
-            logger.info('::temp::    Ring:{} color:{} background:{}'.format(ringnum, c, b))
+        if test is True and loop_counter <= 0:
+            break
+        percent = printer.heatbedTemp if source == 'b' else printer.hotendTemp
+        print('temp:{}'.format(printer.hotendTemp))
+        for i in range(16):
+            pixnum = i + 16 * (ringnum - 1)
+            if order == 'RGB':
+                #pixels[pixnum] = c if percent >= i/16 else b
+                pass
+            else:
+                #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= i/16 else (b[1], b[0], b[2])
+                pass
+        #pixels.show()
+        logger.info('::temp::    Ring:{} color:{} background:{}'.format(ringnum, c, b))
         loop_counter = loop_counter - 1
         time.sleep(1) # update temp every 1 second
 

@@ -5,7 +5,7 @@ $( document ).ready( function() {
     setInterval( function () {
         $.post('/get_status')
         .done( function( response ) {
-            $( '#status' ).text( response.state );
+            $( '#status' ).text( 'Printer state ' + response.state );
         });
     }, 5000);
   
