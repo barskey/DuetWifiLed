@@ -2,6 +2,7 @@ from app import app, db, logger, printer
 from flask import render_template, redirect, url_for, request, jsonify
 import json
 from app.models import Settings, Param
+from app.actions import ActionThread
 
 ###########################
 ####    setup routes   ####
@@ -123,34 +124,23 @@ def update_action():
     db.session.add(params)
     db.session.commit()
     logger.info('<-update_action-> Param updated.')
+    printer.needs_update = True
     return jsonify({'msg': 'Action saved.'})
 
 @app.route('/test_event', methods=['GET', 'POST'])
 def test_event():
-    test = int(request.form.get('action'))
-    ring = int(request.form.get('ring'))
-    c1 = request.form.get('color1')
-    c2 = request.form.get('color2')
-    interval = float(request.form.get('interval'))
-    order = 'RGB' # TODO get setting from db for order
-
-    if test == 2:       # solid
-        logger.info('<-test_event-> Running test solid_color...')
-        app.solid_color(c1, order, ring)
-    elif test == 3:     # hotend temp
-        logger.info('<-test_event-> Running test hotend temp...')
-        app.temp('h', c1, c2, order, ring)
-    elif test == 4:     # heatbed temp
-        logger.info('<-test_event-> Running test heatbed temp...')
-        app.temp('b', c1, c2, order, ring, True)
-    elif test == 5:     # flash
-        logger.info('<-test_event-> Running test flash...')
-        app.flash(c1, c2, order, ring, interval, True)
-    elif test == 6:     # breathe
-        logger.info('<-test_event-> Running test breathe...')
-        app.breathe(c1, c2, order, ring, interval, True)
-    elif test == 7:     # chase
-        logger.info('<-test_event-> Running test chase...')
-        app.chase(c1, c2, order, ring, interval, True)
-    logger.info('<-test_event-> Test complete.')
-    return jsonify({'msg': 'Test done!'})
+    settings = Settings.query.first()
+    order = settings.order
+    ring_num = int(request.form.get('ring'))
+    action_params = {
+        'action': int(request.form.get('action')),
+        'color1': request.form.get('color1'),
+        'color2': request.form.get('color2'),
+        'interval': float(request.form.get('interval'))
+    }
+    at = ActionThread(action_params, printer, ring_num, order)
+    at.setName('test{}'.format(ring_num))
+    at.daemon = True
+    at.start()
+    logger.info('<-test_event-> Test Started.')
+    return jsonify({'msg': 'Test Started!'})

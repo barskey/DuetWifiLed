@@ -69,10 +69,10 @@ def get_status():
         try:
             response = requests.post(host, json=args)
             if response.status_code == requests.codes.ok:
-                state_changed = printer.update_status(response.json())
+                printer.update_status(response.json())
                 logger.debug('<-get_status-> Printer staus updated.')
-                if state_changed is True:
-                    logger.debug('<-get_status-> Printer state change detected!')
+                if printer.needs_update is True:
+                    logger.debug('<-get_status-> Printer needs update. Running update_rings')
                     update_rings()
         except:
             logger.debug('<-get_status-> error trying to get status host:{} args:{}'.format(host, args))

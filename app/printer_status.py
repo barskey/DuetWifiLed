@@ -1,3 +1,5 @@
+from app import logger
+
 # Printer Status class to store current results from status requests
 # Printer States:
 state_events = {
@@ -21,7 +23,7 @@ class PrinterStatus:
         self._heatbedTarget = -1
         self._percentComplete = -1
         self._state = ''
-        self._state_changed = False
+        self.needs_update = False
         self._tasks = [None for i in range(3)]
         
     # using property so retrieving temp will give percent complete as convenience
@@ -76,7 +78,9 @@ class PrinterStatus:
     
     @state.setter
     def state(self, value):
-        self._state_changed = True if value != self._state else False
+        if value != self._state:
+            logger.debug('<-set state-> Printer state change detected!')
+            self.needs_update = True
         self._state = value
     
     def get_task(self, ringnum):
@@ -94,5 +98,4 @@ class PrinterStatus:
         self.hotendTarget = data['temps']['heads']['active'][0]
         self.heatbedTemp = data['temps']['bed']['current']
         self.heatbedTarget = data['temps']['bed']['active']
-        return self._state_changed
 
