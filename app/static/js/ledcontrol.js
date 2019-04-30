@@ -12,7 +12,8 @@ $( document ).ready( function() {
         ['Ring will show percent complete as heatbed temperature reaches target.', '% Complete:', 'Background:'],
         ['Ring changes between two colors switching at specified interval.', 'Color 1:', 'Color 2:'],
         ['Ring fades gradually between two colors over specified interval.', 'Color 1:', 'Color 2:'],
-        ['Chase color spins around ring completing one rotation in specified interval.', 'Chase:', 'Background:']
+        ['Chase color spins around ring completing one rotation in specified interval.', 'Chase:', 'Background:'],
+        ['It\'s a double rainbow!!!', 'Not Used:', 'Not Used:']
     ]
 
     $( '#color1, #color2' ).spectrum({
@@ -49,6 +50,8 @@ $( document ).ready( function() {
         }
         if ( action == 2 ) { // disable second color for 2-solid
             $modal.find( '#color2' ).spectrum( 'disable' );
+        } else if ( action == 8 ) { // disable both colors for 8-rainbow
+            $modal.find( '#color1, #color2' ).spectrum( 'disable' );
         } else {
             $modal.find( '#color2' ).spectrum( 'enable' );
         }

@@ -98,7 +98,7 @@ def ledcontrol():
     except:
         return redirect('/reset_to_defaults')
 
-    # TODO: Fix this ungly hack for converting param db query to usable dict object
+    # TODO: Fix this ugly hack for converting param db query to usable dict object
     params = Param.query.all()
     rings = {}
     for p in params:

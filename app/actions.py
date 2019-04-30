@@ -2,6 +2,10 @@ import threading
 import time
 from app import logger
 from easing_functions import CubicEaseInOut
+#import board
+#import neopixel
+
+NUM_PIXELS = 16
 
 class ActionThread(threading.Thread):
     """Thread class that will stop itself when joined."""
@@ -49,12 +53,15 @@ class ActionThread(threading.Thread):
         elif self._action_num == 7:
             logger.debug('<-ActionThread-> {} running chase.'.format(self.getName()))
             self.chase()
+        elif self._action_num == 8:
+            logger.debug('<-ActionThread-> {} running rainbow.'.format(self.getName()))
+            self.rainbow()
 
     def solid_color(self):
         # color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
-        for i in range(16):
-            pixnum = i + 16 * (self._ringnum - 1)
+        for i in range(NUM_PIXELS):
+            pixnum = i + NUM_PIXELS * (self._ringnum - 1)
             if self._order == 'RGB':
                 #pixels[pixnum] = c
                 pass
@@ -77,8 +84,8 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
-            for i in range(16):
-                pixnum = i + 16 * (self._ringnum - 1)
+            for i in range(NUM_PIXELS):
+                pixnum = i + NUM_PIXELS * (self._ringnum - 1)
                 if self._order == 'RGB':
                     #pixels[pixnum] = c if percent >= i/16 else b
                     pass
@@ -101,8 +108,8 @@ class ActionThread(threading.Thread):
                 return
             if self.stopped():
                 return
-            for i in range(16):
-                pixnum = i + 16 * (self._ringnum - 1)
+            for i in range(NUM_PIXELS):
+                pixnum = i + NUM_PIXELS * (self._ringnum - 1)
                 if self._order == 'RGB':
                     #pixels[pixnum] = c1
                     pass
@@ -137,8 +144,8 @@ class ActionThread(threading.Thread):
                 #rt = r1 + (r2 - r1) * t
                 #gt = g1 + (g2 - g1) * t
                 #bt = b1 + (b2 - b1) * t
-                for i in range(16): # set all pixels in this ring to current color
-                    pixnum = i + 16 * (self._ringnum - 1)
+                for i in range(NUM_PIXELS): # set all pixels in this ring to current color
+                    pixnum = i + NUM_PIXELS * (self._ringnum - 1)
                     if self._order == 'RGB':
                         #pixels[pixnum] = color
                         pass
@@ -161,7 +168,7 @@ class ActionThread(threading.Thread):
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
 
         # creates easing instance for smoothing animations
-        e = CubicEaseInOut(0, self._interval, 16) # will go from 0 to interval in 16 steps
+        e = CubicEaseInOut(0, self._interval, NUM_PIXELS) # will go from 0 to interval in 16 steps
         loop_counter = 2 # use to run a certain number of loops in when called with test True
         while True:
             if test is True and loop_counter <= 0:
@@ -169,9 +176,9 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             last_sleep = 0
-            for pos in range(16):
-                for i in range(16): # step through all pixels in this ring
-                    pixnum = i + 16 * (self._ringnum - 1)
+            for pos in range(NUM_PIXELS):
+                for i in range(NUM_PIXELS): # step through all pixels in this ring
+                    pixnum = i + NUM_PIXELS * (self._ringnum - 1)
                     if self._order == 'RGB':
                         #pixels[pixnum] = c if i == pos else b
                         pass
@@ -185,3 +192,42 @@ class ActionThread(threading.Thread):
                 time.sleep(s)
             logger.debug('<-chase->   Ring:{} loop completed - chase color:{}'.format(self._ringnum, c))
             loop_counter = loop_counter - 1
+
+    def rainbow(self, test=False):
+        loop_counter = 2 # use to run a certain number of loops in when called with test True
+        wait = self._interval / 255 # one rainbow cycle is 255 colors
+        while True:
+            if test is True and loop_counter <= 0:
+                return
+            if self.stopped():
+                return
+            for j in range(255):
+                for i in range(NUM_PIXELS):
+                    pixnum = i + NUM_PIXELS * (self._ringnum - 1)
+                    pixel_index = (i * 256 // NUM_PIXELS) + j # // is floor division
+                    #pixels[pixnum] = self.wheel(pixel_index & 255)
+                #pixels.show()
+                time.sleep(wait)
+            logger.debug('<-rainbow-> Ring:{} loop completed'.format(self._ringnum))
+            loop_counter = loop_counter - 1
+
+    def wheel(self, pos):
+        # Input a value 0 to 255 to get a color value.
+        # The colours are a transition r - g - b - back to r.
+        if pos < 0 or pos > 255:
+            r = g = b = 0
+        elif pos < 85:
+            r = int(pos * 3)
+            g = int(255 - pos*3)
+            b = 0
+        elif pos < 170:
+            pos -= 85
+            r = int(255 - pos*3)
+            g = 0
+            b = int(pos*3)
+        else:
+            pos -= 170
+            r = 0
+            g = int(pos*3)
+            b = int(255 - pos*3)
+        return (r, g, b) # if ORDER == neopixel.RGB or ORDER == neopixel.GRB else (r, g, b, 0)
