@@ -18,6 +18,14 @@ scheduler.start()
 from app.printer_status import PrinterStatus
 printer = PrinterStatus()
 
+#import board
+#import neopixel
+#pixel_pin = board.D18
+NEO_PIXELS = 16
+NUM_RINGS = 3
+#ORDER = neopixel.RGB
+#pixels = neopixel.NeoPixel(pixel_pin, NEO_PIXELS * NUM_RINGS, brightness=0.2, auto_write=False, pixel_order=ORDER)
+
 import logging
 from logging.handlers import RotatingFileHandler
 handler = RotatingFileHandler('pi-duet-wifi.log', maxBytes=100000, backupCount=1)
@@ -83,7 +91,6 @@ from app.actions import ActionThread
 # LED actions
 def update_rings():
     rings = {}
-    order = None
     with app.app_context():
         params = Param.query.all()
         # put results in organized dict object
@@ -100,7 +107,7 @@ def update_rings():
         t = printer.get_task(ring_num - 1)
         if t is not None:
             t.join()
-        t = ActionThread(action_params, printer, ring_num, order)
+        t = ActionThread(action_params, printer, pixels, ring_num, ORDER)
         t.setName('ring{}'.format(ring_num))
         t.daemon = True
         t.start()

@@ -2,7 +2,6 @@ import threading
 import time
 from app import logger
 from easing_functions import CubicEaseInOut
-#import board
 #import neopixel
 
 NUM_PIXELS = 16
@@ -10,7 +9,7 @@ NUM_PIXELS = 16
 class ActionThread(threading.Thread):
     """Thread class that will stop itself when joined."""
 
-    def __init__(self, params, printer, ring, order='RGB', *args, **kwargs):
+    def __init__(self, params, printer, pixels, ring, order='RGB', *args, **kwargs):
         super(ActionThread, self).__init__(*args, **kwargs)
         self._action_num = params['action']
         self._ringnum = ring
@@ -60,8 +59,8 @@ class ActionThread(threading.Thread):
     def solid_color(self):
         # color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
-        for i in range(NUM_PIXELS):
-            pixnum = i + NUM_PIXELS * (self._ringnum - 1)
+        for i in range(NEO_PIXELS):
+            pixnum = i + NEO_PIXELS * (self._ringnum - 1)
             if self._order == 'RGB':
                 #pixels[pixnum] = c
                 pass
@@ -84,8 +83,8 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
-            for i in range(NUM_PIXELS):
-                pixnum = i + NUM_PIXELS * (self._ringnum - 1)
+            for i in range(NEO_PIXELS):
+                pixnum = i + NEO_PIXELS * (self._ringnum - 1)
                 if self._order == 'RGB':
                     #pixels[pixnum] = c if percent >= i/16 else b
                     pass
@@ -108,8 +107,8 @@ class ActionThread(threading.Thread):
                 return
             if self.stopped():
                 return
-            for i in range(NUM_PIXELS):
-                pixnum = i + NUM_PIXELS * (self._ringnum - 1)
+            for i in range(NEO_PIXELS):
+                pixnum = i + NEO_PIXELS * (self._ringnum - 1)
                 if self._order == 'RGB':
                     #pixels[pixnum] = c1
                     pass
@@ -144,8 +143,8 @@ class ActionThread(threading.Thread):
                 #rt = r1 + (r2 - r1) * t
                 #gt = g1 + (g2 - g1) * t
                 #bt = b1 + (b2 - b1) * t
-                for i in range(NUM_PIXELS): # set all pixels in this ring to current color
-                    pixnum = i + NUM_PIXELS * (self._ringnum - 1)
+                for i in range(NEO_PIXELS): # set all pixels in this ring to current color
+                    pixnum = i + NEO_PIXELS * (self._ringnum - 1)
                     if self._order == 'RGB':
                         #pixels[pixnum] = color
                         pass
@@ -168,7 +167,7 @@ class ActionThread(threading.Thread):
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
 
         # creates easing instance for smoothing animations
-        e = CubicEaseInOut(0, self._interval, NUM_PIXELS) # will go from 0 to interval in 16 steps
+        e = CubicEaseInOut(0, self._interval, NEO_PIXELS) # will go from 0 to interval in 16 steps
         loop_counter = 2 # use to run a certain number of loops in when called with test True
         while True:
             if test is True and loop_counter <= 0:
@@ -176,9 +175,9 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             last_sleep = 0
-            for pos in range(NUM_PIXELS):
-                for i in range(NUM_PIXELS): # step through all pixels in this ring
-                    pixnum = i + NUM_PIXELS * (self._ringnum - 1)
+            for pos in range(NEO_PIXELS):
+                for i in range(NEO_PIXELS): # step through all pixels in this ring
+                    pixnum = i + NEO_PIXELS * (self._ringnum - 1)
                     if self._order == 'RGB':
                         #pixels[pixnum] = c if i == pos else b
                         pass
@@ -202,9 +201,9 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             for j in range(255):
-                for i in range(NUM_PIXELS):
-                    pixnum = i + NUM_PIXELS * (self._ringnum - 1)
-                    pixel_index = (i * 256 // NUM_PIXELS) + j # // is floor division
+                for i in range(NEO_PIXELS):
+                    pixnum = i + NEO_PIXELS * (self._ringnum - 1)
+                    pixel_index = (i * 256 // NEO_PIXELS) + j # // is floor division
                     #pixels[pixnum] = self.wheel(pixel_index & 255)
                 #pixels.show()
                 time.sleep(wait)
