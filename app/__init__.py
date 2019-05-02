@@ -23,7 +23,7 @@ printer = PrinterStatus()
 #pixel_pin = board.D18
 NEO_PIXELS = 16
 NUM_RINGS = 3
-#ORDER = neopixel.RGB
+ORDER = 'RGB' #neopixel.RGB
 #pixels = neopixel.NeoPixel(pixel_pin, NEO_PIXELS * NUM_RINGS, brightness=0.2, auto_write=False, pixel_order=ORDER)
 
 import logging
@@ -37,6 +37,7 @@ logger.addHandler(handler)
 
 @app.before_first_request # this will get called before the first request, hence the start_runner loop to send a dummy request
 def load_tasks():
+    logger.info('<-__init__-> Scheduling duet_status job every 5s.')
     scheduler.add_job(func=get_status, trigger='interval', id='duet_status', seconds=5)
 
 # hack to start background thread that polls localhost with request.
@@ -100,14 +101,14 @@ def update_rings():
         for p in params:
             rings[p.ringnum][p.event] = p.get_obj()
         settings = Settings.query.first()
-        order = settings.order
+        order = settings.order # TODO set ORDER as neopixel.RGB e.g.
 
     for ring_num,events in rings.items():
         action_params = events[printer.get_event()] #  get params for action to take for current printer state
         t = printer.get_task(ring_num - 1)
         if t is not None:
             t.join()
-        t = ActionThread(action_params, printer, pixels, ring_num, ORDER)
+        t = ActionThread(action_params, printer, pixels, ring_num)
         t.setName('ring{}'.format(ring_num))
         t.daemon = True
         t.start()

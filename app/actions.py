@@ -2,6 +2,7 @@ import threading
 import time
 from app import logger
 from easing_functions import CubicEaseInOut
+from app import NEO_PIXELS, NUM_RINGS, ORDER
 #import neopixel
 
 NUM_PIXELS = 16
@@ -9,14 +10,13 @@ NUM_PIXELS = 16
 class ActionThread(threading.Thread):
     """Thread class that will stop itself when joined."""
 
-    def __init__(self, params, printer, pixels, ring, order='RGB', *args, **kwargs):
+    def __init__(self, params, printer, pixels, ring, *args, **kwargs):
         super(ActionThread, self).__init__(*args, **kwargs)
         self._action_num = params['action']
         self._ringnum = ring
         self._color1 = params['color1']
         self._color2 = params['color2']
         self._interval = params['interval']
-        self._order = order
 
         self._printer = printer
         self._stopevent = threading.Event()
@@ -61,12 +61,7 @@ class ActionThread(threading.Thread):
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         for i in range(NEO_PIXELS):
             pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-            if self._order == 'RGB':
-                #pixels[pixnum] = c
-                pass
-            else:
-                #pixels[pixnum] = (c[1],c[0],c[2])
-                pass
+            #pixels[pixnum] = c
         #pixels.show()
         logger.debug('<-solid->   Ring:{} color:{}'.format(self._ringnum, c))
 
@@ -85,12 +80,7 @@ class ActionThread(threading.Thread):
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
             for i in range(NEO_PIXELS):
                 pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                if self._order == 'RGB':
-                    #pixels[pixnum] = c if percent >= i/16 else b
-                    pass
-                else:
-                    #pixels[pixnum] = (c[1],c[0],c[2]) if percent >= i/16 else (b[1], b[0], b[2])
-                    pass
+                #pixels[pixnum] = c if percent >= i/16 else b
             #pixels.show()
             logger.debug('<-temp->    Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
             loop_counter = loop_counter - 1
@@ -109,12 +99,7 @@ class ActionThread(threading.Thread):
                 return
             for i in range(NEO_PIXELS):
                 pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                if self._order == 'RGB':
-                    #pixels[pixnum] = c1
-                    pass
-                else:
-                    #pixels[pixnum] = (c1[1],c1[0],c1[2])
-                    pass
+                #pixels[pixnum] = c1
             #pixels.show()
             # swap colors
             c1, c2 = c2, c1
@@ -140,17 +125,9 @@ class ActionThread(threading.Thread):
             for n in range(num_steps): # use 0.01 increment for color change (100 steps)
                 t = n / num_steps if n > 0 else 0
                 color = tuple(round(x + (y - x) * t) for x,y in zip(c1, c2)) # lerp between each color channel over increment
-                #rt = r1 + (r2 - r1) * t
-                #gt = g1 + (g2 - g1) * t
-                #bt = b1 + (b2 - b1) * t
                 for i in range(NEO_PIXELS): # set all pixels in this ring to current color
                     pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                    if self._order == 'RGB':
-                        #pixels[pixnum] = color
-                        pass
-                    else:
-                        #pixels[pixnum] = (color[1],color[0],color[2])
-                        pass
+                    #pixels[pixnum] = color
                 #pixels.show()
                 s = e.ease(n) - last_sleep # gets the sleep time using cubic ease-in/out
                 last_sleep = e.ease(n) # save this sleep time for subtracting from next round
@@ -178,12 +155,7 @@ class ActionThread(threading.Thread):
             for pos in range(NEO_PIXELS):
                 for i in range(NEO_PIXELS): # step through all pixels in this ring
                     pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                    if self._order == 'RGB':
-                        #pixels[pixnum] = c if i == pos else b
-                        pass
-                    else:
-                        #pixels[pixnum] = (c[1], c[0], c[2]) if i == pos else (b[1], b[0], b[2])
-                        pass
+                    #pixels[pixnum] = c if i == pos else b
                 #pixels.show()
                 s = e.ease(pos) - last_sleep # gets the sleep time using cubic ease-in/out
                 last_sleep = e.ease(pos) # save this sleep time for subtracting from next round
