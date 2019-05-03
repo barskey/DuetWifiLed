@@ -20,11 +20,11 @@ printer = PrinterStatus()
 
 #import board
 #import neopixel
-#pixel_pin = board.D18
-NEO_PIXELS = 16
-NUM_RINGS = 3
-ORDER = 'RGB' #neopixel.RGB
-#pixels = neopixel.NeoPixel(pixel_pin, NEO_PIXELS * NUM_RINGS, brightness=0.2, auto_write=False, pixel_order=ORDER)
+#PIXEL_PIN = board.D18
+NEO_PIXELS = 16 # number of pixels per neo-pixel ring
+NUM_RINGS = 3   # How many neo-pixel rings will be connected in sequence
+ORDER = 'RGB' #neopixel.RGB # pixel order (RGB, GRB, RGBW, GRBW)
+#pixels = neopixel.NeoPixel(PIXEL_PIN, NEO_PIXELS * NUM_RINGS, brightness=0.2, auto_write=False, pixel_order=ORDER)
 
 import logging
 from logging.handlers import RotatingFileHandler
@@ -101,8 +101,27 @@ def update_rings():
         for p in params:
             rings[p.ringnum][p.event] = p.get_obj()
         settings = Settings.query.first()
-        order = settings.order # TODO set ORDER as neopixel.RGB e.g.
 
+"""         if settings.order == 'RGB':
+            ORDER = neopixel.RGB
+        elif settings.order == 'RGBW':
+            ORDER = neopixel.RGBW
+        elif settings.order == 'GRB':
+            ORDER = neopixel.GRB
+        elif settings.order == 'GRBW':
+            ORDER = neoixel.GRBW
+        pixels.pixel_order = ORDER
+        
+        if settings.neopin == 10:
+            PIXEL_PIN = board.D10
+        elif settings.neopin == 12:
+            PIXEL_PIN = board.D12
+        elif settings.neopin == 18:
+            PIXEL_PIN = board.D18
+        elif settings.neopin == 21:
+            PIXEL_PIN = board.D21
+        pixels.pixel_pin = PIXEL_PIN
+ """
     for ring_num,events in rings.items():
         action_params = events[printer.get_event()] #  get params for action to take for current printer state
         t = printer.get_task(ring_num - 1)
