@@ -102,7 +102,7 @@ def update_rings():
             rings[p.ringnum][p.event] = p.get_obj()
         settings = Settings.query.first()
 
-"""         if settings.order == 'RGB':
+        """if settings.order == 'RGB':
             ORDER = neopixel.RGB
         elif settings.order == 'RGBW':
             ORDER = neopixel.RGBW
@@ -121,7 +121,7 @@ def update_rings():
         elif settings.neopin == 21:
             PIXEL_PIN = board.D21
         pixels.pixel_pin = PIXEL_PIN
- """
+        """
     for ring_num,events in rings.items():
         action_params = events[printer.get_event()] #  get params for action to take for current printer state
         t = printer.get_task(ring_num - 1)
