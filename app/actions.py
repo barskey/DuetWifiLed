@@ -3,7 +3,7 @@ import time
 from app import logger
 from easing_functions import CubicEaseInOut
 from app import NEO_PIXELS, NUM_RINGS, ORDER
-#import neopixel
+import neopixel
 
 NUM_PIXELS = 16
 
@@ -18,6 +18,7 @@ class ActionThread(threading.Thread):
         self._color2 = params['color2']
         self._interval = params['interval']
 
+        self._pixels = pixels
         self._printer = printer
         self._stopevent = threading.Event()
 
@@ -43,7 +44,6 @@ class ActionThread(threading.Thread):
             logger.debug('<-ActionThread-> {} running heatbed temp.'.format(self.getName()))
             self.temp('b')
         elif self._action_num == 5:
-            print(self._interval)
             logger.debug('<-ActionThread-> {} running flash.'.format(self.getName()))
             self.flash()
         elif self._action_num == 6:
@@ -57,21 +57,26 @@ class ActionThread(threading.Thread):
             self.rainbow()
 
     def solid_color(self):
-        # color: like 'rgb(#, #, #)'
+        # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
+        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+            c = (c[0], c[1], c[2], 0)
         for i in range(NEO_PIXELS):
             pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-            #pixels[pixnum] = c
-        #pixels.show()
+            self._pixels[pixnum] = c
+        self._pixels.show()
         logger.debug('<-solid->   Ring:{} color:{}'.format(self._ringnum, c))
 
     def temp(self, source, test=False):
-        # color: like 'rgb(#, #, #)'
+        # self._color: like 'rgb(#, #, #)'
         # source: 'h' for hotend 'b' for heatbed
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
+        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+            c = (c[0], c[1], c[2], 0)
+            b = (b[0], b[1], b[2], 0)
 
-        loop_counter = 2 # use to run a certain number of loops in when called with test True
+        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
             if test is True and loop_counter <= 0:
                 return
@@ -80,18 +85,21 @@ class ActionThread(threading.Thread):
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
             for i in range(NEO_PIXELS):
                 pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                #pixels[pixnum] = c if percent >= i/16 else b
-            #pixels.show()
+                self._pixels[pixnum] = c if percent >= i/16 else b
+            self._pixels.show()
             logger.debug('<-temp->    Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
             loop_counter = loop_counter - 1
             time.sleep(1) # update temp every 1 second
 
     def flash(self, test=False):
-        # color1,2: like 'rgb(#, #, #)'
+        # self._color: like 'rgb(#, #, #)'
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
+        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+            c1 = (c1[0], c1[1], c1[2], 0)
+            c2 = (c2[0], c2[1], c2[2], 0)
 
-        loop_counter = 2 # use to run a certain number of loops in when called with test True
+        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
             if test is True and loop_counter <= 0:
                 return
@@ -99,8 +107,8 @@ class ActionThread(threading.Thread):
                 return
             for i in range(NEO_PIXELS):
                 pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                #pixels[pixnum] = c1
-            #pixels.show()
+                self._pixels[pixnum] = c1
+            self._pixels.show()
             # swap colors
             c1, c2 = c2, c1
             time.sleep(self._interval)
@@ -108,14 +116,17 @@ class ActionThread(threading.Thread):
             logger.debug('<-flash->   Ring:{} color:{}'.format(self._ringnum, c1))
 
     def breathe(self, test=False):
-        # colors passed in as 'rgb(#, #, #)'
+        # self._color: like 'rgb(#, #, #)'
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
+        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+            c1 = (c1[0], c1[1], c1[2], 0)
+            c2 = (c2[0], c2[1], c2[2], 0)
 
         num_steps = 100 # convenience for changing number of steps for color change
         # create easing instance for smoothing animations
         e = CubicEaseInOut(0, self._interval, num_steps) # will go from 0 to interval in num_steps steps
-        loop_counter = 2 # use to run a certain number of loops in when called with test True
+        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
             if test is True and loop_counter <= 0:
                 return
@@ -127,8 +138,8 @@ class ActionThread(threading.Thread):
                 color = tuple(round(x + (y - x) * t) for x,y in zip(c1, c2)) # lerp between each color channel over increment
                 for i in range(NEO_PIXELS): # set all pixels in this ring to current color
                     pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                    #pixels[pixnum] = color
-                #pixels.show()
+                    self._pixels[pixnum] = color
+                self._pixels.show()
                 s = e.ease(n) - last_sleep # gets the sleep time using cubic ease-in/out
                 last_sleep = e.ease(n) # save this sleep time for subtracting from next round
                 #print ('step:{} color:{}'.format(n, color)) # debug
@@ -139,13 +150,16 @@ class ActionThread(threading.Thread):
             loop_counter = loop_counter - 1
 
     def chase(self, test=False):
-        # color passed in as 'rgb(#, #, #)'
+        # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
+        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+            c = (c[0], c[1], c[2], 0)
+            b = (b[0], b[1], b[2], 0)
 
         # creates easing instance for smoothing animations
         e = CubicEaseInOut(0, self._interval, NEO_PIXELS) # will go from 0 to interval in 16 steps
-        loop_counter = 2 # use to run a certain number of loops in when called with test True
+        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
             if test is True and loop_counter <= 0:
                 return
@@ -155,8 +169,8 @@ class ActionThread(threading.Thread):
             for pos in range(NEO_PIXELS):
                 for i in range(NEO_PIXELS): # step through all pixels in this ring
                     pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                    #pixels[pixnum] = c if i == pos else b
-                #pixels.show()
+                    self._pixels[pixnum] = c if i == pos else b
+                self._pixels.show()
                 s = e.ease(pos) - last_sleep # gets the sleep time using cubic ease-in/out
                 last_sleep = e.ease(pos) # save this sleep time for subtracting from next round
                 #print ('pos:{} sleep:{}'.format(pos, s)) # debug
@@ -165,7 +179,7 @@ class ActionThread(threading.Thread):
             loop_counter = loop_counter - 1
 
     def rainbow(self, test=False):
-        loop_counter = 2 # use to run a certain number of loops in when called with test True
+        loop_counter = 2 # use to run a certain number of loops when called with test True
         wait = self._interval / 255 # one rainbow cycle is 255 colors
         while True:
             if test is True and loop_counter <= 0:
@@ -176,8 +190,8 @@ class ActionThread(threading.Thread):
                 for i in range(NEO_PIXELS):
                     pixnum = i + NEO_PIXELS * (self._ringnum - 1)
                     pixel_index = (i * 256 // NEO_PIXELS) + j # // is floor division
-                    #pixels[pixnum] = self.wheel(pixel_index & 255)
-                #pixels.show()
+                    self._pixels[pixnum] = self.wheel(pixel_index & 255) # bitwise and makes sure it is always less than 255
+                self._pixels.show()
                 time.sleep(wait)
             logger.debug('<-rainbow-> Ring:{} loop completed'.format(self._ringnum))
             loop_counter = loop_counter - 1
@@ -201,4 +215,4 @@ class ActionThread(threading.Thread):
             r = 0
             g = int(pos*3)
             b = int(255 - pos*3)
-        return (r, g, b) # if ORDER == neopixel.RGB or ORDER == neopixel.GRB else (r, g, b, 0)
+        return (r, g, b) if ORDER == neopixel.RGB or ORDER == neopixel.GRB else (r, g, b, 0)
