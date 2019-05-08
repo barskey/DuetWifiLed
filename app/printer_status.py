@@ -82,7 +82,7 @@ class PrinterStatus:
             logger.debug('<-set state-> Printer state change detected!')
             self.needs_update = True
         self._state = value
-    
+
     def get_task(self, ringnum):
         return self._tasks[ringnum]
 
@@ -94,8 +94,8 @@ class PrinterStatus:
     
     def update_status(self, data):
         self.state = data['status']
-        self.hotendTemp = data['temps']['heads']['current'][0]
-        self.hotendTarget = data['temps']['heads']['active'][0]
+        self.hotendTemp = data['temps']['current'][0]
+        self.hotendTarget = data['temps']['tools']['active'][0]
         self.heatbedTemp = data['temps']['bed']['current']
         self.heatbedTarget = data['temps']['bed']['active']
 

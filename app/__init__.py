@@ -2,6 +2,7 @@ import threading
 import requests
 import time
 from flask import Flask
+import sys
 
 app = Flask(__name__)
 app.config.from_pyfile('flask.cfg')
@@ -9,6 +10,15 @@ app.config.from_pyfile('flask.cfg')
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 db.init_app(app)
+
+import logging
+from logging.handlers import RotatingFileHandler
+handler = RotatingFileHandler('pi-duet-wifi.log', maxBytes=100000, backupCount=1)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(handler)
 
 from flask_apscheduler import APScheduler
 scheduler = APScheduler()
@@ -25,15 +35,6 @@ NEO_PIXELS = 16 # number of pixels per neo-pixel ring
 NUM_RINGS = 3   # How many neo-pixel rings will be connected in sequence
 ORDER = 'RGB' #neopixel.RGB # pixel order (RGB, GRB, RGBW, GRBW)
 #pixels = neopixel.NeoPixel(PIXEL_PIN, NEO_PIXELS * NUM_RINGS, brightness=0.2, auto_write=False, pixel_order=ORDER)
-
-import logging
-from logging.handlers import RotatingFileHandler
-handler = RotatingFileHandler('pi-duet-wifi.log', maxBytes=100000, backupCount=1)
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-logger.addHandler(handler)
 
 @app.before_first_request # this will get called before the first request, hence the start_runner loop to send a dummy request
 def load_tasks():
@@ -52,7 +53,7 @@ def start_runner(app):
                 if r.status_code == 200:
                     logger.info('<-__init__-> Server started, quiting start_loop')
                     not_started = False
-                logger.debug('<-__init__-> Received status code:{}'.format(r.status_code))
+                logger.debug('<-__init__-> Received local status code:{}'.format(r.status_code))
             except:
                 logger.debug('<-__init__-> Server not yet started')
             time.sleep(2)
@@ -73,18 +74,18 @@ def get_status():
         s = Settings.query.first()
         host = 'http://' + s.hostname + '/rr_status'
         #print(host)
-        host = 'http://localhost:5001/rr_status'
+        host = 'http://192.168.4.145/rr_status'
         args = {'type': '2'}
         try:
-            response = requests.post(host, json=args)
-            if response.status_code == requests.codes.ok:
+            response = requests.get(host, params=args)
+            if response.status_code == 200:
                 printer.update_status(response.json())
-                logger.debug('<-get_status-> Printer staus updated.')
+                logger.debug('<-get_status-> Printer status updated.')
                 if printer.needs_update is True:
                     logger.debug('<-get_status-> Printer needs update. Running update_rings')
                     update_rings()
         except:
-            logger.debug('<-get_status-> error trying to get status host:{} args:{}'.format(host, args))
+            logger.debug('<-get_status-> error trying to get status host:{} args:{}'.format(host, sys.exc_info()[0]))
     #return response.json()
 
 from app.actions import ActionThread
