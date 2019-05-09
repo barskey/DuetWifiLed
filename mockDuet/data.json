@@ -1,55 +1,74 @@
 {
-	"status": "I",
-	"coords": {
-		"axesHomed": [0, 0, 0],
-		"extr": [0.0, 0.0],
-		"xyz": [0.0, 0.0, 0.0]
-	},
-	"currentTool":1,
-	"output":{
-		"beepDuration": 3000,
-		"beepFrequency": 2000,
-		"message": ""
-	},
-	"params": {
-		"atxPower": 0,
-		"fanPercent": [100.0, 35.0],
-		"speedFactor": 100.00,
-		"extrFactors": [100.0, 100.0]
-	},
-	"seq":0,
-	"sensors": {
-		"probeValue": 0,
-		"probeSecondary": [0,0],
-		"fanRPM": 0
-	},
-	"temps": {
-		"bed": {
-			"current": 20.0,
-			"active": 55.1,
-			"state": 0
-		},
-		"chamber": {
-			"current": 19.7,
-			"active": 50.0,
-			"state": 2
-		},
-		"heads": {
-			"current": [60.0, 25.0],
-			"active": [120.0, 0.0],
-			"standby": [0.0, 0.0],
-			"state": [2, 1]
-		},
-		"tools": {
-			"active": [[0.0], [0.0]],
-			"standby": [[0.0], [0.0]]
-		}
-	},
-	"seq": 0,
-	"resp": "G-Code response for PanelDue",
-	"time": 435.2,
-	"scanner": {
-		"status": "D",
-		"progress": 95
-	}
+    "status": "O", 
+    "coords": {
+        "axesHomed": [0, 0, 0], 
+        "xyz": [0.0, 0.0, 0.0], 
+        "machine": [0.0, 0.0, 0.0], 
+        "extr": [0.0]
+    }, 
+    "speeds": {
+        "requested": 0.0, 
+        "top": 0.0
+    }, 
+    "currentTool": -1, 
+    "params": {
+        "atxPower": 1, 
+        "fanPercent": [0, 100, 100, 0, 0, 0, 0, 0, 0], 
+        "fanNames": ["", "", "", "", "", "", "", "", ""], 
+        "speedFactor": 100.0, 
+        "extrFactors": [100.0], 
+        "babystep": 0.0
+    }, 
+    "seq": 0, 
+    "sensors": {
+        "probeValue": 808, 
+        "fanRPM": 0
+    }, 
+    "temps": {
+        "bed": {
+            "current": 2000.0, 
+            "active": 0.0, 
+            "state": 0, 
+            "heater": 0
+        }, 
+        "current": [2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0,2000.0, 2000.0], 
+        "state": [0, 0, 0, 0, 0, 0, 0, 0],
+        "names": ["", "", "", "", "", "", "", ""], 
+        "tools": {
+            "active": [[0.0]], 
+            "standby": [[0.0]]
+        }, 
+        "extra": [{"name": "*MCU", "temp": 24.4}]
+    }, 
+    "time": 5030.0, 
+    "coldExtrudeTemp": 160.0, 
+    "coldRetractTemp": 90.0, 
+    "compensation": "None",
+    "controllableFans": 1, 
+    "tempLimit": 290.0, 
+    "endstops": 4095, 
+    "firmwareName": "RepRapFirmware for Duet 2 WiFi/Ethernet", 
+    "geometry": "coreXY", 
+    "axes": 3, 
+    "totalAxes": 3, 
+    "axisNames": "XYZ", 
+    "volumes": 2, 
+    "mountedVolumes": 1, 
+    "name": "BLV mgn Cube", 
+    "probe": {
+        "threshold": 500, 
+        "height": 1.04, 
+        "type": 1
+    }, 
+    "tools": [{
+        "number": 0, 
+        "heaters": [1], 
+        "drives": [0], 
+        "axisMap": [[0], [1]], 
+        "fans": 1, 
+        "filament": "", 
+        "offsets":[0.0, 0.0, 0.0]
+    }], 
+    "mcutemp": {"min": 18.6, "cur": 24.4, "max": 25.3}, 
+    "vin": {"min": 0.5, "cur": 1.7, "max": 1.8}
 }

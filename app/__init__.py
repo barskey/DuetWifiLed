@@ -31,13 +31,15 @@ printer = PrinterStatus()
 #import board
 #import neopixel
 #PIXEL_PIN = board.D18
+PIXEL_PIN = None
 NEO_PIXELS = 16 # number of pixels per neo-pixel ring
 NUM_RINGS = 3   # How many neo-pixel rings will be connected in sequence
 ORDER = 'RGB' #neopixel.RGB # pixel order (RGB, GRB, RGBW, GRBW)
+pixels = None
 #pixels = neopixel.NeoPixel(PIXEL_PIN, NEO_PIXELS * NUM_RINGS, brightness=0.2, auto_write=False, pixel_order=ORDER)
 
 @app.before_first_request # this will get called before the first request, hence the start_runner loop to send a dummy request
-def load_tasks():
+def start_scheduler():
     logger.info('<-__init__-> Scheduling duet_status job every 5s.')
     scheduler.add_job(func=get_status, trigger='interval', id='duet_status', seconds=5)
 
@@ -74,19 +76,19 @@ def get_status():
         s = Settings.query.first()
         host = 'http://' + s.hostname + '/rr_status'
         #print(host)
-        host = 'http://192.168.4.145/rr_status'
+        host = 'http://localhost:5001/rr_status'
         args = {'type': '2'}
+        response = None
         try:
             response = requests.get(host, params=args)
-            if response.status_code == 200:
-                printer.update_status(response.json())
-                logger.debug('<-get_status-> Printer status updated.')
-                if printer.needs_update is True:
-                    logger.debug('<-get_status-> Printer needs update. Running update_rings')
-                    update_rings()
         except:
-            logger.debug('<-get_status-> error trying to get status host:{} args:{}'.format(host, sys.exc_info()[0]))
-    #return response.json()
+            logger.debug('<-get_status-> ***ERROR*** trying to get status host:{} args:{} response:{}'.format(host, args, sys.exc_info()[0]))
+        if response is not None and response.status_code == 200:
+            printer.update_status(response.json())
+            logger.debug('<-get_status-> Printer status updated.')
+            if printer.needs_update is True:
+                logger.debug('<-get_status-> Printer needs update. Running update_rings')
+                update_rings()
 
 from app.actions import ActionThread
 
@@ -101,28 +103,7 @@ def update_rings():
             rings[p.ringnum] = {}
         for p in params:
             rings[p.ringnum][p.event] = p.get_obj()
-        settings = Settings.query.first()
 
-        """if settings.order == 'RGB':
-            ORDER = neopixel.RGB
-        elif settings.order == 'RGBW':
-            ORDER = neopixel.RGBW
-        elif settings.order == 'GRB':
-            ORDER = neopixel.GRB
-        elif settings.order == 'GRBW':
-            ORDER = neoixel.GRBW
-        pixels.pixel_order = ORDER
-        
-        if settings.neopin == 10:
-            PIXEL_PIN = board.D10
-        elif settings.neopin == 12:
-            PIXEL_PIN = board.D12
-        elif settings.neopin == 18:
-            PIXEL_PIN = board.D18
-        elif settings.neopin == 21:
-            PIXEL_PIN = board.D21
-        pixels.pixel_pin = PIXEL_PIN
-        """
     for ring_num,events in rings.items():
         action_params = events[printer.get_event()] #  get params for action to take for current printer state
         t = printer.get_task(ring_num - 1)

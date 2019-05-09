@@ -60,7 +60,7 @@ class ActionThread(threading.Thread):
         # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
-            c = (c[0], c[1], c[2], 0)
+            c = c + (0,)
         for i in range(NEO_PIXELS):
             pixnum = i + NEO_PIXELS * (self._ringnum - 1)
             #self._pixels[pixnum] = c
@@ -73,8 +73,8 @@ class ActionThread(threading.Thread):
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
         if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
-            c = (c[0], c[1], c[2], 0)
-            b = (b[0], b[1], b[2], 0)
+            c = c + (0,)
+            b = b + (0,)
 
         loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
@@ -96,8 +96,8 @@ class ActionThread(threading.Thread):
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
         if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
-            c1 = (c1[0], c1[1], c1[2], 0)
-            c2 = (c2[0], c2[1], c2[2], 0)
+            c1 = c1 + (0,)
+            c2 = c2 + (0,)
 
         loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
@@ -120,8 +120,8 @@ class ActionThread(threading.Thread):
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
         if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
-            c1 = (c1[0], c1[1], c1[2], 0)
-            c2 = (c2[0], c2[1], c2[2], 0)
+            c1 = c1 + (0,)
+            c2 = c2 + (0,)
 
         num_steps = 100 # convenience for changing number of steps for color change
         # create easing instance for smoothing animations
@@ -154,8 +154,8 @@ class ActionThread(threading.Thread):
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
         if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
-            c = (c[0], c[1], c[2], 0)
-            b = (b[0], b[1], b[2], 0)
+            c = c + (0,)
+            b = b + (0,)
 
         # creates easing instance for smoothing animations
         e = CubicEaseInOut(0, self._interval, NEO_PIXELS) # will go from 0 to interval in 16 steps

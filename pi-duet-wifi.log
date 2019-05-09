@@ -1,484 +1,644 @@
-2019-05-08 00:03:59,666 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:03:59,668 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:03:59,706 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:03:59,906 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:03:59,906 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:04:04,881 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:04:04,882 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:04,882 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:04,887 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:09,863 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:09,863 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:09,867 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:14,866 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:14,866 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:14,870 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:19,978 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:19,978 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:19,984 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:24,883 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:24,884 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:24,888 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:29,868 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:29,868 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:29,873 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:34,873 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:34,874 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:34,879 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:39,875 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:39,876 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:39,881 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:44,867 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:44,867 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:44,872 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:49,906 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:49,906 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:49,911 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:54,897 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:54,898 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:54,903 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:04:59,868 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:04:59,868 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:04:59,875 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:04,884 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:04,884 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:04,887 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:09,903 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:09,903 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:09,907 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:14,926 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:14,927 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:14,932 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:19,881 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:19,882 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:19,887 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:24,906 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:24,907 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:24,911 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:29,861 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:29,861 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:29,867 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:35,011 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:05:35,011 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:05:35,050 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:05:35,186 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:05:35,187 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:05:40,312 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:05:40,312 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:40,313 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:40,323 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:45,210 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:45,211 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:45,216 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:50,189 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:50,189 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:50,194 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:05:55,197 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:05:55,198 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:05:55,204 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:00,191 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:00,191 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:00,197 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:05,172 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:05,173 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:05,179 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:10,177 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:10,178 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:10,183 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:16,122 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:06:16,123 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:06:16,170 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:06:16,367 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:06:16,367 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:06:21,329 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:06:21,329 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:21,329 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:21,334 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:26,335 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:26,336 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:26,343 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:31,339 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:31,339 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:31,344 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:36,338 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:36,338 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:36,345 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:41,349 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:41,349 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:41,353 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:46,337 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:46,338 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:46,343 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:51,407 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:51,407 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:51,414 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:06:56,378 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:06:56,378 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:06:56,383 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:00,170 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:07:00,170 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:07:00,205 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:07:00,375 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:07:00,376 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:07:05,358 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:07:05,359 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:05,359 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:05,366 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:10,360 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:10,360 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:10,365 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:15,350 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:15,350 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:15,357 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:20,355 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:20,355 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:20,361 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:24,900 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:07:24,902 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:07:24,933 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:07:25,070 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:07:25,070 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:07:30,080 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:07:30,081 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:30,081 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:30,088 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:35,061 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:35,061 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:35,067 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:39,010 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:07:39,010 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:07:39,047 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:07:39,271 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:07:39,272 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:07:44,247 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:07:44,248 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:44,248 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:44,253 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:49,245 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:49,245 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:49,251 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:54,237 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:54,238 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:54,243 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:07:59,223 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:07:59,224 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:07:59,229 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:08:03,741 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:08:03,741 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:08:03,780 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:08:03,997 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:08:03,998 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:08:09,107 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:13,974 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:19,030 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:24,146 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:28,962 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:33,966 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:35,197 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:08:35,197 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:08:35,244 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:08:35,453 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:08:35,454 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:08:40,485 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:45,447 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:50,526 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:08:55,598 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:00,452 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:05,459 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:10,449 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:15,445 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:20,431 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:25,441 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:30,440 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:35,436 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:40,499 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:45,444 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:50,432 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:09:55,434 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:00,437 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:04,525 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:10:04,528 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:10:04,577 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:10:04,782 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:10:04,783 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:10:09,773 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:10:09,773 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:09,774 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:09,780 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:14,778 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:14,778 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:14,784 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:19,821 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:19,822 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:19,829 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:24,826 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:24,830 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:24,835 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:29,771 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:29,771 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:29,778 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:32,737 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:10:32,738 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:10:32,773 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:10:32,920 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:10:32,921 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:10:38,056 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:10:38,057 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:38,057 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:38,064 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:42,965 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:42,965 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:42,971 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:47,939 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:47,940 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:47,946 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:52,906 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:52,906 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:52,911 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:10:57,921 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:10:57,921 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:10:57,927 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:11:02,937 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:02,937 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:11:02,943 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:11:07,905 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:07,905 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:11:07,911 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:11:12,970 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:12,971 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:11:12,976 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:11:17,921 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:17,921 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:11:17,927 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:11:22,919 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:22,920 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:11:22,925 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:11:27,980 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:11:27,980 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:11:28,016 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:11:28,155 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:11:28,156 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:11:33,145 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:38,155 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:43,145 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:48,143 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:53,158 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:11:58,159 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:03,518 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:12:03,518 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:12:03,591 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:12:03,812 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:12:03,812 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:12:08,802 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:12:08,802 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:13,798 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:18,798 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:23,827 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:29,907 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:33,819 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:38,809 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:42,195 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:12:42,196 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:12:42,227 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:12:42,378 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:12:42,379 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:12:47,604 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:12:47,604 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:47,604 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:12:47,614 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:12:52,374 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:52,374 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:12:52,379 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:12:57,369 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:12:57,369 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:12:57,375 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:02,463 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:02,464 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:02,469 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:07,380 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:07,381 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:07,386 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:12,474 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:12,476 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:12,484 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:17,534 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:17,534 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:17,537 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:22,371 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:22,371 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:22,377 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:27,388 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:27,389 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:27,395 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:32,378 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:32,378 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:32,382 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:38,436 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:13:38,437 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:13:38,482 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:13:38,758 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:13:38,759 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:13:43,733 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:43,733 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:43,739 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:48,727 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:48,728 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:48,732 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:53,824 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:53,824 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:53,831 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:13:58,756 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:13:58,756 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:13:58,761 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:14:01,981 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:14:01,981 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:14:02,415 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:14:02,416 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:14:02,437 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:14:02,575 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:14:02,575 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:14:02,575 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:14:02,575 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:14:07,549 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:07,549 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:14:07,556 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:14:12,588 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:12,591 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:14:12,597 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:14:17,629 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:17,630 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:14:17,638 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:14:22,559 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:22,560 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:14:22,567 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:14:27,557 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:27,558 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:14:27,564 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:14:32,548 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:32,548 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:14:32,554 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:14:34,210 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:14:34,210 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:14:34,247 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:14:34,389 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:14:34,390 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:14:39,391 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:14:39,391 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:44,417 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:49,395 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:54,408 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:14:59,407 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:04,384 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:09,418 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:14,423 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:19,388 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:24,382 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:29,436 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:34,483 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:39,403 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:44,422 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:49,405 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:54,422 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:15:59,382 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:03,103 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:16:03,104 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:16:03,132 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:16:03,254 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:16:03,254 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:16:08,336 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:16:08,336 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:08,336 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:08,344 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:13,260 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:13,261 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:13,267 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:18,277 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:18,278 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:18,284 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:23,244 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:23,244 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:23,251 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:28,304 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:28,305 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:28,310 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:33,252 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:33,252 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:33,258 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:38,283 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:38,284 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:38,291 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:43,259 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:43,259 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:43,264 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:48,281 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:48,282 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:48,288 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:53,269 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:53,269 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:53,275 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:16:58,258 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:16:58,259 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:16:58,266 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:03,281 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:03,282 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:17:03,287 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:08,245 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:08,245 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:17:08,252 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:13,251 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:13,252 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:17:13,258 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:18,264 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:18,264 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:17:18,271 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:23,244 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:23,244 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:17:23,250 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:28,313 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:28,313 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:17:28,319 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:31,044 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:17:31,044 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:17:31,070 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:17:31,189 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:17:31,189 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:17:36,423 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:17:36,423 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:36,424 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:17:36,429 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:17:41,225 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:46,192 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:51,248 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:17:56,189 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:18:01,188 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:18:06,197 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:18:11,073 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:18:11,074 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:18:11,506 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:18:11,507 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:18:11,529 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:18:11,659 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:18:11,660 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:18:11,666 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:18:11,667 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:18:16,703 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:18:16,704 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:18:16,704 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:18:16,713 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:18:21,657 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:18:26,647 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:19:29,829 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:19:29,831 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:19:30,340 - DEBUG - <-__init__-> Started runner
-2019-05-08 00:19:30,341 - DEBUG - <-__init__-> In start loop
-2019-05-08 00:19:30,377 - INFO - <-__init__-> Scheduling duet_status job every 5s.
-2019-05-08 00:19:30,500 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:19:30,501 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:19:30,506 - INFO - <-__init__-> Server started, quiting start_loop
-2019-05-08 00:19:30,507 - DEBUG - <-__init__-> Received local status code:200
-2019-05-08 00:19:35,532 - DEBUG - <-set state-> Printer state change detected!
-2019-05-08 00:19:35,532 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:19:35,533 - DEBUG - <-get_status-> Printer needs update. Running update_rings
-2019-05-08 00:19:35,543 - DEBUG - <-get_status-> error trying to get status host:http://192.168.4.145/rr_status args:<class 'KeyError'>
-2019-05-08 00:19:40,521 - DEBUG - <-get_status-> Printer status updated.
-2019-05-08 00:19:45,528 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 14:56:58,559 - DEBUG - <-__init__-> Started runner
+2019-05-09 14:56:58,561 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:56:59,568 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 14:56:59,909 - DEBUG - <-__init__-> Started runner
+2019-05-09 14:56:59,909 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:00,422 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 14:57:01,012 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:01,569 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:01,611 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:03,013 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:03,063 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:03,613 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:03,662 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:05,064 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:05,121 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:05,663 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:05,734 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:07,122 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:07,171 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:07,735 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:07,788 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:09,172 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:09,228 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:09,790 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:09,829 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:11,228 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:11,278 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:11,831 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:11,892 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:13,279 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:13,336 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:13,894 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:13,957 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:15,336 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:15,385 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:15,958 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:16,010 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:17,386 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:17,434 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:18,011 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:18,036 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:19,435 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:19,488 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:20,037 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:20,089 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:21,489 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:21,542 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:22,089 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:22,138 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:23,543 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:23,576 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:24,139 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:24,194 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:25,577 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:25,638 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:26,194 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:26,243 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:26,712 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 14:57:27,639 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:27,688 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:28,244 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:28,303 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:29,689 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:29,749 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:30,305 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:30,352 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:31,750 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:31,812 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:32,352 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:32,403 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:33,813 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:33,870 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:34,403 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:34,458 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:35,870 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:35,919 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:36,458 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:36,487 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:37,920 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:37,972 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:38,488 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:38,541 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:39,973 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:39,999 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:40,541 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:40,580 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:41,999 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:42,052 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:42,581 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:42,631 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:44,053 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:44,112 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:44,631 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:44,688 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:46,113 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:46,163 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:46,689 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:46,751 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:48,164 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:48,224 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:48,752 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:48,801 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:50,225 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:50,273 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:50,802 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:50,854 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:51,704 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 14:57:52,274 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:52,324 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:52,855 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:52,907 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:54,325 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:54,385 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:54,908 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:54,940 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:56,385 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:56,443 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:56,941 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:57,000 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:58,443 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:58,499 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:57:59,000 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:57:59,059 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:00,499 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:00,559 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:01,060 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:01,117 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:02,560 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:02,609 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:03,118 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:03,162 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:04,610 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:04,648 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:05,164 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:05,207 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:06,649 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:06,708 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:07,207 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:07,254 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:08,708 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:08,761 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:09,255 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:09,285 - DEBUG - <-__init__-> Received local status code:500
+2019-05-09 14:58:10,762 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:10,793 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 14:58:10,793 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 14:58:11,286 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:11,294 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 14:58:11,294 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 14:58:16,708 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 14:58:21,015 - DEBUG - <-__init__-> Started runner
+2019-05-09 14:58:21,015 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:22,042 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 14:58:22,248 - DEBUG - <-__init__-> Started runner
+2019-05-09 14:58:22,249 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:22,760 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 14:58:22,880 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 14:58:22,881 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 14:58:24,043 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:58:24,060 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 14:58:24,060 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 14:58:48,829 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 14:59:02,681 - DEBUG - <-__init__-> Started runner
+2019-05-09 14:59:02,682 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:59:03,693 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 14:59:03,988 - DEBUG - <-__init__-> Started runner
+2019-05-09 14:59:03,988 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:59:04,499 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 14:59:04,578 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 14:59:04,578 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 14:59:05,694 - DEBUG - <-__init__-> In start loop
+2019-05-09 14:59:05,711 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 14:59:05,711 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 14:59:30,547 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:00:10,289 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:00:10,290 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:00:11,298 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:00:11,355 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:00:11,355 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:00:11,866 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:00:11,959 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:00:11,959 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:00:13,300 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:00:13,317 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:00:13,318 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:00:37,936 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:04:28,972 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:04:28,973 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:04:29,982 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:04:30,144 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:04:30,145 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:04:30,323 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:04:30,357 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:04:30,712 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:04:30,713 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:04:31,984 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:04:31,998 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:04:31,998 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:04:33,569 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:04:38,873 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:04:48,160 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:04:52,856 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:04:56,369 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:04:58,158 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:02,857 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:08,784 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:13,482 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:18,328 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:21,377 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:05:24,863 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:30,162 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:34,859 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:40,161 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:44,860 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:05:46,374 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:07:08,628 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:07:08,628 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:07:09,638 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:07:09,939 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:07:09,939 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:07:10,157 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:07:10,195 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:10,494 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:07:10,494 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:07:11,639 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:07:11,655 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:07:11,656 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:07:18,242 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:22,940 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:28,241 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:32,938 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:36,200 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:07:38,243 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:42,938 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:48,240 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:52,937 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:07:58,783 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:01,208 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:08:03,482 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:08,781 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:13,477 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:18,782 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:22,938 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:26,207 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:08:28,240 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:33,481 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:38,781 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:43,478 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:48,241 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:51,206 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:08:52,938 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:08:58,240 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:02,938 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:08,240 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:12,935 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:16,206 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:09:18,239 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:22,937 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:33,379 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:40,117 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:41,205 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:09:45,416 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:50,114 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:09:55,415 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:10:00,113 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:27:04,095 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:27:04,101 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:27:04,443 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:27:04,916 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:27:04,916 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:27:04,919 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:27:04,920 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:27:30,587 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:27:55,585 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:28:06,296 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:11,594 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:16,292 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:20,592 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:28:21,595 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:26,293 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:37,067 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:42,370 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:45,592 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:28:47,067 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:28:56,425 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:01,121 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:06,695 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:10,590 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:29:11,264 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:18,200 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:24,523 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:29,825 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:34,522 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:35,592 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:29:39,826 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:44,523 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:49,823 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:54,523 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:29:59,824 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:00,592 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:30:04,523 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:09,825 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:14,522 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:19,824 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:24,521 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:25,592 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:30:29,825 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:34,523 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:39,825 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:44,523 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:49,824 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:50,591 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:30:54,521 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:30:59,822 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:05,394 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:10,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:15,396 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:15,586 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:31:19,799 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:31:19,799 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:31:19,837 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:31:19,955 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:31:19,956 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:31:20,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:25,396 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:25,728 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:31:30,696 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:30,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:31:35,394 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:35,713 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:31:40,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:40,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:31:45,395 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:45,721 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:31:50,698 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:50,713 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:31:55,396 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:31:55,719 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:00,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:00,718 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:05,395 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:05,720 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:10,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:10,719 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:15,392 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:15,723 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:20,696 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:20,718 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:25,393 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:25,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:30,698 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:30,724 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:35,395 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:35,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:40,698 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:40,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:45,394 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:45,711 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:50,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:50,719 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:32:55,395 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:32:55,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:00,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:00,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:05,397 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:05,713 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:09,824 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:10,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:15,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:16,390 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:20,718 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:21,086 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:25,714 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:26,386 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:30,726 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:31,086 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:35,718 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:36,386 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:40,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:43,330 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:45,724 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:48,026 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:50,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:33:53,697 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:33:55,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:00,711 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:01,593 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:05,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:06,286 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:10,712 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:15,408 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:15,712 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:20,105 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:20,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:25,409 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:25,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:30,712 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:35,017 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:35,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:40,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:41,635 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:45,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:48,792 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:50,720 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:53,490 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:34:55,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:34:58,792 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:00,722 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:03,489 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:05,721 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:08,792 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:10,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:13,491 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:15,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:18,792 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:20,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:23,490 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:25,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:29,698 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:30,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:35,712 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:36,145 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:40,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:41,443 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:45,718 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:46,141 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:50,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:51,443 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:35:55,720 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:35:56,141 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:00,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:01,444 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:05,714 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:06,141 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:10,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:11,444 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:15,713 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:16,141 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:20,715 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:21,443 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:25,717 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:26,141 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:30,730 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:31,443 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:35,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:36,142 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:40,713 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:41,443 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:45,731 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:46,141 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:50,716 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:51,445 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:36:55,713 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:36:56,142 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:37:05,377 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:37:05,378 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:37:06,389 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:37:06,413 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:37:06,413 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:37:06,696 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:37:06,760 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:37:06,968 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:37:06,968 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:37:08,391 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:37:08,409 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:37:08,409 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:37:11,139 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:37:12,598 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:37:16,443 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:37:17,591 - DEBUG - <-get_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '2'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-09 15:39:05,842 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:39:05,842 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:39:06,854 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:39:06,889 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:39:06,889 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:39:07,144 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:39:07,175 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:39:07,466 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:39:07,466 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:39:08,855 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:39:08,865 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:39:08,865 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:39:11,143 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:39:13,200 - DEBUG - <-set state-> Printer state change detected!
+2019-05-09 15:39:13,201 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 15:39:13,201 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 15:54:52,522 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:54:52,523 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:54:53,534 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:54:53,646 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:54:53,647 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:54:54,156 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:54:54,229 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:54:54,229 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:54:55,535 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:54:55,551 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:54:55,552 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:54:56,446 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:55:00,219 - DEBUG - <-set state-> Printer state change detected!
+2019-05-09 15:55:00,220 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 15:55:00,220 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 15:55:05,211 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 15:55:05,212 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 15:56:37,943 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:56:37,944 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:56:38,957 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:56:39,257 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:56:39,258 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:56:39,769 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:56:39,851 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:56:39,851 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:56:40,959 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:56:40,974 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:56:40,974 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:56:41,448 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:56:45,829 - DEBUG - <-set state-> Printer state change detected!
+2019-05-09 15:56:45,829 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 15:56:45,830 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 15:56:45,836 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 15:56:45,836 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 15:56:45,837 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 15:58:58,412 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:58:58,413 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:58:59,423 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 15:58:59,525 - DEBUG - <-__init__-> Started runner
+2019-05-09 15:58:59,525 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:59:00,037 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 15:59:00,130 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:59:00,130 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:59:01,424 - DEBUG - <-__init__-> In start loop
+2019-05-09 15:59:01,439 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 15:59:01,440 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 15:59:01,447 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 15:59:06,112 - DEBUG - <-set state-> Printer state change detected!
+2019-05-09 15:59:06,113 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 15:59:06,113 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 15:59:06,118 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 15:59:06,119 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 15:59:06,120 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:00:19,256 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:00:19,256 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:00:20,265 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 16:00:20,336 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:00:20,337 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:00:20,848 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 16:00:20,937 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:00:20,938 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:00:21,447 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 16:00:22,266 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:00:22,276 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:00:22,276 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:00:26,146 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 16:00:26,919 - DEBUG - <-set state-> Printer state change detected!
+2019-05-09 16:00:26,919 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 16:00:26,919 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 16:00:26,925 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 16:00:26,926 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 16:00:26,927 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:00:31,447 - DEBUG - <-get_status-> Returning current printer status:{'state': 'O', 'hotend': [2000.0, 0.0, 0], 'bed': [2000.0, 0.0, 0], 'percent': -1, 'tasks': [<ActionThread(ring1, stopped daemon 12340)>, <ActionThread(ring2, stopped daemon 5264)>, <ActionThread(ring3, stopped daemon 8932)>]}.
+2019-05-09 16:00:31,917 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 16:00:31,918 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 16:00:31,921 - DEBUG - <-ActionThread-> Stopping thread ring1...
+2019-05-09 16:00:31,922 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 16:00:31,923 - DEBUG - <-ActionThread-> Stopping thread ring2...
+2019-05-09 16:00:31,924 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 16:00:31,924 - DEBUG - <-ActionThread-> Stopping thread ring3...
+2019-05-09 16:00:31,925 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:04:48,414 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:04:48,415 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:04:49,393 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:04:49,393 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:04:49,423 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 16:04:49,899 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 16:04:49,988 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:04:49,988 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:04:51,425 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:04:51,437 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:04:51,438 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:04:51,448 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1, 'tasks': [None, None, None]}.
+2019-05-09 16:04:55,976 - DEBUG - <-set state-> Printer state change detected!
+2019-05-09 16:04:55,977 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 16:04:55,977 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 16:04:55,983 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 16:04:55,984 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 16:04:55,985 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:04:56,144 - DEBUG - <-get_status-> Returning current printer status:{'state': 'O', 'hotend': [2000.0, 0.0, 0], 'bed': [2000.0, 0.0, 0], 'percent': -1, 'tasks': [<ActionThread(ring1, stopped daemon 9668)>, <ActionThread(ring2, stopped daemon 6808)>, <ActionThread(ring3, stopped daemon 12564)>]}.
+2019-05-09 16:05:19,644 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:05:19,645 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:05:20,672 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 16:05:20,685 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:05:20,686 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:05:21,196 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 16:05:21,276 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:05:21,277 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:05:21,449 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1}.
+2019-05-09 16:05:22,673 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:05:22,681 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:05:22,681 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:07:03,255 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:07:03,256 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:07:04,263 - DEBUG - <-__init__-> Server not yet started
+2019-05-09 16:07:04,310 - DEBUG - <-__init__-> Started runner
+2019-05-09 16:07:04,311 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:07:04,821 - INFO - <-__init__-> Scheduling duet_status job every 5s.
+2019-05-09 16:07:04,916 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:07:04,916 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:07:06,264 - DEBUG - <-__init__-> In start loop
+2019-05-09 16:07:06,281 - INFO - <-__init__-> Server started, quiting start_loop
+2019-05-09 16:07:06,281 - DEBUG - <-__init__-> Received local status code:200
+2019-05-09 16:07:06,446 - DEBUG - <-get_status-> Returning current printer status:{'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': -1}.
+2019-05-09 16:07:10,904 - DEBUG - <-set state-> Printer state change detected!
+2019-05-09 16:07:10,904 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 16:07:10,904 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 16:07:10,910 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 16:07:10,911 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 16:07:10,911 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:07:11,146 - DEBUG - <-get_status-> Returning current printer status:{'state': 'O', 'hotend': [2000.0, 0.0, 0], 'bed': [2000.0, 0.0, 0], 'percent': -1}.
+2019-05-09 16:07:15,899 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 16:07:15,899 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 16:07:15,901 - DEBUG - <-ActionThread-> Stopping thread ring1...
+2019-05-09 16:07:15,901 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 16:07:15,902 - DEBUG - <-ActionThread-> Stopping thread ring2...
+2019-05-09 16:07:15,902 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 16:07:15,903 - DEBUG - <-ActionThread-> Stopping thread ring3...
+2019-05-09 16:07:15,903 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:07:16,448 - DEBUG - <-get_status-> Returning current printer status:{'state': 'O', 'hotend': [2000.0, 0.0, 0], 'bed': [2000.0, 0.0, 0], 'percent': -1}.
+2019-05-09 16:07:20,896 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 16:07:20,897 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 16:07:20,900 - DEBUG - <-ActionThread-> Stopping thread ring1...
+2019-05-09 16:07:20,901 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 16:07:20,901 - DEBUG - <-ActionThread-> Stopping thread ring2...
+2019-05-09 16:07:20,902 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 16:07:20,902 - DEBUG - <-ActionThread-> Stopping thread ring3...
+2019-05-09 16:07:20,903 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:07:21,146 - DEBUG - <-get_status-> Returning current printer status:{'state': 'O', 'hotend': [2000.0, 0.0, 0], 'bed': [2000.0, 0.0, 0], 'percent': -1}.
+2019-05-09 16:07:25,900 - DEBUG - <-get_status-> Printer status updated.
+2019-05-09 16:07:25,901 - DEBUG - <-get_status-> Printer needs update. Running update_rings
+2019-05-09 16:07:25,904 - DEBUG - <-ActionThread-> Stopping thread ring1...
+2019-05-09 16:07:25,905 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-09 16:07:25,906 - DEBUG - <-ActionThread-> Stopping thread ring2...
+2019-05-09 16:07:25,907 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-09 16:07:25,907 - DEBUG - <-ActionThread-> Stopping thread ring3...
+2019-05-09 16:07:25,908 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-09 16:07:26,447 - DEBUG - <-get_status-> Returning current printer status:{'state': 'O', 'hotend': [2000.0, 0.0, 0], 'bed': [2000.0, 0.0, 0], 'percent': -1}.

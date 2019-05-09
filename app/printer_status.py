@@ -12,7 +12,8 @@ state_events = {
     'R': 'pause', # (resuming a paused print)
     'H': 'error', # (halted, after emergency stop)
     'F': 'config', # (flashing new firmware)
-    'T': 'print' # (changing tool, new in 1.17b)
+    'T': 'print', # (changing tool, new in 1.17b)
+    'O': 'config' # unknown
 }
 
 class PrinterStatus:
@@ -29,7 +30,7 @@ class PrinterStatus:
     # using property so retrieving temp will give percent complete as convenience
     @property
     def hotendTemp(self):
-        if self._hotendTemp < 0 or self._hotendTarget < 0:
+        if self._hotendTemp <= 0 or self._hotendTarget <= 0:
             return 0
         return self._hotendTemp / self._hotendTarget
 
@@ -39,7 +40,7 @@ class PrinterStatus:
     
     @property
     def hotendTarget(self):
-        return 0 if self._hotendTarget < 0 else self._hotendTarget
+        return 0 if self._hotendTarget <= 0 else self._hotendTarget
 
     @hotendTarget.setter
     def hotendTarget(self, value):
@@ -48,7 +49,7 @@ class PrinterStatus:
     # using property so retrieving temp will give percent complete as convenience
     @property
     def heatbedTemp(self):
-        if self._heatbedTemp < 0 or self._heatbedTarget < 0:
+        if self._heatbedTemp <= 0 or self._heatbedTarget <= 0:
             return 0
         return self._heatbedTemp / self._heatbedTarget
 
@@ -58,7 +59,7 @@ class PrinterStatus:
     
     @property
     def heatbedTarget(self):
-        return 0 if self._heatbedTarget < 0 else self._heatbedTarget
+        return 0 if self._heatbedTarget <= 0 else self._heatbedTarget
 
     @heatbedTarget.setter
     def heatbedTarget(self, value):
@@ -66,7 +67,7 @@ class PrinterStatus:
 
     @property
     def percentComplete(self):
-        return 0 if self._percentComplete < 0 else self._percentComplete
+        return 0 if self._percentComplete <= 0 else self._percentComplete
 
     @percentComplete.setter
     def percentComplete(self, value):
@@ -95,7 +96,15 @@ class PrinterStatus:
     def update_status(self, data):
         self.state = data['status']
         self.hotendTemp = data['temps']['current'][0]
-        self.hotendTarget = data['temps']['tools']['active'][0]
+        self.hotendTarget = data['temps']['tools']['active'][0][0]
         self.heatbedTemp = data['temps']['bed']['current']
         self.heatbedTarget = data['temps']['bed']['active']
+    
+    def get_status(self):
+        return {
+            'state': self._state,
+            'hotend': [self._hotendTemp, self._hotendTarget, self.hotendTemp],
+            'bed': [self._heatbedTemp, self._heatbedTarget, self.heatbedTemp],
+            'percent': self._percentComplete
+        }
 

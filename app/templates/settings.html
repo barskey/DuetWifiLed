@@ -40,6 +40,8 @@
                             <select class="custom-select pdl-setting" id="order" name="order">
                                 <option {% if settings.order == 'RGB' %}selected{% endif %}>RGB</option>
                                 <option {% if settings.order == 'GRB' %}selected{% endif %}>GRB</option>
+                                <option {% if settings.order == 'RGBW' %}selected{% endif %}>RGBW</option>
+                                <option {% if settings.order == 'GRBW' %}selected{% endif %}>GRBW</option>
                             </select>
                         </div>
                     </div>

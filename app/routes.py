@@ -1,4 +1,4 @@
-from app import app, db, logger, printer
+from app import app, db, logger, printer, pixels, ORDER, PIXEL_PIN
 from flask import render_template, redirect, url_for, request, jsonify
 import json
 from app.models import Settings, Param
@@ -29,15 +29,36 @@ def update_settings():
     s.neo2pin = int(0 if request.form.get('neo2pin') == '' else request.form.get('neo2pin'))
     s.neo3pin = int(0 if request.form.get('neo3pin') == '' else request.form.get('neo3pin'))
     s.order = request.form.get('order')
+    if s.order == 'RGB':
+        ORDER = neopixel.RGB
+    elif s.order == 'RGBW':
+        ORDER = neopixel.RGBW
+    elif s.order == 'GRB':
+        ORDER = neopixel.GRB
+    elif s.order == 'GRBW':
+        ORDER = neoixel.GRBW
+    pixels.pixel_order = ORDER
+    
+    if s.neopin == 10:
+        PIXEL_PIN = board.D10
+    elif s.neopin == 12:
+        PIXEL_PIN = board.D12
+    elif s.neopin == 18:
+        PIXEL_PIN = board.D18
+    elif s.neopin == 21:
+        PIXEL_PIN = board.D21
+    pixels.pixel_pin = PIXEL_PIN
+
     db.session.add(s)
     db.session.commit()
+
     logger.info('<-update_settings-> Settings updated.')
     return jsonify({'msg': 'Settings saved.'})
 
 @app.route('/get_status', methods=['GET', 'POST'])
 def update_status():
-    logger.debug('<-get_status-> Returning current printer state:{}.'.format(printer.state))
-    return jsonify({'state': printer.state})
+    logger.debug('<-get_status-> Returning current printer status:{}.'.format(printer.get_status()))
+    return jsonify(printer.get_status())
 
 @app.route('/reset_to_defaults')
 def reset_to_defaults():
@@ -144,3 +165,24 @@ def test_event():
     at.start()
     logger.info('<-test_event-> Test Started.')
     return jsonify({'msg': 'Test Started!'})
+
+###########################
+####    debug routes   ####
+###########################
+
+@app.route('/debug')
+def debug_page():
+    # if Settings can't be queried, reset to defaults to create tables and load defaults
+    try:
+        Settings.query.all()
+    except:
+        return redirect('/reset_to_defaults')
+
+    # if Param can't be queried, reset to defaults to create tables and load defaults
+    try:
+        Param.query.all()
+    except:
+        return redirect('/reset_to_defaults')
+
+    settings = Settings.query.first()
+    return render_template('debug.html', settings=settings)
