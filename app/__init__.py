@@ -114,4 +114,3 @@ def update_rings():
         t.daemon = True
         t.start()
         printer.set_task(ring_num - 1, t)
-        #print ('Ring {}: Do action {}!'.format(ring_num, action_num))
