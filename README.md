@@ -1,4 +1,4 @@
-# PDWN - PiDuetWifiNeopixel
+# Pi Duet Wifi Neopixel (PDWN)
 
 _PDWN is used to set and change the display of the neo-pixel rings on the BLV mln printer. For example, you could set a ring to display bed temperature while it is heating (idle) then display print percent while it is printing, and flash a rainbow when the print is done._
 
