@@ -117,3 +117,18 @@
 2019-05-20 16:54:47,951 - INFO - <-__init__-> Server started, quiting start_loop
 2019-05-20 16:54:47,952 - DEBUG - <-__init__-> Received local status code:200
 2019-05-20 16:54:49,862 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:55:13,638 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-20 16:55:38,635 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-20 16:55:46,458 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:55:51,754 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:55:56,453 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:56:01,755 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:56:03,631 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-20 16:56:06,452 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:56:11,755 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:56:16,452 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:56:21,753 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:56:26,452 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-20 16:56:28,634 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-20 16:56:53,636 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-20 16:57:18,635 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
