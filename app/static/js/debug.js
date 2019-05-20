@@ -46,5 +46,25 @@ $( document ).ready( function() {
             $( '#status' ).val( response.status );
         })
     });
+    
+    $( '#sim-mode-toggle' ).change( function () {
+        if ($(this).prop('checked')) {
+            $( '#sim-mode-alert' ).removeClass( 'd-none' );
+        } else {
+            $( '#sim-mode-alert' ).addClass( 'd-none' );
+        }
+        $.post( '/debug_sim_mode', {'mode': $(this).prop('checked')} );
+    });
+
+    $( 'select.pdwn-sim' ).change( function() {
+        var status = $( this ).children( 'option:selected' ).val();
+        $.post( '/debug_set_printer', $( '#sim-form' ).serialize() );
+        updateTime();
+    });
+
+    $( 'input.pdwn-sim' ).change( function() {
+        $.post( '/debug_set_printer', $( '#sim-form' ).serialize() );
+        updateTime();
+    });
 
 });

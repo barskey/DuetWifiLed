@@ -5,8 +5,6 @@ from easing_functions import CubicEaseInOut
 from app import NEO_PIXELS, NUM_RINGS, ORDER
 #import neopixel
 
-NUM_PIXELS = 16
-
 class ActionThread(threading.Thread):
     """Thread class that will stop itself when joined."""
 
@@ -86,9 +84,19 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
-            for i in range(NEO_PIXELS):
-                pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                #self._pixels[pixnum] = c if percent >= i/16 else b
+            for i in range(NEO_PIXELS): # repeat 16 times - once for each pixel in ring
+                pixnum = i + NEO_PIXELS * (self._ringnum - 1) # adjust pixnum for ring number
+                threshold = (i + 1)/NEO_PIXELS # threshold before changing to next pixel
+                pix_percent = (percent - i/NEO_PIXELS)/(1/NEO_PIXELS) # normalize percentage complete to this pixel range
+                if pix_percent < 0: # background pixel
+                    #self._pixels[pixnum] = b
+                    pass
+                elif pix_percent >= 1: # full percent pixel
+                    #self._pixels[pixnum] = c
+                    pass
+                else: # fade color from off (0) to full color
+                    cx = tuple(round(x * pix_percent) for x in c)
+                    #self._pixels[pixnum] = cx
             #self._pixels.show()
             logger.debug('<-temp->    Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
             loop_counter = loop_counter - 1
@@ -109,9 +117,19 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.percentComplete
-            for i in range(NEO_PIXELS):
-                pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                #self._pixels[pixnum] = c if percent >= i/16 else b
+            for i in range(NEO_PIXELS): # repeat 16 times - once for each pixel in ring
+                pixnum = i + NEO_PIXELS * (self._ringnum - 1) # adjust pixnum for ring number
+                threshold = (i + 1)/NEO_PIXELS # threshold before changing to next pixel
+                pix_percent = (percent - i/NEO_PIXELS)/(1/NEO_PIXELS) # normalize percentage complete to this pixel range
+                if pix_percent < 0: # background pixel
+                    #self._pixels[pixnum] = b
+                    pass
+                elif pix_percent >= 1: # full percent pixel
+                    #self._pixels[pixnum] = c
+                    pass
+                else: # fade color from off (0) to full color
+                    cx = tuple(round(x * pix_percent) for x in c)
+                    #self._pixels[pixnum] = cx
             #self._pixels.show()
             logger.debug('<-print_%-> Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
             loop_counter = loop_counter - 1

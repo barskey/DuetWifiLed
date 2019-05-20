@@ -63,7 +63,7 @@ $( document ).ready( function() {
         $modal.modal( 'show' );
     }
 
-    $( 'a.pdl-action' ).click( function() {
+    $( 'a.pdwn-action' ).click( function() {
         var action = $( this ).parent().parent().find( 'select option:selected' ).val();
         var ring = $( this ).attr( 'id' ).split( '-' )[1];
         var evnt = $( this ).attr( 'id' ).split( '-' )[2];
@@ -79,7 +79,7 @@ $( document ).ready( function() {
         }
     });
 
-    $( 'select.pdl-action' ).change( function() {
+    $( 'select.pdwn-action' ).change( function() {
         var action = $( this ).children( 'option:selected' ).val();
         var ring = $( this ).attr( 'id' ).split( '-' )[1];
         var evnt = $( this ).attr( 'id' ).split( '-' )[2];

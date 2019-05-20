@@ -13,7 +13,10 @@
                         <a class="nav-link" id="status-tab" data-toggle="tab"  href="#last-status">Get Status</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="log-tab" data-toggle="tab"  href="#logfile">Log File</a>
+                        <a class="nav-link" id="sim-tab" data-toggle="tab"  href="#sim-mode">Simulation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="log-tab" data-toggle="tab"  href="#logfile">Log</a>
                     </li>
                 </ul>
             </div>
@@ -38,15 +41,61 @@
                             <dt class="col-3">Print %</dt>
                             <dd class="col-9"><span class="text-info" id="print-percent"></span></dd>
                         </dl>
+                        <div class="float-right"><button class="btn btn-info" id="refresh">Refresh</button></div>
                     </div>
                     <div class="container-fluid tab-pane" id="last-status">
-                        <div class="input-group mb-3 col-6">
+                        <div class="input-group mb-3 col-5 col-md-6">
                             <input type="text" class="form-control" id="status-type" value="3">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-info" id="get-status" type="button">Get Status</button>
                             </div>
                         </div>
                         <textarea class="form-control mb-2" id="status"></textarea>
+                    </div>
+                    <div class="container-fluid tab-pane" id="sim-mode">
+                        <form id="sim-form">
+                            <div class="form-group row">
+                                <label for="sim-mode-toggle" class="col-8 col-form-label"><h5>Simulation Mode</h5></label>
+                                <div class="col-4">
+                                    <input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-width="75" id="sim-mode-toggle">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="printer-status" class="col-4 col-form-label">Printer Status</label>
+                                <div class="col-4">
+                                    <select class="form-control pdwn-sim" name="printer-status">
+                                        <option value="I">Idle</option>
+                                        <option value="P">Print</option>
+                                        <option value="D">Pause</option>
+                                        <option value="S">Stopped</option>
+                                        <option value="R">Resuming</option>
+                                        <option value="H">Halted</option>
+                                        <option value="F">Firmware</option>
+                                        <option value="T">Tool Change</option>
+                                        <option value="C">Config</option>
+                                        <option value="B">Busy</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="hotend-temp" class="col-4 col-form-label">Hotend %</label>
+                                <div class="col-8">
+                                    <input type="range" class="custom-range pdwn-sim" name="hotend-percent" min="0" max="100" step="0.1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="heatbed-temp" class="col-4 col-form-label">Heatbed %</label>
+                                <div class="col-8">
+                                    <input type="range" class="custom-range pdwn-sim" name="heatbed-percent" min="0" max="100" step="0.1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="print-percent" class="col-4 col-form-label">Print %</label>
+                                <div class="col-8">
+                                    <input type="range" class="custom-range pdwn-sim" name="print-percent" min="0" max="100" step="0.1">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="container-fluid tab-pane" id="logfile">
                         <textarea class="form-control" id="log"></textarea>
@@ -55,7 +104,7 @@
             </div>
             <div class="card-footer clearfix">
                 <div class="float-left"><em><span class="text-muted">Last Updated:&nbsp;</span><span class="text-muted" id="lastupdate"></span></em></div>
-                <div class="float-right"><button class="btn btn-info" id="refresh">Refresh</button></div>
+                
             </div>
         </div>
     </div>

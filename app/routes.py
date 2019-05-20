@@ -1,4 +1,4 @@
-from app import app, db, logger, printer, pixels, ORDER, PIXEL_PIN, LOGFILE
+from app import app, db, logger, printer, pixels, ORDER, PIXEL_PIN, LOGFILE, SIM_MODE
 from flask import render_template, redirect, url_for, request, jsonify
 import json
 import requests, sys
@@ -18,7 +18,7 @@ def settings():
         return redirect('/reset_to_defaults')
 
     settings = Settings.query.first()
-    return render_template('settings.html', settings=settings)
+    return render_template('settings.html', settings=settings, simmode=SIM_MODE)
 
 @app.route('/update_settings', methods=['GET', 'POST'])
 def update_settings():
@@ -131,7 +131,8 @@ def ledcontrol():
         rings[p.ringnum][p.event] = p.get_obj()
     #print(rings)
 
-    return render_template('led.html', rings=rings)
+    print(SIM_MODE)
+    return render_template('led.html', rings=rings, simmode=SIM_MODE)
 
 @app.route('/get_action_params', methods=['GET', 'POST'])
 def get_action_params():
@@ -169,6 +170,7 @@ def test_event():
     logger.info('<-test_event-> Test Started.')
     return jsonify({'msg': 'Test Started!'})
 
+
 ###########################
 ####    debug routes   ####
 ###########################
@@ -188,7 +190,7 @@ def debug_page():
         return redirect('/reset_to_defaults')
 
     settings = Settings.query.first()
-    return render_template('debug.html', settings=settings)
+    return render_template('debug.html', settings=settings, simmode=SIM_MODE)
 
 @app.route('/get_log', methods=['POST'])
 def get_log():
@@ -212,3 +214,24 @@ def debug_status():
     else:
         logger.debug('<-debug_status-> Non 200 status code received: {}'.format(response.status_code))
         return jsonify({'status': 'Error: Received response {}'.format(response.status_code)})
+
+@app.route('/debug_set_printer', methods=['POST'])
+def debug_setprinter():
+    data = json.load(open('mockDuet/data.json'))
+    data['status'] = request.form.get('printer-status')
+    data['temps']['tools']['active'][0][0] = 100 # set hotened target to 100 to normalize percent
+    data['temps']['current'][1] = float(request.form.get('hotend-percent'))
+    data['temps']['bed']['active'] = 100 # set heatbed target to 100 to normalize percent
+    data['temps']['current'][0] = request.form.get('heatbed-percent')
+    data['fractionPrinted'] = request.form.get('print-percent')
+
+    with open('data.json', 'w') as outfile:
+        json.dump(data, outfile)
+    return jsonify({'result': 'OK'})
+
+@app.route('/debug_sim_mode', methods=['POST'])
+def debug_simmode():
+    mode = request.form.get('mode')
+    print('y' if mode == 'true' else 'no')
+    SIM_MODE = True if mode == 'true' else False
+    return jsonify({'result': 'OK'})

@@ -10,7 +10,7 @@ $( document ).ready( function() {
         });
     }, 5000);
   
-    $( '.pdl-setting' ).change( function() {
+    $( '.pdwn-setting' ).change( function() {
         $( '#status' ).text( 'Saving settings...' );
         $.post('/update_settings', $( '#settingsForm' ).serialize() )
         .done( function( response ) {
