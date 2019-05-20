@@ -1,8 +1,8 @@
 # Pi Duet Wifi Neopixel (PDWN)
 
-_PDWN is used to set and change the display of the neo-pixel rings on the (BLV mgn Cube - 3d printer)[https://www.thingiverse.com/thing:3382718]. For example, you could set a ring to display bed temperature while it is heating (idle) then display print percent while it is printing, and flash a rainbow when the print is done._
+_PDWN is used to set and change the display of the neo-pixel rings on the [BLV mgn Cube 3d printer](https://www.thingiverse.com/thing:3382718). For example, you could set a ring to display bed temperature while it is heating (idle) then display print percent while it is printing, and flash a rainbow when the print is done._
 
-Here are some of the reasons I wrote PDWL:
+Here are some of the reasons I wrote PDWN:
 * Connects to your network via WiFi, so no serial connection to Duet needed
   * PDWN communicates with Duet using http requests to get status reports from the printer
 * Runs on Raspberry Pi Zero W which is inexpensive and very versatile, AND easily programmed with python
