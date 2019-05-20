@@ -11,9 +11,10 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 db.init_app(app)
 
+LOGFILE = 'pi-duet-wifi.log'
 import logging
 from logging.handlers import RotatingFileHandler
-handler = RotatingFileHandler('pi-duet-wifi.log', maxBytes=100000, backupCount=1)
+handler = RotatingFileHandler(LOGFILE, maxBytes=100000, backupCount=1)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger = logging.getLogger(__name__)
@@ -40,7 +41,7 @@ pixels = None
 
 @app.before_first_request # this will get called before the first request, hence the start_runner loop to send a dummy request
 def start_scheduler():
-    logger.info('<-__init__-> Scheduling duet_status job every 5s.')
+    logger.info('<-__init__-> Scheduling get_status job every 5s.')
     scheduler.add_job(func=get_status, trigger='interval', id='duet_status', seconds=5)
 
 # hack to start background thread that polls localhost with request.
@@ -69,15 +70,16 @@ start_runner(app)
 from app import routes, models
 from app.models import Settings, Param
 
-# communication task for duet status
+# communication tasks for duet status
+# gets type 3 status
 def get_status():
     response = None
     with app.app_context():
         s = Settings.query.first()
         host = 'http://' + s.hostname + '/rr_status'
         #print(host)
-        host = 'http://localhost:5001/rr_status'
-        args = {'type': '2'}
+        #host = 'http://localhost:5001/rr_status'
+        args = {'type': '3'}
         response = None
         try:
             response = requests.get(host, params=args)
@@ -89,6 +91,8 @@ def get_status():
             if printer.needs_update is True:
                 logger.debug('<-get_status-> Printer needs update. Running update_rings')
                 update_rings()
+                printer.needs_update = False
+
 
 from app.actions import ActionThread
 

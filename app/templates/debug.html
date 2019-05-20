@@ -4,14 +4,58 @@
 <div class="row justify-content-lg-center">
     <div class="col col-lg-6">
         <div class="card">
-            <div class="card-header bg-secondary text-light">
-                <h5>Debug</h5>
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="printer-tab" data-toggle="tab" href="#printer">Printer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="status-tab" data-toggle="tab"  href="#last-status">Get Status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="log-tab" data-toggle="tab"  href="#logfile">Log File</a>
+                    </li>
+                </ul>
             </div>
             <div class="card-body">
-
+                <div class="tab-content">
+                    <div class="container-fluid tab-pane show active" id="printer">
+                        <dl class="row">
+                            <dt class="col-3">Status</dt>
+                            <dd class="col-9"><span class="text-info" id="printer-state">None</span></dd>
+                            <dt class="col-3">Temps</dt>
+                            <dd class="col-3">Current</dd>
+                            <dd class="col-3">Target</dd>
+                            <dd class="col-3">%</dd>
+                            <dt class="col-3">Hotend</dt>
+                            <dd class="col-3"><span class="text-info" id="hotend-temp">None</span></dd>
+                            <dd class="col-3"><span class="text-info" id="hotend-target">None</span></dd>
+                            <dd class="col-3"><span class="text-info" id="hotend-percent">None</span></dd>
+                            <dt class="col-3">Heatbed</dt>
+                            <dd class="col-3"><span class="text-info" id="heatbed-temp">None</span></dd>
+                            <dd class="col-3"><span class="text-info" id="heatbed-target">None</span></dd>
+                            <dd class="col-3"><span class="text-info" id="heatbed-percent">None</span></dd>
+                            <dt class="col-3">Print %</dt>
+                            <dd class="col-9"><span class="text-info" id="print-percent"></span></dd>
+                        </dl>
+                    </div>
+                    <div class="container-fluid tab-pane" id="last-status">
+                        <div class="input-group mb-3 col-6">
+                            <input type="text" class="form-control" id="status-type" value="3">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-info" id="get-status" type="button">Get Status</button>
+                            </div>
+                        </div>
+                        <textarea class="form-control mb-2" id="status"></textarea>
+                    </div>
+                    <div class="container-fluid tab-pane" id="logfile">
+                        <textarea class="form-control" id="log"></textarea>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer">
-                <em><span class="text-muted">Last Updated:</span><span class="text-muted" id="lastupdate"></span></em>
+            <div class="card-footer clearfix">
+                <div class="float-left"><em><span class="text-muted">Last Updated:&nbsp;</span><span class="text-muted" id="lastupdate"></span></em></div>
+                <div class="float-right"><button class="btn btn-info" id="refresh">Refresh</button></div>
             </div>
         </div>
     </div>

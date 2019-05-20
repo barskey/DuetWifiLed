@@ -1,6 +1,7 @@
-from app import app, db, logger, printer, pixels, ORDER, PIXEL_PIN
+from app import app, db, logger, printer, pixels, ORDER, PIXEL_PIN, LOGFILE
 from flask import render_template, redirect, url_for, request, jsonify
 import json
+import requests, sys
 from app.models import Settings, Param
 from app.actions import ActionThread
 
@@ -29,6 +30,7 @@ def update_settings():
     s.neo2pin = int(0 if request.form.get('neo2pin') == '' else request.form.get('neo2pin'))
     s.neo3pin = int(0 if request.form.get('neo3pin') == '' else request.form.get('neo3pin'))
     s.order = request.form.get('order')
+    """
     if s.order == 'RGB':
         ORDER = neopixel.RGB
     elif s.order == 'RGBW':
@@ -48,6 +50,7 @@ def update_settings():
     elif s.neopin == 21:
         PIXEL_PIN = board.D21
     pixels.pixel_pin = PIXEL_PIN
+    """
 
     db.session.add(s)
     db.session.commit()
@@ -56,7 +59,7 @@ def update_settings():
     return jsonify({'msg': 'Settings saved.'})
 
 @app.route('/get_status', methods=['GET', 'POST'])
-def update_status():
+def get_status():
     logger.debug('<-get_status-> Returning current printer status:{}.'.format(printer.get_status()))
     return jsonify(printer.get_status())
 
@@ -186,3 +189,26 @@ def debug_page():
 
     settings = Settings.query.first()
     return render_template('debug.html', settings=settings)
+
+@app.route('/get_log', methods=['POST'])
+def get_log():
+    f = open(LOGFILE, 'r')
+    log = f.read()
+    return jsonify({'log': log})
+
+@app.route('/debug_status', methods=['POST'])
+def debug_status():
+    s = Settings.query.first()
+    host = 'http://' + s.hostname + '/rr_status'
+    args = {'type': request.form.get('type')}
+    response = None
+    try:
+        response = requests.get(host, params=args)
+    except:
+        logger.debug('<-debug_status-> ***ERROR*** trying to get status host:{} args:{} response:{}'.format(host, args, sys.exc_info()[0]))
+    if response is not None and response.status_code == 200:
+        logger.debug('<-debug_status-> Printer status received.')
+        return jsonify({'status': str(response.json())})
+    else:
+        logger.debug('<-debug_status-> Non 200 status code received: {}'.format(response.status_code))
+        return jsonify({'status': 'Error: Received response {}'.format(response.status_code)})

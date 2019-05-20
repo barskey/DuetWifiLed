@@ -44,15 +44,18 @@ class ActionThread(threading.Thread):
             logger.debug('<-ActionThread-> {} running heatbed temp.'.format(self.getName()))
             self.temp('b')
         elif self._action_num == 5:
+            logger.debug('<-ActionThread-> {} running print percent.'.format(self.getName()))
+            self.print_percent()
+        elif self._action_num == 6:
             logger.debug('<-ActionThread-> {} running flash.'.format(self.getName()))
             self.flash()
-        elif self._action_num == 6:
+        elif self._action_num == 7:
             logger.debug('<-ActionThread-> {} running breathe.'.format(self.getName()))
             self.breathe()
-        elif self._action_num == 7:
+        elif self._action_num == 8:
             logger.debug('<-ActionThread-> {} running chase.'.format(self.getName()))
             self.chase()
-        elif self._action_num == 8:
+        elif self._action_num == 9:
             logger.debug('<-ActionThread-> {} running rainbow.'.format(self.getName()))
             self.rainbow()
 
@@ -88,6 +91,29 @@ class ActionThread(threading.Thread):
                 #self._pixels[pixnum] = c if percent >= i/16 else b
             #self._pixels.show()
             logger.debug('<-temp->    Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
+            loop_counter = loop_counter - 1
+            time.sleep(1) # update temp every 1 second
+
+    def print_percent(self, test=False):
+        # self._color: like 'rgb(#, #, #)'
+        c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
+        b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
+        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+            c = c + (0,)
+            b = b + (0,)
+
+        loop_counter = 2 # use to run a certain number of loops when called with test True
+        while True:
+            if test is True and loop_counter <= 0:
+                return
+            if self.stopped():
+                return
+            percent = self._printer.percentComplete
+            for i in range(NEO_PIXELS):
+                pixnum = i + NEO_PIXELS * (self._ringnum - 1)
+                #self._pixels[pixnum] = c if percent >= i/16 else b
+            #self._pixels.show()
+            logger.debug('<-print_%-> Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
             loop_counter = loop_counter - 1
             time.sleep(1) # update temp every 1 second
 

@@ -26,6 +26,7 @@ class PrinterStatus:
         self._state = ''
         self.needs_update = False
         self._tasks = [None for i in range(3)]
+        self.last_status = ''
         
     # using property so retrieving temp will give percent complete as convenience
     @property
@@ -94,17 +95,20 @@ class PrinterStatus:
         return state_events[self._state]
     
     def update_status(self, data):
+        self.last_status = str(data)
         self.state = data['status']
-        self.hotendTemp = data['temps']['current'][0]
+        self.hotendTemp = data['temps']['current'][1]
         self.hotendTarget = data['temps']['tools']['active'][0][0]
-        self.heatbedTemp = data['temps']['bed']['current']
+        self.heatbedTemp = data['temps']['current'][0]
         self.heatbedTarget = data['temps']['bed']['active']
+        self.percentComplete = data['fractionPrinted']
     
     def get_status(self):
         return {
+            'status': self.last_status,
             'state': self._state,
             'hotend': [self._hotendTemp, self._hotendTarget, self.hotendTemp],
             'bed': [self._heatbedTemp, self._heatbedTarget, self.heatbedTemp],
-            'percent': self._percentComplete
+            'percent': self.percentComplete
         }
 

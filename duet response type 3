@@ -1,0 +1,56 @@
+{
+    'status': 'P', 
+    'coords': {
+        'axesHomed': [1, 1, 1], 
+        'xyz': [144.728, 147.027, 21.99], 
+        'machine': [146.632, 142.997, 21.79], 
+        'extr': [1211.8]
+    }, 
+    'speeds': {
+        'requested': 120.0, 
+        'top': 31.2
+    }, 
+    'currentTool': 0, 
+    'params': {
+        'atxPower': 1, 
+        'fanPercent': [100, 100, 100, 0, 0, 0, 0, 0, 0],
+        'speedFactor': 100.0, 
+        'extrFactors': [100.0], 
+        'babystep': 0.0
+    }, 
+    'seq': 14, 
+    'sensors': {
+        'probeValue': 0, 
+        'fanRPM': 0
+    }, 
+    'temps': {
+        'bed': {
+            'current': 45.0, 
+            'active': 45.0, 
+            'state': 2, 
+            'heater': 0
+        }, 
+        'current': [45.0, 200.1, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 
+        'state': [2, 2, 0, 0, 0, 0, 0, 0], 
+        'tools': {
+            'active': [[200.0]], 
+            'standby': [[200.0]]
+        }, 
+        'extra': [{'name': '*MCU', 'temp': 32.4}]
+    }, 
+    'time': 3015.0, 
+    'currentLayer': 110, 
+    'currentLayerTime': 0.4, 
+    'extrRaw': [1212.1], 
+    'fractionPrinted': 13.1, 
+    'filePosition': 1004248, 
+    'firstLayerDuration': 104.1, 
+    'firstLayerHeight': 0.24, 
+    'printDuration': 1752.8, 
+    'warmUpDuration': 0.0, 
+    'timesLeft': {
+        'file': 7596.8, 
+        'filament': 7552.7, 
+        'layer': 7582.0
+    }
+}

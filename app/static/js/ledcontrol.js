@@ -10,6 +10,7 @@ $( document ).ready( function() {
         ['Ring shows selected color.', 'Color:', 'Not Used'],
         ['Ring will show percent complete as hotend temperature reaches target.', '% Complete:', 'Background:'],
         ['Ring will show percent complete as heatbed temperature reaches target.', '% Complete:', 'Background:'],
+        ['Ring will show percentage of print complete.', '% Complete:', 'Background:'],
         ['Ring changes between two colors switching at specified interval.', 'Color 1:', 'Color 2:'],
         ['Ring fades gradually between two colors over specified interval.', 'Color 1:', 'Color 2:'],
         ['Chase color spins around ring completing one rotation in specified interval.', 'Chase:', 'Background:'],
@@ -42,7 +43,7 @@ $( document ).ready( function() {
         $modal.find( '#action' ).val( action );
 
         //console.log(action < 5);
-        if( action < 5 ) { // disable interval for these
+        if( action < 6 ) { // disable interval for these
             $modal.find( '#interval' ).val( '0' );
             $modal.find( '#interval' ).attr( 'readonly', true );
         } else {
@@ -50,7 +51,7 @@ $( document ).ready( function() {
         }
         if ( action == 2 ) { // disable second color for 2-solid
             $modal.find( '#color2' ).spectrum( 'disable' );
-        } else if ( action == 8 ) { // disable both colors for 8-rainbow
+        } else if ( action == 9 ) { // disable both colors for 9-rainbow
             $modal.find( '#color1, #color2' ).spectrum( 'disable' );
         } else {
             $modal.find( '#color2' ).spectrum( 'enable' );
