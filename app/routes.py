@@ -45,13 +45,13 @@ def update_settings():
         app.config['ORDER'] = neoixel.GRBW
     pixels.pixel_order = app.config['ORDER']
     
-    if s.neopin == 10:
+    if s.pixel_pin == 10:
         app.config['PIXEL_PIN'] = board.D10
-    elif s.neopin == 12:
+    elif s.pixel_pin == 12:
         app.config['PIXEL_PIN'] = board.D12
-    elif s.neopin == 18:
+    elif s.pixel_pin == 18:
         app.config['PIXEL_PIN'] = board.D18
-    elif s.neopin == 21:
+    elif s.pixel_pin == 21:
         app.config['PIXEL_PIN'] = board.D21
     pixels.pixel_pin = app.config['PIXEL_PIN']
 
