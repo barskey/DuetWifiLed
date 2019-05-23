@@ -1,16 +1,12 @@
-from app import app, db, logger, printer, pixels, ORDER, PIXEL_PIN, LOGFILE, SIM_MODE
+from app import app, db, logger, printer, pixels
 from flask import render_template, redirect, url_for, request, jsonify
 import json
 import requests, sys
 from app.models import Settings, Param
 from app.actions import ActionThread
 
-###########################
-####    setup routes   ####
-###########################
-
-@app.route('/settings')
-def settings():
+@app.context_processor
+def context_processor():
     # if Settings can't be queried, reset to defaults to create tables and load defaults
     try:
         Settings.query.all()
@@ -18,38 +14,45 @@ def settings():
         return redirect('/reset_to_defaults')
 
     settings = Settings.query.first()
-    return render_template('settings.html', settings=settings, simmode=SIM_MODE)
+    print(app.config['SIM_MODE'])
+    return dict(simmode=app.config['SIM_MODE'], settings=settings)
+
+###########################
+####    setup routes   ####
+###########################
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
 
 @app.route('/update_settings', methods=['GET', 'POST'])
 def update_settings():
     s = Settings.query.first()
     s.hostname = request.form.get('hostname')
     s.password = request.form.get('password')
-    s.interval = int(0 if request.form.get('interval') == '' else request.form.get('interval'))
-    s.neo1pin = int(0 if request.form.get('neo1pin') == '' else request.form.get('neo1pin'))
-    s.neo2pin = int(0 if request.form.get('neo2pin') == '' else request.form.get('neo2pin'))
-    s.neo3pin = int(0 if request.form.get('neo3pin') == '' else request.form.get('neo3pin'))
+    s.interval = int(0 if request.form.get('interval') == '' else request.form.get('interval')) # TODO modify duet_status job with new interval
+    s.pixel_pin = int(0 if request.form.get('neo1pin') == '' else request.form.get('neo1pin'))
     s.order = request.form.get('order')
     """
     if s.order == 'RGB':
-        ORDER = neopixel.RGB
+        app.config['ORDER'] = neopixel.RGB
     elif s.order == 'RGBW':
-        ORDER = neopixel.RGBW
+        app.config['ORDER'] = neopixel.RGBW
     elif s.order == 'GRB':
-        ORDER = neopixel.GRB
+        app.config['ORDER'] = neopixel.GRB
     elif s.order == 'GRBW':
-        ORDER = neoixel.GRBW
-    pixels.pixel_order = ORDER
+        app.config['ORDER'] = neoixel.GRBW
+    pixels.pixel_order = app.config['ORDER']
     
     if s.neopin == 10:
-        PIXEL_PIN = board.D10
+        app.config['PIXEL_PIN'] = board.D10
     elif s.neopin == 12:
-        PIXEL_PIN = board.D12
+        app.config['PIXEL_PIN'] = board.D12
     elif s.neopin == 18:
-        PIXEL_PIN = board.D18
+        app.config['PIXEL_PIN'] = board.D18
     elif s.neopin == 21:
-        PIXEL_PIN = board.D21
-    pixels.pixel_pin = PIXEL_PIN
+        app.config['PIXEL_PIN'] = board.D21
+    pixels.pixel_pin = app.config['PIXEL_PIN']
     """
 
     db.session.add(s)
@@ -75,11 +78,11 @@ def reset_to_defaults():
     s = Settings(
         hostname = defaults['hostname'],
         password = defaults['password'],
-        neo1pin = defaults['neo1pin'],
-        neo2pin = defaults['neo2pin'],
-        neo3pin = defaults['neo3pin'],
+        pixel_pin = defaults['pixel_pin'],
         interval = defaults['interval'],
-        order = defaults['order']
+        order = defaults['order'],
+        num_pixels = defaults['num_pixels'],
+        num_rings = defaults['num_rings']
     )
     db.session.add(s)
     db.session.commit()
@@ -110,18 +113,6 @@ def reset_to_defaults():
 @app.route('/index')
 @app.route('/ledcontrol')
 def ledcontrol():
-    # if Settings can't be queried, reset to defaults to create tables and load defaults
-    try:
-        Settings.query.all()
-    except:
-        return redirect('/reset_to_defaults')
-
-    # if Param can't be queried, reset to defaults to create tables and load defaults
-    try:
-        Param.query.all()
-    except:
-        return redirect('/reset_to_defaults')
-
     # TODO: Fix this ugly hack for converting param db query to usable dict object
     params = Param.query.all()
     rings = {}
@@ -129,10 +120,8 @@ def ledcontrol():
         rings[p.ringnum] = {}
     for p in params:
         rings[p.ringnum][p.event] = p.get_obj()
-    #print(rings)
 
-    print(SIM_MODE)
-    return render_template('led.html', rings=rings, simmode=SIM_MODE)
+    return render_template('led.html', rings=rings)
 
 @app.route('/get_action_params', methods=['GET', 'POST'])
 def get_action_params():
@@ -177,24 +166,12 @@ def test_event():
 
 @app.route('/debug')
 def debug_page():
-    # if Settings can't be queried, reset to defaults to create tables and load defaults
-    try:
-        Settings.query.all()
-    except:
-        return redirect('/reset_to_defaults')
-
-    # if Param can't be queried, reset to defaults to create tables and load defaults
-    try:
-        Param.query.all()
-    except:
-        return redirect('/reset_to_defaults')
-
     settings = Settings.query.first()
-    return render_template('debug.html', settings=settings, simmode=SIM_MODE)
+    return render_template('debug.html', settings=settings)
 
 @app.route('/get_log', methods=['POST'])
 def get_log():
-    f = open(LOGFILE, 'r')
+    f = open(app.config['LOGFILE'], 'r')
     log = f.read()
     return jsonify({'log': log})
 
@@ -212,8 +189,8 @@ def debug_status():
         logger.debug('<-debug_status-> Printer status received.')
         return jsonify({'status': str(response.json())})
     else:
-        logger.debug('<-debug_status-> Non 200 status code received: {}'.format(response.status_code))
-        return jsonify({'status': 'Error: Received response {}'.format(response.status_code)})
+        logger.debug('<-debug_status-> No response received')
+        return jsonify({'status': 'Error: No response received.'})
 
 @app.route('/debug_set_printer', methods=['POST'])
 def debug_setprinter():
@@ -222,16 +199,15 @@ def debug_setprinter():
     data['temps']['tools']['active'][0][0] = 100 # set hotened target to 100 to normalize percent
     data['temps']['current'][1] = float(request.form.get('hotend-percent'))
     data['temps']['bed']['active'] = 100 # set heatbed target to 100 to normalize percent
-    data['temps']['current'][0] = request.form.get('heatbed-percent')
-    data['fractionPrinted'] = request.form.get('print-percent')
+    data['temps']['current'][0] = float(request.form.get('heatbed-percent'))
+    data['fractionPrinted'] = float(request.form.get('print-percent'))
 
-    with open('data.json', 'w') as outfile:
+    with open('mockDuet/data.json', 'w') as outfile:
         json.dump(data, outfile)
     return jsonify({'result': 'OK'})
 
 @app.route('/debug_sim_mode', methods=['POST'])
 def debug_simmode():
     mode = request.form.get('mode')
-    print('y' if mode == 'true' else 'no')
-    SIM_MODE = True if mode == 'true' else False
+    app.config['SIM_MODE'] = True if mode == 'true' else False
     return jsonify({'result': 'OK'})

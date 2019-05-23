@@ -1,1 +1,1 @@
-{"hostname": "duettest.local", "password": "", "interval": 60, "neo1pin": 10, "neo2pin": 12, "neo3pin": 18, "order": "RGB"}
+{"hostname": "duettest.local", "password": "", "interval": 5, "pixel_pin": 18, "order": "RGB", "num_pixels": 16, "num_rings": 3}

@@ -34,6 +34,7 @@
                                     <span class="input-group-text">secs</span>
                                 </div>
                             </div>
+                            <small>How often data is retrieved from Duet</small>
                         </div>
                         <div class="col">
                             <label for="order" class="custom-label">RGB Order</label>
@@ -43,59 +44,24 @@
                                 <option {% if settings.order == 'RGBW' %}selected{% endif %}>RGBW</option>
                                 <option {% if settings.order == 'GRBW' %}selected{% endif %}>GRBW</option>
                             </select>
+                            <small>Order/number of led colors</small>
                         </div>
-                    </div>
-                    <div class="form-row mb-2">
-                        <h5>Pi PWM GPIO Pin Numbers</h5>
-                    </div>
-                    <div class="form-row mb-2">
-                        <div class="col text-center">
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">1</span>
-                                </div>
-                                <select class="custom-select pdwn-setting" id="neo1pin" name="neo1pin">
-                                    <option value="">Pin...</option>
-                                    <option value=10 {% if settings.neo1pin == 10 %}selected{% endif %}>10</option>
-                                    <option value=12 {% if settings.neo1pin == 12 %}selected{% endif %}>12</option>
-                                    <option value=18 {% if settings.neo1pin == 18 %}selected{% endif %}>18</option>
-                                    <option value=21 {% if settings.neo1pin == 21 %}selected{% endif %}>21</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col text-center">
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">2</span>
-                                </div>
-                                <select class="custom-select pdwn-setting" id="neo2pin" name="neo2pin">
-                                    <option value="">Pin...</option>
-                                    <option value=10 {% if settings.neo2pin == 10 %}selected{% endif %}>10</option>
-                                    <option value=12 {% if settings.neo2pin == 12 %}selected{% endif %}>12</option>
-                                    <option value=18 {% if settings.neo2pin == 18 %}selected{% endif %}>18</option>
-                                    <option value=21 {% if settings.neo2pin == 21 %}selected{% endif %}>21</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col text-center">
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">3</span>
-                                </div>
-                                <select class="custom-select pdwn-setting" id="neo3pin" name="neo3pin">
-                                    <option value="">Pin...</option>
-                                    <option value=10 {% if settings.neo3pin == 10 %}selected{% endif %}>10</option>
-                                    <option value=12 {% if settings.neo3pin == 12 %}selected{% endif %}>12</option>
-                                    <option value=18 {% if settings.neo3pin == 18 %}selected{% endif %}>18</option>
-                                    <option value=21 {% if settings.neo3pin == 21 %}selected{% endif %}>21</option>
-                                </select>
-                            </div>
+                        <div class="col">
+                            <label for="order" class="custom-label">Pi GPIO Pin</label>
+                            <select class="custom-select pdwn-setting" id="neo1pin" name="neo1pin">
+                                <option value="">Pin...</option>
+                                <option value=10 {% if settings.pixel_pin == 10 %}selected{% endif %}>10</option>
+                                <option value=12 {% if settings.pixel_pin == 12 %}selected{% endif %}>12</option>
+                                <option value=18 {% if settings.pixel_pin == 18 %}selected{% endif %}>18</option>
+                                <option value=21 {% if settings.pixel_pin == 21 %}selected{% endif %}>21</option>
+                            </select>
+                            <small>Rings must be connected to GPIO10, GPIO12, GPIO18 or GPIO21</small>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="card-footer">
-                <span class="text-muted">Pi Status: </span><em><span class="text-muted" id="status"></span></em>
+                <span class="text-muted">Status: </span><em><span class="text-muted" id="status"></span></em>
             </div>
         </div>
     </div>

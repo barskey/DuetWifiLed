@@ -5,11 +5,11 @@ class Settings(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     hostname = db.Column(db.String(30))
     password = db.Column(db.String(30))
-    neo1pin = db.Column(db.Integer)
-    neo2pin = db.Column(db.Integer)
-    neo3pin = db.Column(db.Integer)
+    pixel_pin = db.Column(db.Integer)
     interval = db.Column(db.Integer)
     order = db.Column(db.String(5))
+    num_pixels = db.Column(db.Integer)
+    num_rings = db.Column(db.Integer)
 
     def __repr__(self):
         return 'hostname:{}'.format(self.hostname)

@@ -35,8 +35,11 @@ $( document ).ready( function() {
     refreshStatus();
     refreshLog();
 
-    $( '#refresh' ).click( function() {
+    $( '#refresh-printer' ).click( function() {
         refreshStatus();
+    });
+
+    $( '#refresh-log' ).click( function() {
         refreshLog();
     });
 
@@ -59,12 +62,12 @@ $( document ).ready( function() {
     $( 'select.pdwn-sim' ).change( function() {
         var status = $( this ).children( 'option:selected' ).val();
         $.post( '/debug_set_printer', $( '#sim-form' ).serialize() );
-        updateTime();
+        refreshStatus();
     });
 
     $( 'input.pdwn-sim' ).change( function() {
         $.post( '/debug_set_printer', $( '#sim-form' ).serialize() );
-        updateTime();
+        refreshStatus();
     });
 
 });

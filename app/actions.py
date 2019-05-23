@@ -1,8 +1,7 @@
 import threading
 import time
-from app import logger
+from app import app, logger
 from easing_functions import CubicEaseInOut
-from app import NEO_PIXELS, NUM_RINGS, ORDER
 #import neopixel
 
 class ActionThread(threading.Thread):
@@ -60,10 +59,10 @@ class ActionThread(threading.Thread):
     def solid_color(self):
         # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
-        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+        if app.config['ORDER'] == neopixel.RGBW or app.config['ORDER'] == neopixel.GRBW:
             c = c + (0,)
-        for i in range(NEO_PIXELS):
-            pixnum = i + NEO_PIXELS * (self._ringnum - 1)
+        for i in range(app.config['NEO_PIXELS']):
+            pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1)
             #self._pixels[pixnum] = c
         #self._pixels.show()
         logger.debug('<-solid->   Ring:{} color:{}'.format(self._ringnum, c))
@@ -73,7 +72,7 @@ class ActionThread(threading.Thread):
         # source: 'h' for hotend 'b' for heatbed
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
-        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+        if app.config['ORDER'] == neopixel.RGBW or app.config['ORDER'] == neopixel.GRBW:
             c = c + (0,)
             b = b + (0,)
 
@@ -84,10 +83,10 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
-            for i in range(NEO_PIXELS): # repeat 16 times - once for each pixel in ring
-                pixnum = i + NEO_PIXELS * (self._ringnum - 1) # adjust pixnum for ring number
-                threshold = (i + 1)/NEO_PIXELS # threshold before changing to next pixel
-                pix_percent = (percent - i/NEO_PIXELS)/(1/NEO_PIXELS) # normalize percentage complete to this pixel range
+            for i in range(app.config['NEO_PIXELS']): # repeat 16 times - once for each pixel in ring
+                pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1) # adjust pixnum for ring number
+                threshold = (i + 1)/app.config['NEO_PIXELS'] # threshold before changing to next pixel
+                pix_percent = (percent - i/app.config['NEO_PIXELS'])/(1/app.config['NEO_PIXELS']) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
                     #self._pixels[pixnum] = b
                     pass
@@ -106,7 +105,7 @@ class ActionThread(threading.Thread):
         # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
-        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+        if app.config['ORDER'] == neopixel.RGBW or app.config['ORDER'] == neopixel.GRBW:
             c = c + (0,)
             b = b + (0,)
 
@@ -117,10 +116,10 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.percentComplete
-            for i in range(NEO_PIXELS): # repeat 16 times - once for each pixel in ring
-                pixnum = i + NEO_PIXELS * (self._ringnum - 1) # adjust pixnum for ring number
-                threshold = (i + 1)/NEO_PIXELS # threshold before changing to next pixel
-                pix_percent = (percent - i/NEO_PIXELS)/(1/NEO_PIXELS) # normalize percentage complete to this pixel range
+            for i in range(app.config['NEO_PIXELS']): # repeat 16 times - once for each pixel in ring
+                pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1) # adjust pixnum for ring number
+                threshold = (i + 1)/app.config['NEO_PIXELS'] # threshold before changing to next pixel
+                pix_percent = (percent - i/app.config['NEO_PIXELS'])/(1/app.config['NEO_PIXELS']) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
                     #self._pixels[pixnum] = b
                     pass
@@ -139,7 +138,7 @@ class ActionThread(threading.Thread):
         # self._color: like 'rgb(#, #, #)'
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
-        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+        if app.config['ORDER'] == neopixel.RGBW or app.config['ORDER'] == neopixel.GRBW:
             c1 = c1 + (0,)
             c2 = c2 + (0,)
 
@@ -149,8 +148,8 @@ class ActionThread(threading.Thread):
                 return
             if self.stopped():
                 return
-            for i in range(NEO_PIXELS):
-                pixnum = i + NEO_PIXELS * (self._ringnum - 1)
+            for i in range(app.config['NEO_PIXELS']):
+                pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1)
                 #self._pixels[pixnum] = c1
             #self._pixels.show()
             # swap colors
@@ -163,7 +162,7 @@ class ActionThread(threading.Thread):
         # self._color: like 'rgb(#, #, #)'
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
-        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+        if app.config['ORDER'] == neopixel.RGBW or app.config['ORDER'] == neopixel.GRBW:
             c1 = c1 + (0,)
             c2 = c2 + (0,)
 
@@ -180,8 +179,8 @@ class ActionThread(threading.Thread):
             for n in range(num_steps): # use 0.01 increment for color change (100 steps)
                 t = n / num_steps if n > 0 else 0
                 color = tuple(round(x + (y - x) * t) for x,y in zip(c1, c2)) # lerp between each color channel over increment
-                for i in range(NEO_PIXELS): # set all pixels in this ring to current color
-                    pixnum = i + NEO_PIXELS * (self._ringnum - 1)
+                for i in range(app.config['NEO_PIXELS']): # set all pixels in this ring to current color
+                    pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1)
                     #self._pixels[pixnum] = color
                 #self._pixels.show()
                 s = e.ease(n) - last_sleep # gets the sleep time using cubic ease-in/out
@@ -197,12 +196,12 @@ class ActionThread(threading.Thread):
         # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
-        if ORDER == neopixel.RGBW or ORDER == neopixel.GRBW:
+        if app.config['ORDER'] == neopixel.RGBW or app.config['ORDER'] == neopixel.GRBW:
             c = c + (0,)
             b = b + (0,)
 
         # creates easing instance for smoothing animations
-        e = CubicEaseInOut(0, self._interval, NEO_PIXELS) # will go from 0 to interval in 16 steps
+        e = CubicEaseInOut(0, self._interval, app.config['NEO_PIXELS']) # will go from 0 to interval in 16 steps
         loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
             if test is True and loop_counter <= 0:
@@ -210,9 +209,9 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             last_sleep = 0
-            for pos in range(NEO_PIXELS):
-                for i in range(NEO_PIXELS): # step through all pixels in this ring
-                    pixnum = i + NEO_PIXELS * (self._ringnum - 1)
+            for pos in range(app.config['NEO_PIXELS']):
+                for i in range(app.config['NEO_PIXELS']): # step through all pixels in this ring
+                    pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1)
                     #self._pixels[pixnum] = c if i == pos else b
                 #self._pixels.show()
                 s = e.ease(pos) - last_sleep # gets the sleep time using cubic ease-in/out
@@ -231,9 +230,9 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             for j in range(255):
-                for i in range(NEO_PIXELS):
-                    pixnum = i + NEO_PIXELS * (self._ringnum - 1)
-                    pixel_index = (i * 256 // NEO_PIXELS) + j # // is floor division
+                for i in range(app.config['NEO_PIXELS']):
+                    pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1)
+                    pixel_index = (i * 256 // app.config['NEO_PIXELS']) + j # // is floor division
                     #self._pixels[pixnum] = self.wheel(pixel_index & 255) # bitwise and makes sure it is always less than 255
                 #self._pixels.show()
                 time.sleep(wait)
@@ -259,4 +258,4 @@ class ActionThread(threading.Thread):
             r = 0
             g = int(pos*3)
             b = int(255 - pos*3)
-        return (r, g, b) if ORDER == neopixel.RGB or ORDER == neopixel.GRB else (r, g, b, 0)
+        return (r, g, b) if app.config['ORDER'] == neopixel.RGB or app.config['ORDER'] == neopixel.GRB else (r, g, b, 0)
