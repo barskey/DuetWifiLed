@@ -267,3 +267,107 @@
 2019-05-22 17:04:40,421 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
 2019-05-22 17:04:42,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
 2019-05-22 17:04:43,205 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:04:45,976 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:04:47,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:04:50,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:04:51,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:04:52,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:04:55,727 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:04:56,493 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:04:57,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:00,422 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:01,490 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:02,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:05,723 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:06,490 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:07,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:10,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:11,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:12,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:15,725 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:16,491 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:17,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:20,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:21,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:22,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:25,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:26,492 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:27,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:30,424 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:31,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:32,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:35,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:36,487 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:37,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:40,420 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:41,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:42,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:45,722 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:46,488 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:47,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:50,419 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:51,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:52,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:55,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 17:05:56,473 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:05:57,188 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:01,468 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:02,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:06,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:07,199 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:11,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:12,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:16,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:17,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:21,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:26,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:27,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:31,471 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:32,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:36,478 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:37,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:41,468 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:42,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:46,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:47,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:51,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:52,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:56,475 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:06:57,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:01,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:02,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:06,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:07,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:11,473 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:12,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:16,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:17,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:21,468 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:22,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:26,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:27,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:31,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:32,200 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:36,482 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:37,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:41,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:42,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:46,484 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:47,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:51,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:52,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:56,480 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:07:57,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:01,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:02,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:06,489 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:07,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:11,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:12,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:16,496 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:17,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:21,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:26,490 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 17:08:27,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
