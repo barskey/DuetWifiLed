@@ -10,102 +10,146 @@
                         <a class="nav-link active" id="printer-tab" data-toggle="tab" href="#printer">Printer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="status-tab" data-toggle="tab"  href="#last-status">Get Status</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="sim-tab" data-toggle="tab"  href="#sim-mode">Simulation</a>
+                        <a class="nav-link" id="sim-tab" data-toggle="tab"  href="#sim-mode">Sim</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="log-tab" data-toggle="tab"  href="#logfile">Log</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reset-tab" data-toggle="tab" href="#reset">Reset</a>
                     </li>
                 </ul>
             </div>
             <div class="card-body">
                 <div class="tab-content">
                     <div class="container-fluid tab-pane show active" id="printer">
-                        <dl class="row">
-                            <dt class="col-3">Status</dt>
-                            <dd class="col-9"><span class="text-info" id="printer-state">None</span></dd>
-                            <dt class="col-3">Temps</dt>
-                            <dd class="col-3">Current</dd>
-                            <dd class="col-3">Target</dd>
-                            <dd class="col-3">%</dd>
-                            <dt class="col-3">Hotend</dt>
-                            <dd class="col-3"><span class="text-info" id="hotend-temp">None</span></dd>
-                            <dd class="col-3"><span class="text-info" id="hotend-target">None</span></dd>
-                            <dd class="col-3"><span class="text-info" id="hotend-percent">None</span></dd>
-                            <dt class="col-3">Heatbed</dt>
-                            <dd class="col-3"><span class="text-info" id="heatbed-temp">None</span></dd>
-                            <dd class="col-3"><span class="text-info" id="heatbed-target">None</span></dd>
-                            <dd class="col-3"><span class="text-info" id="heatbed-percent">None</span></dd>
-                            <dt class="col-3">Print %</dt>
-                            <dd class="col-9"><span class="text-info" id="print-percent"></span></dd>
-                        </dl>
-                        <div class="float-right"><button class="btn btn-info" id="refresh-printer">Refresh</button></div>
-                    </div>
-                    <div class="container-fluid tab-pane" id="last-status">
-                        <div class="input-group mb-3 col-5 col-md-6">
-                            <input type="text" class="form-control" id="status-type" value="3">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-info" id="get-status" type="button">Get Status</button>
+                        <div class="row clearfix">
+                            <div class="col">
+                                <h5 class="float-left">Current Status</h5>
+                                <div class="float-right"><button class="btn btn-sm btn-info" id="refresh-printer">Refresh</button></div>
                             </div>
                         </div>
-                        <textarea class="form-control mb-2" id="status"></textarea>
+                        <div class="row">
+                            <div class="col">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <th scope="row">State</th>
+                                        <td colspan="3"><span class="text-info" id="printer-state">None</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td>%</td>
+                                        <td>Current</td>
+                                        <td>Target</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Hotend</th>
+                                        <td><span class="text-info" id="hotend-percent">None</span></td>
+                                        <td><span class="text-info" id="hotend-temp">None</span></td>
+                                        <td><span class="text-info" id="hotend-target">None</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Bed</th>
+                                        <td><span class="text-info" id="heatbed-percent">None</span></td>
+                                        <td><span class="text-info" id="heatbed-temp">None</span></td>
+                                        <td><span class="text-info" id="heatbed-target">None</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Print</th>
+                                        <td colspan="3"><span class="text-info" id="print-percent"></span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col">
+                                <h5 class="float-left">Duet Response</h5>
+                                <div class="input-group input-group-sm mb-3 col-6 col-md-5 float-right">
+                                    <input type="text" class="form-control" id="status-type" value="3">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-info" id="get-status" type="button">Get Status</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <textarea class="form-control mb-2" style="height:120px" id="status"></textarea>
+                            </div>
+                        </div>
                     </div>
                     <div class="container-fluid tab-pane" id="sim-mode">
                         <form id="sim-form">
                             <div class="form-group row">
                                 <label for="sim-mode-toggle" class="col-8 col-form-label"><h5>Simulation Mode</h5></label>
                                 <div class="col-4">
-                                    <input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-width="75" id="sim-mode-toggle">
+                                    <input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-width="75" id="sim-mode-toggle" {% if simmode == true %}checked{% endif %}>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="printer-status" class="col-4 col-form-label">Printer Status</label>
-                                <div class="col-4">
+                                <label for="printer-status" class="col-6 col-form-label">Printer Status</label>
+                                <div class="col-6">
                                     <select class="form-control pdwn-sim" name="printer-status">
-                                        <option value="I">Idle</option>
-                                        <option value="P">Print</option>
-                                        <option value="D">Pause</option>
-                                        <option value="S">Stopped</option>
-                                        <option value="R">Resuming</option>
-                                        <option value="H">Halted</option>
-                                        <option value="F">Firmware</option>
-                                        <option value="T">Tool Change</option>
-                                        <option value="C">Config</option>
-                                        <option value="B">Busy</option>
+                                        <option value="I" {% if data.status == 'I' %}selected{% endif %}>Idle</option>
+                                        <option value="P" {% if data.status == 'P' %}selected{% endif %}>Print</option>
+                                        <option value="S" {% if data.status == 'S' %}selected{% endif %}>Paused</option>
+                                        <option value="R" {% if data.status == 'R' %}selected{% endif %}>Resuming</option>
+                                        <option value="H" {% if data.status == 'H' %}selected{% endif %}>Halted</option>
+                                        <option value="F" {% if data.status == 'F' %}selected{% endif %}>Firmware</option>
+                                        <option value="T" {% if data.status == 'T' %}selected{% endif %}>Tool Change</option>
+                                        <option value="C" {% if data.status == 'C' %}selected{% endif %}>Config</option>
+                                        <option value="B" {% if data.status == 'B' %}selected{% endif %}>Busy</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="hotend-temp" class="col-4 col-form-label">Hotend %</label>
+                                <label for="hotend-percent" class="col-4 col-form-label">Hotend %</label>
                                 <div class="col-8">
-                                    <input type="range" class="custom-range pdwn-sim" name="hotend-percent" min="0" max="100" step="0.1">
+                                    <input type="range" class="custom-range pdwn-sim" name="hotend-percent" min="0" max="100" step="0.1" value="{{ (data.temps.current[1] / data.temps.tools.active[0][0]) * 100}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="heatbed-temp" class="col-4 col-form-label">Heatbed %</label>
+                                <label for="heatbed-percent" class="col-4 col-form-label">Bed %</label>
                                 <div class="col-8">
-                                    <input type="range" class="custom-range pdwn-sim" name="heatbed-percent" min="0" max="100" step="0.1">
+                                    <input type="range" class="custom-range pdwn-sim" name="heatbed-percent" min="0" max="100" step="0.1" value="{{ (data.temps.current[0] / data.temps.bed.active) * 100 }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="print-percent" class="col-4 col-form-label">Print %</label>
                                 <div class="col-8">
-                                    <input type="range" class="custom-range pdwn-sim" name="print-percent" min="0" max="100" step="0.1">
+                                    <input type="range" class="custom-range pdwn-sim" name="print-percent" min="0" max="100" step="0.1" value="{{ data.fractionPrinted }}">
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="container-fluid tab-pane" id="logfile">
-                        <textarea class="form-control" id="log"></textarea>
-                        <div class="float-right mt-3"><button class="btn btn-info" id="refresh-log">Refresh</button></div>
+                        <div class="row mb-3">
+                            <label for="log-level" class="col-6 col-form-label">Logging Level</label>
+                            <div class="col-6">
+                                <select class="form-control pdwn-log" name="log-level">
+                                    <option {% if settings.loglevel == 'info' %}selected{% endif %}>Info</option>
+                                    <option {% if settings.loglevel == 'debug' %}selected{% endif %}>Debug</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <textarea class="form-control" style="height:200px" id="log"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="float-right"><button class="btn btn-info" id="refresh-log">Refresh</button></div>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane" id="reset"> 
+                        <h4 class="text-danger">Reset to Defauts</h4>
+                        <p>This will reset all settings under SETUP and LEDS to default settings.</p>
+                        <div class="text-center"><a class="btn btn-danger" id="reset-to-default" href="/debug/reset_to_defaults">Reset</a></div>
                     </div>
                 </div>
             </div>
             <div class="card-footer clearfix">
-                <div class="float-left"><em><span class="text-muted">Last Updated:&nbsp;</span><span class="text-muted" id="lastupdate"></span></em></div>
-                
+                <div class="float-left">
+                    <em><span class="text-muted">Last Updated:&nbsp;</span><span class="text-muted" id="lastupdate"></span></em>
+                </div>
             </div>
         </div>
     </div>

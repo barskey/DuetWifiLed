@@ -10,6 +10,7 @@ class Settings(db.Model):
     order = db.Column(db.String(5))
     num_pixels = db.Column(db.Integer)
     num_rings = db.Column(db.Integer)
+    loglevel = db.Column(db.String(10))
 
     def __repr__(self):
         return 'hostname:{}'.format(self.hostname)

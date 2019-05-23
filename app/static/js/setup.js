@@ -1,6 +1,10 @@
 $( document ).ready( function() {
   
+    feather.replace()
+  
     $( '#setup' ).addClass( 'active' );
+    
+    $('[data-toggle="tooltip"]').tooltip();
 
     setInterval( function () {
         $.post('/get_status')

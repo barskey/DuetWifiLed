@@ -22,40 +22,42 @@
                         </div>
                     </div>
                     <div class="form-row mb-2">
-                        <label for="password" class="custom-label">Password</label>
-                        <input type="text" class="form-control pdwn-setting" name="password" id="password" value="{{ settings.password }}" />
-                    </div>
-                    <div class="form-row mb-2">
-                        <div class="col">
-                            <label for="freq" class="custom-label">Polling Frequency</label>
+                        <div class="col-8">
+                            <label for="password" class="custom-label">Password</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="Set on Duet Wifi interface. Empty by default."></span>
+                            <input type="text" class="form-control pdwn-setting" name="password" id="password" value="{{ settings.password }}" />
+                        </div>
+                        <div class="col-4">
+                            <label for="freq" class="custom-label">Freq.</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="How often the Pi polls the Duet for updates."></span>
                             <div class="input-group">
                                 <input type="text" class="form-control pdwn-setting" name="interval" id="interval" value="{{ settings.interval }}" />
                                 <div class="input-group-append">
-                                    <span class="input-group-text">secs</span>
+                                    <span class="input-group-text">s</span>
                                 </div>
                             </div>
-                            <small>How often data is retrieved from Duet</small>
                         </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <h5>Pi Settings</h5>
+                    </div>
+                    <div class="form-row mb-2">
                         <div class="col">
-                            <label for="order" class="custom-label">RGB Order</label>
+                            <label for="order" class="custom-label">RGB Order</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="Order/number of colors in LED ring/strip."></span>
                             <select class="custom-select pdwn-setting" id="order" name="order">
                                 <option {% if settings.order == 'RGB' %}selected{% endif %}>RGB</option>
                                 <option {% if settings.order == 'GRB' %}selected{% endif %}>GRB</option>
                                 <option {% if settings.order == 'RGBW' %}selected{% endif %}>RGBW</option>
                                 <option {% if settings.order == 'GRBW' %}selected{% endif %}>GRBW</option>
                             </select>
-                            <small>Order/number of led colors</small>
                         </div>
                         <div class="col">
-                            <label for="order" class="custom-label">Pi GPIO Pin</label>
-                            <select class="custom-select pdwn-setting" id="neo1pin" name="neo1pin">
+                            <label for="order" class="custom-label">Pi GPIO Pin</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="NOTE: Currently must be GPIO10 so app can run without sudo."></span>
+                            <select class="custom-select pdwn-setting" id="neo1pin" name="neo1pin" disabled>
                                 <option value="">Pin...</option>
                                 <option value=10 {% if settings.pixel_pin == 10 %}selected{% endif %}>10</option>
                                 <option value=12 {% if settings.pixel_pin == 12 %}selected{% endif %}>12</option>
                                 <option value=18 {% if settings.pixel_pin == 18 %}selected{% endif %}>18</option>
                                 <option value=21 {% if settings.pixel_pin == 21 %}selected{% endif %}>21</option>
                             </select>
-                            <small>Rings must be connected to GPIO10, GPIO12, GPIO18 or GPIO21</small>
                         </div>
                     </div>
                 </form>

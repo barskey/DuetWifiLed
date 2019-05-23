@@ -2,7 +2,7 @@ import threading
 import time
 from app import app, logger
 from easing_functions import CubicEaseInOut
-import neopixel
+#import neopixel
 
 class ActionThread(threading.Thread):
     """Thread class that will stop itself when joined."""
@@ -10,7 +10,7 @@ class ActionThread(threading.Thread):
     def __init__(self, params, printer, pixels, ring, *args, **kwargs):
         super(ActionThread, self).__init__(*args, **kwargs)
         self._action_num = params['action']
-        self._ringnum = ring
+        self._ringnum = int(ring)
         self._color1 = params['color1']
         self._color2 = params['color2']
         self._interval = params['interval']
@@ -118,7 +118,6 @@ class ActionThread(threading.Thread):
             percent = self._printer.percentComplete
             for i in range(app.config['NEO_PIXELS']): # repeat 16 times - once for each pixel in ring
                 pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1) # adjust pixnum for ring number
-                threshold = (i + 1)/app.config['NEO_PIXELS'] # threshold before changing to next pixel
                 pix_percent = (percent - i/app.config['NEO_PIXELS'])/(1/app.config['NEO_PIXELS']) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
                     self._pixels[pixnum] = b
@@ -224,15 +223,16 @@ class ActionThread(threading.Thread):
     def rainbow(self, test=False):
         loop_counter = 2 # use to run a certain number of loops when called with test True
         wait = self._interval / 255 # one rainbow cycle is 255 colors
+        n = app.config['NEO_PIXELS'] # number of pixels, for convenience
         while True:
             if test is True and loop_counter <= 0:
                 return
             if self.stopped():
                 return
             for j in range(255):
-                for i in range(app.config['NEO_PIXELS']):
-                    pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1)
-                    pixel_index = (i * 256 // app.config['NEO_PIXELS']) + j # // is floor division
+                for i in range(n):
+                    pixnum = i + n * (self._ringnum - 1)
+                    pixel_index = (i * 256 // n) + j # // is floor division
                     self._pixels[pixnum] = self.wheel(pixel_index & 255) # bitwise and makes sure it is always less than 255
                 self._pixels.show()
                 time.sleep(wait)

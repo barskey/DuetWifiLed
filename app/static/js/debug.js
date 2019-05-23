@@ -1,5 +1,5 @@
 $( document ).ready( function() {
-  
+
     $( '#debug' ).addClass( 'active' );
 
     function updateTime() {
@@ -12,19 +12,19 @@ $( document ).ready( function() {
         .done( function( response ) {
             $( '#status' ).val( response.status );
             $( '#printer-state' ).text( response.state );
-            $( '#hotend-temp' ).text( response.hotend[0] );
-            $( '#hotend-target' ).text( response.hotend[1] );
-            $( '#hotend-percent' ).text( response.hotend[2] );
-            $( '#heatbed-temp' ).text( response.bed[0] );
-            $( '#heatbed-target' ).text( response.bed[1] );
-            $( '#heatbed-percent' ).text( response.bed[2] );
+            $( '#hotend-temp' ).text( response.hotend[0].toFixed(1) );
+            $( '#hotend-target' ).text( response.hotend[1].toFixed(1) );
+            $( '#hotend-percent' ).text( ( response.hotend[2] * 100 ).toFixed(1) );
+            $( '#heatbed-temp' ).text( response.bed[0].toFixed(1) );
+            $( '#heatbed-target' ).text( response.bed[1].toFixed(1) );
+            $( '#heatbed-percent' ).text( ( response.bed[2] * 100 ).toFixed(1) );
             $( '#print-percent' ).text ( response.percent );
             updateTime();
         });
     }
 
     function refreshLog() {
-        $.post( '/get_log' )
+        $.post( '/debug/get_log' )
         .done( function( response ) {
             $( '#log' ).val( response.log );
             updateTime();
@@ -44,7 +44,7 @@ $( document ).ready( function() {
     });
 
     $( '#get-status' ).click( function() {
-        $.post( '/debug_status', {'type': $( '#status-type' ).val()} )
+        $.post( '/debug/status', {'type': $( '#status-type' ).val()} )
         .done( function( response ) {
             $( '#status' ).val( response.status );
         })
@@ -56,18 +56,24 @@ $( document ).ready( function() {
         } else {
             $( '#sim-mode-alert' ).addClass( 'd-none' );
         }
-        $.post( '/debug_sim_mode', {'mode': $(this).prop('checked')} );
+        $.post( '/debug/sim_mode', {'mode': $(this).prop('checked')} )
+        .done( function( response ) {
+            console.log( response.result );
+        });
     });
 
-    $( 'select.pdwn-sim' ).change( function() {
-        var status = $( this ).children( 'option:selected' ).val();
-        $.post( '/debug_set_printer', $( '#sim-form' ).serialize() );
+    $( 'select.pdwn-sim,input.pdwn-sim' ).change( function() {
+        //var status = $( this ).children( 'option:selected' ).val();
+        $.post( '/debug/set_printer', $( '#sim-form' ).serialize() );
         refreshStatus();
     });
 
-    $( 'input.pdwn-sim' ).change( function() {
-        $.post( '/debug_set_printer', $( '#sim-form' ).serialize() );
-        refreshStatus();
+    $( 'select.pdwn-log' ).change( function() {
+        var level = $( this ).children( 'option:selected' ).val();
+        $.post( '/debug/set_loglevel', {loglevel: level} )
+        .done( function( response ) {
+            console.log( response.result );
+        });
     });
 
 });

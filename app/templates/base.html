@@ -36,8 +36,8 @@
                         <a class="nav-link" href="{{ url_for('debug_page') }}">DEBUG</a>
                     </li>
                 </ul>
-                <div class="alert alert-danger my-0 py-0 {% if not simmode %}d-none{% endif %}" role="alert" id="sim-mode-alert">
-                    Simulation Mode ON
+                <div class="alert alert-danger my-0 py-0 {% if simmode == false %}d-none{% endif %}" role="alert" id="sim-mode-alert">
+                    Sim Mode ON
                 </div>
             </div>
         </div>

@@ -2,10 +2,11 @@ from app import app, db, logger, printer, pixels
 from flask import render_template, redirect, url_for, request, jsonify
 import json
 import requests, sys
+import logging
 from app.models import Settings, Param
 from app.actions import ActionThread
-import neopixel
-import board
+#import neopixel
+#import board
 
 @app.context_processor
 def context_processor():
@@ -16,7 +17,6 @@ def context_processor():
         return redirect('/reset_to_defaults')
 
     settings = Settings.query.first()
-    print(app.config['SIM_MODE'])
     return dict(simmode=app.config['SIM_MODE'], settings=settings)
 
 ###########################
@@ -35,6 +35,7 @@ def update_settings():
     s.interval = int(0 if request.form.get('interval') == '' else request.form.get('interval')) # TODO modify duet_status job with new interval
     s.pixel_pin = int(0 if request.form.get('neo1pin') == '' else request.form.get('neo1pin'))
     s.order = request.form.get('order')
+    """
     if s.order == 'RGB':
         app.config['ORDER'] = neopixel.RGB
     elif s.order == 'RGBW':
@@ -54,6 +55,7 @@ def update_settings():
     elif s.pixel_pin == 21:
         app.config['PIXEL_PIN'] = board.D21
     pixels.pixel_pin = app.config['PIXEL_PIN']
+    """
 
     db.session.add(s)
     db.session.commit()
@@ -65,45 +67,6 @@ def update_settings():
 def get_status():
     logger.debug('<-get_status-> Returning current printer status:{}.'.format(printer.get_status()))
     return jsonify(printer.get_status())
-
-@app.route('/reset_to_defaults')
-def reset_to_defaults():
-    logger.info('<-reset_to_defaults-> Dropping all db tables...')
-    db.drop_all()
-    logger.info('<-reset_to_defaults-> Creating all db tables...')
-    db.create_all()
-    
-    logger.info('<-reset_to_defaults-> Adding default Settings values...')
-    defaults = json.load(open('app/settings.default.json'))
-    s = Settings(
-        hostname = defaults['hostname'],
-        password = defaults['password'],
-        pixel_pin = defaults['pixel_pin'],
-        interval = defaults['interval'],
-        order = defaults['order'],
-        num_pixels = defaults['num_pixels'],
-        num_rings = defaults['num_rings']
-    )
-    db.session.add(s)
-    db.session.commit()
-    logger.info('<-reset_to_defaults-> Settings Done!')
-
-    logger.info('<-reset_to_defaults-> Adding default Param values...')
-    defaults = json.load(open('app/params.default.json'))
-    for key,events in defaults.items():
-        for event,param in events.items():
-            p = Param(
-                ringnum = int(key),
-                event = event,
-                action = param['action'],
-                color1 = param['color1'],
-                color2 = param['color2'],
-                interval = param['interval']
-            )
-            db.session.add(p)
-    db.session.commit()
-    logger.info('<-reset_to_defaults-> Done! Redirecting to /')
-    return redirect('/')
 
 ###########################
 #### ledcontrol routes ####
@@ -152,7 +115,7 @@ def test_event():
         'color2': request.form.get('color2'),
         'interval': float(request.form.get('interval'))
     }
-    at = ActionThread(action_params, printer, ring_num, order)
+    at = ActionThread(action_params, printer, pixels, ring_num)
     at.setName('test{}'.format(ring_num))
     at.daemon = True
     at.start()
@@ -166,16 +129,16 @@ def test_event():
 
 @app.route('/debug')
 def debug_page():
-    settings = Settings.query.first()
-    return render_template('debug.html', settings=settings)
+    data = json.load(open('mockDuet/data.json'))
+    return render_template('debug.html', data=data)
 
-@app.route('/get_log', methods=['POST'])
+@app.route('/debug/get_log', methods=['POST'])
 def get_log():
     f = open(app.config['LOGFILE'], 'r')
     log = f.read()
     return jsonify({'log': log})
 
-@app.route('/debug_status', methods=['POST'])
+@app.route('/debug/status', methods=['POST'])
 def debug_status():
     s = Settings.query.first()
     host = 'http://' + s.hostname + '/rr_status'
@@ -192,7 +155,7 @@ def debug_status():
         logger.debug('<-debug_status-> No response received')
         return jsonify({'status': 'Error: No response received.'})
 
-@app.route('/debug_set_printer', methods=['POST'])
+@app.route('/debug/set_printer', methods=['POST'])
 def debug_setprinter():
     data = json.load(open('mockDuet/data.json'))
     data['status'] = request.form.get('printer-status')
@@ -204,10 +167,65 @@ def debug_setprinter():
 
     with open('mockDuet/data.json', 'w') as outfile:
         json.dump(data, outfile)
+
     return jsonify({'result': 'OK'})
 
-@app.route('/debug_sim_mode', methods=['POST'])
+@app.route('/debug/sim_mode', methods=['POST'])
 def debug_simmode():
     mode = request.form.get('mode')
     app.config['SIM_MODE'] = True if mode == 'true' else False
-    return jsonify({'result': 'OK'})
+
+    return jsonify({'result': mode})
+
+@app.route('/debug/set_loglevel', methods=['POST'])
+def debug_set_loglevel():
+    level = request.form.get('loglevel', 'debug').lower()
+    if level == 'info':
+        logger.setLevel(logging.INFO)
+    elif level == 'debug':
+        logger.setLevel(logging.DEBUG)
+    s = Settings.query.first()
+    s.loglevel = level
+    db.session.add(s)
+    db.session.commit()
+
+    return jsonify({'result': level})
+
+@app.route('/debug/reset_to_defaults')
+def reset_to_defaults():
+    logger.info('<-reset_to_defaults-> Dropping all db tables...')
+    db.drop_all()
+    logger.info('<-reset_to_defaults-> Creating all db tables...')
+    db.create_all()
+    
+    logger.info('<-reset_to_defaults-> Adding default Settings values...')
+    defaults = json.load(open('app/settings.default.json'))
+    s = Settings(
+        hostname = defaults['hostname'],
+        password = defaults['password'],
+        pixel_pin = defaults['pixel_pin'],
+        interval = defaults['interval'],
+        order = defaults['order'],
+        num_pixels = defaults['num_pixels'],
+        num_rings = defaults['num_rings']
+    )
+    db.session.add(s)
+    db.session.commit()
+    logger.info('<-reset_to_defaults-> Settings Done!')
+
+    logger.info('<-reset_to_defaults-> Adding default Param values...')
+    defaults = json.load(open('app/params.default.json'))
+    for key,events in defaults.items():
+        for event,param in events.items():
+            p = Param(
+                ringnum = int(key),
+                event = event,
+                action = param['action'],
+                color1 = param['color1'],
+                color2 = param['color2'],
+                interval = param['interval']
+            )
+            db.session.add(p)
+    db.session.commit()
+    logger.info('<-reset_to_defaults-> Done! Redirecting to /')
+    return redirect('/')

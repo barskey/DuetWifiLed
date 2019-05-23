@@ -94,7 +94,8 @@ $( document ).ready( function() {
 
     $( '#testEvent' ).click( function() {
         var $modal = $( '#paramModal' );
-        if( ['5','6','7'].includes( $modal.find( '#action' ).val() ) && $modal.find( '#interval' ).val() == '' ) {
+        // actions 6,7,8,9 need interval, hence can't be blank
+        if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) && $modal.find( '#interval' ).val() == '' ) {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             return false;
         }
@@ -108,7 +109,8 @@ $( document ).ready( function() {
 
     $( '#modalDone' ).click( function() {
         var $modal = $( '#paramModal' );
-        if( ['5','6','7'].includes( $modal.find( '#action' ).val() ) &&
+        // actions 6,7,8,9 need interval, hence can't be blank
+        if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) &&
         ($modal.find( '#interval' ).val() == ''  || $modal.find( '#interval' ).val() == '0')) {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             return false;

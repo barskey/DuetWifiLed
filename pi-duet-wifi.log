@@ -1,424 +1,240 @@
-2019-05-22 16:57:07,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:10,416 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:11,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:12,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:15,718 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:16,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:17,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:20,416 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:21,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:22,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:25,716 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:26,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:27,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:30,417 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:31,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:32,206 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:35,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:36,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:37,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:40,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:41,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:42,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:45,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:46,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:47,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:50,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:51,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:52,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:57:55,719 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:57:56,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:57:57,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:00,414 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:01,594 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:02,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:05,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:06,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:07,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:10,416 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:11,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:12,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:15,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:16,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:17,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:20,416 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:21,597 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:22,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:25,719 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:26,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:27,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:30,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:31,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:32,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:35,716 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:36,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:37,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:40,416 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:41,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:42,200 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:45,718 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:46,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:47,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:50,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:51,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:52,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:58:55,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:58:56,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:58:57,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:00,416 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:01,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:02,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:05,718 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:06,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:07,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:10,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:11,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:12,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:15,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:16,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:17,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:20,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:21,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:25,720 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:26,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:27,189 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:30,416 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:31,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:32,200 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:35,718 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:36,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:37,200 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:40,413 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:41,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:42,201 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:45,718 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:46,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:47,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:50,412 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:51,595 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:52,204 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 16:59:55,719 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 16:59:56,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 16:59:57,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:00,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 17:00:01,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 17:00:02,199 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:05,718 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 17:00:06,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 17:00:07,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:10,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 17:00:11,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 17:00:12,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:15,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 17:00:16,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 17:00:17,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:20,415 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 17:00:21,596 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 17:00:22,210 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:25,717 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'I', 'temps': {'bed': {'current': 45.0, 'active': 100, 'state': 2, 'heater': 0}, 'current': [42.8, 77.4, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[100]], 'standby': [[200.0]]}, 'extra': [{'name': '*MCU', 'temp': 32.4}]}, 'fractionPrinted': 65.2}", 'state': 'I', 'hotend': [77.4, 100, 0.774], 'bed': [42.8, 100, 0.428], 'percent': 65.2}.
-2019-05-22 17:00:26,597 - DEBUG - <-get_duet_status-> SIM_MODE:Printer status updated.
-2019-05-22 17:00:27,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:32,189 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:35,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:00:37,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:40,222 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:40,414 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:00:42,208 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:45,207 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:45,718 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:00:47,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:50,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:50,415 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:00:52,210 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:55,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:00:55,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:00:57,199 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:00,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:00,417 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:02,212 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:05,199 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:05,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:07,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:10,202 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:10,415 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:12,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:15,201 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:15,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:17,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:20,200 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:20,415 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:22,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:25,201 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:27,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:30,717 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:32,209 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:35,206 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:35,414 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:37,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:40,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:40,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:42,187 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:45,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:45,415 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:47,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:50,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:50,720 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:52,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:55,189 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:01:55,415 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:01:57,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:00,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:00,714 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:02,204 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:05,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:05,414 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:07,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:10,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:10,717 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:12,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:15,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:15,414 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:17,209 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:20,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:20,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:25,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:25,414 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:27,207 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:30,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:30,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:32,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:35,185 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:35,414 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:37,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:40,187 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:40,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:42,210 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:45,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:45,414 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:47,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:50,191 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:50,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:52,189 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:55,714 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:02:57,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:02:58,220 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:00,415 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:02,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:03,212 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:05,716 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:07,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:08,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:10,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:12,207 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:13,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:15,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:17,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:18,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:20,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:22,203 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:23,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:25,725 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:27,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:28,210 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:30,422 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:32,207 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:33,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:35,725 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:37,200 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:38,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:40,424 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:42,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:43,203 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:45,723 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:47,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:48,227 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:50,422 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:52,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:53,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:55,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:03:57,208 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:03:58,224 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:00,421 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:02,199 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:03,212 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:05,725 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:07,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:08,228 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:10,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:12,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:13,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:15,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:17,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:18,204 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:20,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:23,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:25,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:27,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:28,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:30,422 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:32,208 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:33,208 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:35,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:37,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:38,205 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:40,421 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:42,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:43,205 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:45,976 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:47,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:50,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:51,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:52,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:55,727 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:04:56,493 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:04:57,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:00,422 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:01,490 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:02,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:05,723 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:06,490 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:07,211 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:10,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:11,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:12,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:15,725 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:16,491 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:17,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:20,423 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:21,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:22,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:25,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:26,492 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:27,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:30,424 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:31,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:32,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:35,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:36,487 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:37,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:40,420 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:41,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:42,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:45,722 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:46,488 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:47,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:50,419 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:51,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:52,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:55,724 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 17:05:56,473 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:05:57,188 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:01,468 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:02,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:06,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:07,199 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:11,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:12,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:16,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:17,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:21,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:26,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:27,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:31,471 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:32,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:36,478 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:37,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:41,468 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:42,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:46,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:47,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:51,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:52,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:56,475 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:06:57,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:01,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:02,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:06,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:07,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:11,473 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:12,192 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:16,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:17,190 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:21,468 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:22,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:26,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:27,198 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:31,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:32,200 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:36,482 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:37,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:41,479 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:42,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:46,484 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:47,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:51,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:52,196 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:56,480 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:07:57,193 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:01,474 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:02,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:06,489 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:07,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:11,476 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:12,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:16,496 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:17,197 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:21,477 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:26,490 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 17:08:27,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 20:11:28,924 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 20:11:29,125 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 20:11:31,302 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 20:11:38,899 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 20:11:39,081 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 20:11:39,249 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 20:11:44,245 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 20:11:46,110 - INFO - <-update_settings-> Settings updated.
-2019-05-22 20:11:48,900 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 20:11:49,085 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
-2019-05-22 20:11:49,750 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 20:11:51,435 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
-2019-05-22 20:11:53,937 - DEBUG - <-set state-> Printer state change detected!
-2019-05-22 20:11:53,938 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:11:53,938 - DEBUG - <-get_duet_status-> Printer needs update. Running update_rings
-2019-05-22 20:11:53,944 - DEBUG - <-ActionThread-> ring1 set to no change.
-2019-05-22 20:11:53,944 - DEBUG - <-ActionThread-> ring2 set to no change.
-2019-05-22 20:11:53,945 - DEBUG - <-ActionThread-> ring3 set to no change.
-2019-05-22 20:11:54,102 - DEBUG - <-set state-> Printer state change detected!
-2019-05-22 20:11:54,102 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:11:54,102 - DEBUG - <-get_duet_status-> Printer needs update. Running update_rings
-2019-05-22 20:11:54,107 - DEBUG - <-ActionThread-> ring1 set to no change.
-2019-05-22 20:11:54,108 - DEBUG - <-ActionThread-> ring2 set to no change.
-2019-05-22 20:11:54,109 - DEBUG - <-ActionThread-> ring3 set to no change.
-2019-05-22 20:11:58,945 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:11:59,106 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:03,953 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:04,129 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:08,934 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:09,102 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:13,935 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:14,107 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:18,919 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:19,130 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:23,934 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:24,125 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:27,867 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'P', 'coords': {'axesHomed': [1, 1, 1], 'xyz': [165.934, 103.876, 0.2], 'machine': [154.831, 115.11, 0.1], 'extr': [172.3]}, 'speeds': {'requested': 40.0, 'top': 40.0}, 'currentTool': 0, 'params': {'atxPower': 1, 'fanPercent': [0, 100, 100, 0, 0, 0, 0, 0, 0], 'speedFactor': 100.0, 'extrFactors': [100.0], 'babystep': -0.1}, 'seq': 14, 'sensors': {'probeValue': 537, 'fanRPM': 0}, 'temps': {'bed': {'current': 64.7, 'active': 65.0, 'state': 2, 'heater': 0}, 'current': [64.7, 240.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[240.0]], 'standby': [[240.0]]}, 'extra': [{'name': '*MCU', 'temp': 37.0}]}, 'time': 956.0, 'currentLayer': 1, 'currentLayerTime': 0.0, 'extrRaw': [173.7], 'fractionPrinted': 0.5, 'filePosition': 33747, 'firstLayerDuration': 282.8, 'firstLayerHeight': 0.2, 'printDuration': 282.8, 'warmUpDuration': 0.0, 'timesLeft': {'file': 53297.2, 'filament': 11955.6, 'layer': 0.0}}", 'state': 'P', 'hotend': [240.0, 240.0, 1.0], 'bed': [64.7, 65.0, 0.9953846153846154], 'percent': 0.5}.
-2019-05-22 20:12:28,952 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:29,132 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:33,931 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:34,116 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:38,923 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:39,113 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:43,933 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:44,103 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:48,923 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:49,102 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:53,923 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:54,105 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:58,929 - DEBUG - <-get_duet_status-> Printer status updated.
-2019-05-22 20:12:59,095 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-23 09:41:56,261 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:42:00,920 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:05,620 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:10,921 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:15,619 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:20,922 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:21,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:42:21,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:42:25,620 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:30,920 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:35,619 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:40,920 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:45,618 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:46,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:42:46,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:42:50,922 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:42:55,620 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:00,921 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:05,618 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:10,919 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:11,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:43:11,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:43:15,619 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:20,921 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:25,620 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:30,922 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:32,505 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:43:36,255 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:43:36,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:44:01,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:44:01,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:44:08,056 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:44:26,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:44:26,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:44:42,703 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:44:51,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:45:08,570 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:45:16,255 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:45:16,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:45:30,035 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:45:41,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:45:41,261 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:45:54,037 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:46:06,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:46:06,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:46:31,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:46:31,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:46:38,525 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:46:45,327 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:46:56,255 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:46:56,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:47:21,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:47:21,263 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:47:44,221 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:47:46,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:47:46,262 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:48:11,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:48:11,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:48:13,034 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:48:33,008 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:48:36,256 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:48:36,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:01,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:01,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:09,543 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:49:10,049 - DEBUG - <-debug_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:10,050 - DEBUG - <-debug_status-> No response received
+2019-05-23 09:49:16,791 - DEBUG - <-debug_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:16,792 - DEBUG - <-debug_status-> No response received
+2019-05-23 09:49:26,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:26,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:26,604 - DEBUG - <-debug_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:49:26,605 - DEBUG - <-debug_status-> No response received
+2019-05-23 09:49:51,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:50:16,251 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:50:16,252 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:50:41,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:50:41,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:51:06,261 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:51:06,262 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:51:31,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:51:31,263 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:51:56,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:51:56,262 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:52:21,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:52:21,272 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:52:46,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:52:46,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:53:11,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:53:11,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:53:36,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:54:01,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:54:01,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:54:26,252 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:54:26,253 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:54:51,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:54:51,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:55:16,256 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:55:16,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:55:41,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:55:41,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:56:06,254 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:56:06,263 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:56:27,927 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:56:31,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:56:37,662 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:56:56,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:56:56,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:57:21,253 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:57:21,255 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:57:46,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:57:51,466 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 09:58:11,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:58:11,263 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:58:36,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:58:36,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:59:01,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:59:01,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:59:26,261 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:59:26,263 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:59:51,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 09:59:51,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:00:16,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:00:16,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:00:41,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:00:41,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:01:06,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:01:31,256 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:01:31,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:01:56,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:02:21,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:02:21,261 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:02:46,253 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:02:46,274 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:03:11,255 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:03:11,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:03:36,256 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:03:36,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:04:01,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:04:01,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:04:26,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:04:51,254 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:04:51,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:05:16,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:05:16,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:05:41,257 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:05:41,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:06:06,258 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:06:06,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:06:31,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:06:31,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:06:36,179 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 10:06:56,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:06:56,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:07:03,749 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-23 10:07:21,259 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:07:21,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:07:46,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:07:46,260 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:08:11,256 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 10:08:11,261 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://192.168.4.145/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-23 11:57:16,280 - INFO - <-startup-> ***ERROR*** Settings table not created yet.
+2019-05-23 11:57:16,280 - INFO - <-startup-> Dropping all db tables...
+2019-05-23 11:57:16,280 - INFO - <-startup-> Dropping all db tables...
+2019-05-23 11:57:16,429 - INFO - <-startup-> Creating all db tables...
+2019-05-23 11:57:16,580 - INFO - <-startup-> Adding default Settings values...
+2019-05-23 11:57:16,663 - INFO - <-startup-> Settings Done!
+2019-05-23 11:57:16,663 - INFO - <-startup-> Adding default Param values...
+2019-05-23 11:57:16,771 - INFO - <-startup-> Done!
+2019-05-23 11:57:17,013 - INFO - <-startup-> Creating all db tables...
+2019-05-23 11:57:17,262 - INFO - <-startup-> Adding default Settings values...
+2019-05-23 11:57:17,338 - INFO - <-startup-> Settings Done!
+2019-05-23 11:57:17,338 - INFO - <-startup-> Adding default Param values...
+2019-05-23 11:57:17,429 - INFO - <-startup-> Done!
+2019-05-23 15:21:29,065 - INFO - <-update_settings-> Settings updated.
+2019-05-23 15:21:34,067 - INFO - <-update_action-> Param updated.
+2019-05-23 15:23:16,569 - INFO - <-reset_to_defaults-> Dropping all db tables...
+2019-05-23 15:23:16,779 - INFO - <-reset_to_defaults-> Creating all db tables...
+2019-05-23 15:23:17,103 - INFO - <-reset_to_defaults-> Adding default Settings values...
+2019-05-23 15:23:17,178 - INFO - <-reset_to_defaults-> Settings Done!
+2019-05-23 15:23:17,179 - INFO - <-reset_to_defaults-> Adding default Param values...
+2019-05-23 15:23:17,262 - INFO - <-reset_to_defaults-> Done! Redirecting to /
+2019-05-23 16:08:41,662 - INFO - <-startup-> ***ERROR*** Settings table not created yet.
+2019-05-23 16:08:41,662 - INFO - <-startup-> ***ERROR*** Settings table not created yet.
+2019-05-23 16:08:41,662 - INFO - <-startup-> Dropping all db tables...
+2019-05-23 16:08:41,663 - INFO - <-startup-> Creating all db tables...
+2019-05-23 16:08:41,663 - INFO - <-startup-> Creating all db tables...
+2019-05-23 16:08:42,144 - INFO - <-startup-> Adding default Settings values...
+2019-05-23 16:08:42,314 - INFO - <-startup-> Settings Done!
+2019-05-23 16:08:42,315 - INFO - <-startup-> Adding default Param values...
+2019-05-23 16:08:42,418 - INFO - <-startup-> Done!
+2019-05-23 16:11:29,891 - INFO - <-startup-> App started.
+2019-05-23 16:11:29,908 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:11:30,951 - INFO - <-startup-> App started.
+2019-05-23 16:11:30,968 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:12:15,958 - INFO - <-startup-> App started.
+2019-05-23 16:12:15,974 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:12:15,975 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:36:32,804 - INFO - <-update_action-> Param updated.
+2019-05-23 16:36:45,680 - INFO - <-update_action-> Param updated.
+2019-05-23 16:36:50,052 - INFO - <-test_event-> Test Started.
+2019-05-23 16:40:04,546 - INFO - <-startup-> App started.
+2019-05-23 16:40:04,602 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:40:04,603 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:40:29,471 - INFO - <-test_event-> Test Started.
+2019-05-23 16:41:02,573 - INFO - <-startup-> App started.
+2019-05-23 16:41:02,589 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:41:02,590 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:41:07,383 - INFO - <-test_event-> Test Started.
+2019-05-23 16:41:16,215 - INFO - <-startup-> App started.
+2019-05-23 16:41:16,230 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:41:16,231 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:41:20,938 - INFO - <-test_event-> Test Started.
+2019-05-23 16:45:34,774 - INFO - <-startup-> App started.
+2019-05-23 16:45:34,789 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:45:34,790 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:45:55,283 - INFO - <-test_event-> Test Started.
+2019-05-23 16:46:39,062 - INFO - <-startup-> App started.
+2019-05-23 16:46:39,080 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:46:39,081 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:46:43,930 - INFO - <-test_event-> Test Started.
+2019-05-23 16:47:15,898 - INFO - <-startup-> App started.
+2019-05-23 16:47:15,915 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:47:15,916 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:47:20,467 - INFO - <-startup-> App started.
+2019-05-23 16:47:20,483 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:47:20,484 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:47:42,329 - INFO - <-startup-> App started.
+2019-05-23 16:47:42,345 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:47:42,346 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:47:54,144 - INFO - <-startup-> App started.
+2019-05-23 16:47:54,159 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:47:54,161 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:58:50,685 - INFO - <-startup-> App started.
+2019-05-23 16:58:50,689 - INFO - <-startup-> App started.
+2019-05-23 16:58:50,734 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:58:50,734 - INFO - <-startup-> Setting config global variables from Settings table.
+2019-05-23 16:58:50,735 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:58:50,735 - INFO - <-startup-> Startup thread complete.
+2019-05-23 16:58:53,948 - INFO - <-test_event-> Test Started.

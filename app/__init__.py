@@ -1,4 +1,3 @@
-import threading
 import requests
 import time
 from flask import Flask
@@ -8,6 +7,7 @@ app = Flask(__name__)
 app.config.from_pyfile('flask.cfg')
 
 
+### db Init ###
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 db.init_app(app)
@@ -19,7 +19,7 @@ handler = RotatingFileHandler(app.config['LOGFILE'], maxBytes=100000, backupCoun
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 logger.addHandler(handler)
 
 ### Printer Init ###
@@ -27,10 +27,10 @@ from app.printer_status import PrinterStatus
 printer = PrinterStatus()
 
 ### NeoPixel Init ###
-import board
-import neopixel
+#import board
+#import neopixel
 pixels = None
-pixels = neopixel.NeoPixel(app.config['PIXEL_PIN'], app.config['NEO_PIXELS'] * app.config['NUM_RINGS'], auto_write=False, pixel_order=app.config['ORDER'])
+#pixels = neopixel.NeoPixel(app.config['PIXEL_PIN'], app.config['NEO_PIXELS'] * app.config['NUM_RINGS'], auto_write=False, pixel_order=app.config['ORDER'])
 
 ### APScheduler Init ###
 import json
@@ -43,52 +43,63 @@ scheduler = APScheduler()
 scheduler.init_app(app)
 scheduler.start()
 
+# drops and creates db tables to auto-initialize the first time this app is run
+def create_tables():
+    logger.info('<-startup-> Dropping all db tables...')
+    db.drop_all()
+    logger.info('<-startup-> Creating all db tables...')
+    db.create_all()
+    
+    logger.info('<-startup-> Adding default Settings values...')
+    defaults = json.load(open('app/settings.default.json'))
+    s = Settings(
+        hostname = defaults['hostname'],
+        password = defaults['password'],
+        pixel_pin = defaults['pixel_pin'],
+        interval = defaults['interval'],
+        order = defaults['order'],
+        num_pixels = defaults['num_pixels'],
+        num_rings = defaults['num_rings']
+    )
+    db.session.add(s)
+    db.session.commit()
+    logger.info('<-startup-> Settings Done!')
+
+    logger.info('<-startup-> Adding default Param values...')
+    defaults = json.load(open('app/params.default.json'))
+    for key,events in defaults.items():
+        for event,param in events.items():
+            p = Param(
+                ringnum = int(key),
+                event = event,
+                action = param['action'],
+                color1 = param['color1'],
+                color2 = param['color2'],
+                interval = param['interval']
+            )
+            db.session.add(p)
+    db.session.commit()
+    logger.info('<-startup-> Done!')
+
 @scheduler.task('date', id='startup')
 def startup():
-    print('startup')
+    logger.info('<-startup-> App started.')
     with app.app_context():
         try:
             Settings.query.all()
         except:
             logger.info('<-startup-> ***ERROR*** Settings table not created yet.')
-            logger.info('<-startup-> Dropping all db tables...')
-            db.drop_all()
-            logger.info('<-startup-> Creating all db tables...')
-            db.create_all()
-            
-            logger.info('<-startup-> Adding default Settings values...')
-            defaults = json.load(open('app/settings.default.json'))
-            s = Settings(
-                hostname = defaults['hostname'],
-                password = defaults['password'],
-                pixel_pin = defaults['pixel_pin'],
-                interval = defaults['interval'],
-                order = defaults['order'],
-                num_pixels = defaults['num_pixels'],
-                num_rings = defaults['num_rings']
-            )
-            db.session.add(s)
-            db.session.commit()
-            logger.info('<-startup-> Settings Done!')
+            create_tables()
 
-            logger.info('<-startup-> Adding default Param values...')
-            defaults = json.load(open('app/params.default.json'))
-            for key,events in defaults.items():
-                for event,param in events.items():
-                    p = Param(
-                        ringnum = int(key),
-                        event = event,
-                        action = param['action'],
-                        color1 = param['color1'],
-                        color2 = param['color2'],
-                        interval = param['interval']
-                    )
-                    db.session.add(p)
-            db.session.commit()
-            logger.info('<-startup-> Done!')
+        logger.info('<-startup-> Setting config global variables from Settings table.')
         s = Settings.query.first()
+        if s.loglevel == 'info':
+            logger.setLevel(logging.INFO)
+        elif s.loglevel == 'debug':
+            logger.setLevel(logging.DEBUG)
         app.config['NEO_PIXELS'] = s.num_pixels
         app.config['NUM_RINGS'] = s.num_rings
+        """
         app.config['ORDER'] = neopixel.RGB
         if s.order == 'RGB':
             app.config['ORDER'] = neopixel.RGB
@@ -110,6 +121,8 @@ def startup():
         elif s.pixel_pin == 21:
             app.config['PIXEL_PIN'] = board.D21
         pixels.pixel_pin = app.config['PIXEL_PIN']
+        """
+        logger.info('<-startup-> Startup thread complete.')
 
 @scheduler.task('interval', id='duet_status', seconds=5)
 def get_status():
@@ -126,8 +139,6 @@ def get_status():
         with app.app_context():
             s = Settings.query.first()
             host = 'http://' + s.hostname + '/rr_status'
-            #print(host)
-            #host = 'http://localhost:5001/rr_status'
             args = {'type': '3'}
             response = None
             try:
