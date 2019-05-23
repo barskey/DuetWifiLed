@@ -371,3 +371,54 @@
 2019-05-22 17:08:22,195 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
 2019-05-22 17:08:26,490 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
 2019-05-22 17:08:27,194 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 20:11:28,924 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 20:11:29,125 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 20:11:31,302 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 20:11:38,899 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 20:11:39,081 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 20:11:39,249 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 20:11:44,245 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 20:11:46,110 - INFO - <-update_settings-> Settings updated.
+2019-05-22 20:11:48,900 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 20:11:49,085 - DEBUG - <-get_duet_status-> ***ERROR*** trying to get status host:http://duettest.local/rr_status args:{'type': '3'} response:<class 'requests.exceptions.ConnectionError'>
+2019-05-22 20:11:49,750 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 20:11:51,435 - DEBUG - <-get_status-> Returning current printer status:{'status': '', 'state': '', 'hotend': [-1, -1, 0], 'bed': [-1, -1, 0], 'percent': 0}.
+2019-05-22 20:11:53,937 - DEBUG - <-set state-> Printer state change detected!
+2019-05-22 20:11:53,938 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:11:53,938 - DEBUG - <-get_duet_status-> Printer needs update. Running update_rings
+2019-05-22 20:11:53,944 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-22 20:11:53,944 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-22 20:11:53,945 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-22 20:11:54,102 - DEBUG - <-set state-> Printer state change detected!
+2019-05-22 20:11:54,102 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:11:54,102 - DEBUG - <-get_duet_status-> Printer needs update. Running update_rings
+2019-05-22 20:11:54,107 - DEBUG - <-ActionThread-> ring1 set to no change.
+2019-05-22 20:11:54,108 - DEBUG - <-ActionThread-> ring2 set to no change.
+2019-05-22 20:11:54,109 - DEBUG - <-ActionThread-> ring3 set to no change.
+2019-05-22 20:11:58,945 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:11:59,106 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:03,953 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:04,129 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:08,934 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:09,102 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:13,935 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:14,107 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:18,919 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:19,130 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:23,934 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:24,125 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:27,867 - DEBUG - <-get_status-> Returning current printer status:{'status': "{'status': 'P', 'coords': {'axesHomed': [1, 1, 1], 'xyz': [165.934, 103.876, 0.2], 'machine': [154.831, 115.11, 0.1], 'extr': [172.3]}, 'speeds': {'requested': 40.0, 'top': 40.0}, 'currentTool': 0, 'params': {'atxPower': 1, 'fanPercent': [0, 100, 100, 0, 0, 0, 0, 0, 0], 'speedFactor': 100.0, 'extrFactors': [100.0], 'babystep': -0.1}, 'seq': 14, 'sensors': {'probeValue': 537, 'fanRPM': 0}, 'temps': {'bed': {'current': 64.7, 'active': 65.0, 'state': 2, 'heater': 0}, 'current': [64.7, 240.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0, 2000.0], 'state': [2, 2, 0, 0, 0, 0, 0, 0], 'tools': {'active': [[240.0]], 'standby': [[240.0]]}, 'extra': [{'name': '*MCU', 'temp': 37.0}]}, 'time': 956.0, 'currentLayer': 1, 'currentLayerTime': 0.0, 'extrRaw': [173.7], 'fractionPrinted': 0.5, 'filePosition': 33747, 'firstLayerDuration': 282.8, 'firstLayerHeight': 0.2, 'printDuration': 282.8, 'warmUpDuration': 0.0, 'timesLeft': {'file': 53297.2, 'filament': 11955.6, 'layer': 0.0}}", 'state': 'P', 'hotend': [240.0, 240.0, 1.0], 'bed': [64.7, 65.0, 0.9953846153846154], 'percent': 0.5}.
+2019-05-22 20:12:28,952 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:29,132 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:33,931 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:34,116 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:38,923 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:39,113 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:43,933 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:44,103 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:48,923 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:49,102 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:53,923 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:54,105 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:58,929 - DEBUG - <-get_duet_status-> Printer status updated.
+2019-05-22 20:12:59,095 - DEBUG - <-get_duet_status-> Printer status updated.
