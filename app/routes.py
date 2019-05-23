@@ -4,6 +4,8 @@ import json
 import requests, sys
 from app.models import Settings, Param
 from app.actions import ActionThread
+import neopixel
+import board
 
 @app.context_processor
 def context_processor():
@@ -33,7 +35,6 @@ def update_settings():
     s.interval = int(0 if request.form.get('interval') == '' else request.form.get('interval')) # TODO modify duet_status job with new interval
     s.pixel_pin = int(0 if request.form.get('neo1pin') == '' else request.form.get('neo1pin'))
     s.order = request.form.get('order')
-    """
     if s.order == 'RGB':
         app.config['ORDER'] = neopixel.RGB
     elif s.order == 'RGBW':
@@ -53,7 +54,6 @@ def update_settings():
     elif s.neopin == 21:
         app.config['PIXEL_PIN'] = board.D21
     pixels.pixel_pin = app.config['PIXEL_PIN']
-    """
 
     db.session.add(s)
     db.session.commit()
