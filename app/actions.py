@@ -88,7 +88,7 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
-            for i in reversed(range(self.n) if self.inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
+            for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
                 pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
                 pix_percent = (percent - i/self.n)/(1/self.n) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
@@ -120,7 +120,7 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.percentComplete / 100 # need percent as decimal bet 0 and 1
-            for i in reversed(range(self.n) if self.inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
+            for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
                 pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
                 pix_percent = (percent - i/self.n)/(1/self.n) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
@@ -212,8 +212,8 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             last_sleep = 0
-            for pos in reversed(range(self.n) if self.inv_dir == 1 else range(self.n):
-                for i in reversed(range(self.n) if self.inv_dir == 1 else range(self.n): # step through all pixels in this ring
+            for pos in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n):
+                for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n): # step through all pixels in this ring
                     pixnum = i + self.n * (self._ringnum - 1)
                     self._pixels[pixnum] = c if i == pos else b
                 self._pixels.show()
@@ -233,7 +233,7 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             for j in range(255):
-                for i in reversed(range(self.n) if self.inv_dir == 1 else range(self.n):
+                for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n):
                     pixnum = i + self.n * (self._ringnum - 1)
                     pixel_index = (i * 256 // self.n) + j # // is floor division
                     self._pixels[pixnum] = self.wheel(pixel_index & 255) # bitwise and makes sure it is always less than 255
