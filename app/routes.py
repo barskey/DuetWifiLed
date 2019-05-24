@@ -36,7 +36,6 @@ def update_settings():
     s.brightness = float(request.form.get('brightness'))
     pixels.brightness = s.brightness
     s.invert_dir = 1 if request.form.get('invert-dir') == 'on' else 0
-    print(s.invert_dir)
     app.config['INV_DIR'] = s.invert_dir
 
     s.order = request.form.get('order')
