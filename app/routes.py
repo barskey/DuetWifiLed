@@ -33,7 +33,7 @@ def update_settings():
     s.hostname = request.form.get('hostname')
     s.password = request.form.get('password')
     s.interval = int(0 if request.form.get('interval') == '' else request.form.get('interval')) # TODO modify duet_status job with new interval
-    s.pixel_pin = int(0 if request.form.get('neo1pin') == '' else request.form.get('neo1pin'))
+    s.pixel_pin = int(0 if request.form.get('neo1pin', '') == '' else request.form.get('neo1pin'))
     s.order = request.form.get('order')
     if s.order == 'RGB':
         app.config['ORDER'] = neopixel.RGB
