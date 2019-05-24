@@ -50,11 +50,12 @@ $( document ).ready( function() {
             $modal.find( '#interval' ).attr( 'readonly', false );
         }
         if ( action == 2 ) { // disable second color for 2-solid
+            $modal.find( '#color1' ).spectrum( 'enable' );
             $modal.find( '#color2' ).spectrum( 'disable' );
         } else if ( action == 9 ) { // disable both colors for 9-rainbow
-            $modal.find( '#color1, #color2' ).spectrum( 'disable' );
+            $modal.find( '#color1,#color2' ).spectrum( 'disable' );
         } else {
-            $modal.find( '#color2' ).spectrum( 'enable' );
+            $modal.find( '#color1,#color2' ).spectrum( 'enable' );
         }
 
         $modal.find( '#color1' ).spectrum( 'set', params.color1 );

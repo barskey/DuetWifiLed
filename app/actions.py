@@ -88,8 +88,9 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
-            for i in reversed(range(self.n)) if inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
-                pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
+            for i in range(self.n): # repeat 16 times - once for each pixel in ring
+                ix = self.n - i - 1 if inv_dir == 1 else i
+                pixnum = ix + self.n * (self._ringnum - 1) # adjust pixnum for ring number
                 pix_percent = (percent - i/self.n)/(1/self.n) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
                     self._pixels[pixnum] = b
