@@ -44,6 +44,7 @@ def update_settings():
     elif s.order == 'GRBW':
         app.config['ORDER'] = neopixel.GRBW
     pixels.order = app.config['ORDER']
+    print(app.config['ORDER'])
     
     app.config['PIXEL_PIN'] = board.D10
     if s.pixel_pin == 10:
