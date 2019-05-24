@@ -222,7 +222,7 @@ class ActionThread(threading.Thread):
                 last_sleep = e.ease(p) # save this sleep time for subtracting from next round
                 #print ('pos:{} sleep:{}'.format(pos, s)) # debug
                 time.sleep(s)
-            self.inv_dir = app.config['INVERT_DIR']
+            self.inv_dir = app.config['INV_DIR']
             logger.debug('<-chase->   Ring:{} loop completed - chase color:{}'.format(self._ringnum, c))
             loop_counter = loop_counter - 1
 
