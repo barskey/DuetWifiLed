@@ -11,6 +11,8 @@ class Settings(db.Model):
     num_pixels = db.Column(db.Integer)
     num_rings = db.Column(db.Integer)
     loglevel = db.Column(db.String(10))
+    brightness = db.Column(db.Float)
+    invert_dir = db.Column(db.Integer)
 
     def __repr__(self):
         return 'hostname:{}'.format(self.hostname)

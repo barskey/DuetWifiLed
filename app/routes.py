@@ -33,7 +33,10 @@ def update_settings():
     s.hostname = request.form.get('hostname')
     s.password = request.form.get('password')
     s.interval = int(0 if request.form.get('interval') == '' else request.form.get('interval')) # TODO modify duet_status job with new interval
-    s.pixel_pin = int(0 if request.form.get('neo1pin', '') == '' else request.form.get('neo1pin'))
+    s.brightness = float(request.form.get('brightness'))
+    pixels.brightness = s.brightness
+    s.invert_dir = 1 if request.form.get('invert-dir') == 'true' else 0
+
     s.order = request.form.get('order')
     if s.order == 'RGB':
         app.config['ORDER'] = neopixel.RGB
@@ -44,9 +47,8 @@ def update_settings():
     elif s.order == 'GRBW':
         app.config['ORDER'] = neopixel.GRBW
     pixels.order = app.config['ORDER']
-    print(app.config['ORDER'])
     
-    app.config['PIXEL_PIN'] = board.D10
+    s.pixel_pin = int(0 if request.form.get('neo1pin', '') == '' else request.form.get('neo1pin'))
     if s.pixel_pin == 10:
         app.config['PIXEL_PIN'] = board.D10
     elif s.pixel_pin == 12:
@@ -107,7 +109,6 @@ def update_action():
 @app.route('/test_event', methods=['GET', 'POST'])
 def test_event():
     settings = Settings.query.first()
-    order = settings.order
     ring_num = int(request.form.get('ring'))
     action_params = {
         'action': int(request.form.get('action')),
