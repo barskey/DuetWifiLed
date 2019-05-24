@@ -26,7 +26,7 @@ class ActionThread(threading.Thread):
         """ Stop the thread. """
         logger.debug('<-ActionThread-> Stopping thread {}...'.format(self.getName()))
         self._stopevent.set()
-        sef.clean_up()
+        self.clean_up()
         threading.Thread.join(self, timeout)
 
     def run(self):
