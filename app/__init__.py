@@ -27,10 +27,10 @@ from app.printer_status import PrinterStatus
 printer = PrinterStatus()
 
 ### NeoPixel Init ###
-#import board
-#import neopixel
-pixels = None
-#pixels = neopixel.NeoPixel(app.config['PIXEL_PIN'], app.config['NEO_PIXELS'] * app.config['NUM_RINGS'], auto_write=False, pixel_order=app.config['ORDER'])
+import board
+import neopixel
+#pixels = None
+pixels = neopixel.NeoPixel(app.config['PIXEL_PIN'], app.config['NEO_PIXELS'] * app.config['NUM_RINGS'], auto_write=False, pixel_order=app.config['ORDER'])
 
 ### APScheduler Init ###
 import json
@@ -99,7 +99,6 @@ def startup():
             logger.setLevel(logging.DEBUG)
         app.config['NEO_PIXELS'] = s.num_pixels
         app.config['NUM_RINGS'] = s.num_rings
-        """
         app.config['ORDER'] = neopixel.RGB
         if s.order == 'RGB':
             app.config['ORDER'] = neopixel.RGB
@@ -121,7 +120,6 @@ def startup():
         elif s.pixel_pin == 21:
             app.config['PIXEL_PIN'] = board.D21
         pixels.pixel_pin = app.config['PIXEL_PIN']
-        """
         logger.info('<-startup-> Startup thread complete.')
 
 @scheduler.task('interval', id='duet_status', seconds=5)

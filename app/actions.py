@@ -2,7 +2,7 @@ import threading
 import time
 from app import app, logger
 from easing_functions import CubicEaseInOut
-#import neopixel
+import neopixel
 
 class ActionThread(threading.Thread):
     """Thread class that will stop itself when joined."""
