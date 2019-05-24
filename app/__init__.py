@@ -99,7 +99,7 @@ def startup():
             logger.setLevel(logging.DEBUG)
         app.config['NEO_PIXELS'] = s.num_pixels
         app.config['NUM_RINGS'] = s.num_rings
-        app.config['ORDER'] = neopixel.RGB
+        app.config['ORDER'] = neopixel.GRB
         if s.order == 'RGB':
             app.config['ORDER'] = neopixel.RGB
         elif s.order == 'RGBW':
@@ -110,7 +110,7 @@ def startup():
             app.config['ORDER'] = neopixel.GRBW
         pixels.order = app.config['ORDER']
         
-        app.config['PIXEL_PIN'] = board.D18
+        app.config['PIXEL_PIN'] = board.D10
         if s.pixel_pin == 10:
             app.config['PIXEL_PIN'] = board.D10
         elif s.pixel_pin == 12:
@@ -119,7 +119,7 @@ def startup():
             app.config['PIXEL_PIN'] = board.D18
         elif s.pixel_pin == 21:
             app.config['PIXEL_PIN'] = board.D21
-        pixels.pin = app.config['PIXEL_PIN']
+        #pixels.pin = app.config['PIXEL_PIN'] # TODO - figure out way to change after instantiated -- currently gives error
         logger.info('<-startup-> Startup thread complete.')
 
 @scheduler.task('interval', id='duet_status', seconds=5)

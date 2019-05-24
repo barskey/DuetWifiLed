@@ -45,6 +45,7 @@ def update_settings():
         app.config['ORDER'] = neopixel.GRBW
     pixels.order = app.config['ORDER']
     
+    app.config['PIXEL_PIN'] = board.D10
     if s.pixel_pin == 10:
         app.config['PIXEL_PIN'] = board.D10
     elif s.pixel_pin == 12:
@@ -53,7 +54,7 @@ def update_settings():
         app.config['PIXEL_PIN'] = board.D18
     elif s.pixel_pin == 21:
         app.config['PIXEL_PIN'] = board.D21
-    pixels.pin = app.config['PIXEL_PIN']
+    #pixels.pin = app.config['PIXEL_PIN'] # TODO - figure out way to change after instantiated -- currently gives error
 
     db.session.add(s)
     db.session.commit()

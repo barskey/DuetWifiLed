@@ -1,1 +1,1 @@
-{"hostname": "duettest.local", "password": "", "interval": 5, "pixel_pin": 10, "order": "RGB", "num_pixels": 16, "num_rings": 3, "loglevel": "info"}
+{"hostname": "duettest.local", "password": "", "interval": 5, "pixel_pin": 10, "order": "GRB", "num_pixels": 16, "num_rings": 3, "loglevel": "info"}

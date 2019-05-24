@@ -50,7 +50,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <label for="order" class="custom-label">Pi GPIO Pin</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="NOTE: Currently must be GPIO10 so app can run without sudo."></span>
+                            <label for="order" class="custom-label">Pi GPIO Pin</label>&nbsp;<span data-feather="help-circle" class="text-danger" data-toggle="tooltip" title="NOTE: Must be GPIO10 so app can run without sudo. Changing this currently does NOTHING."></span>
                             <select class="custom-select pdwn-setting" id="neo1pin" name="neo1pin" disabled>
                                 <option value="">Pin...</option>
                                 <option value=10 {% if settings.pixel_pin == 10 %}selected{% endif %}>10</option>
