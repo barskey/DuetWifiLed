@@ -59,7 +59,9 @@ def create_tables():
         interval = defaults['interval'],
         order = defaults['order'],
         num_pixels = defaults['num_pixels'],
-        num_rings = defaults['num_rings']
+        num_rings = defaults['num_rings'],
+        brightness = defaults['brightness'],
+        invert_dir = defaults['invert_dir']
     )
     db.session.add(s)
     db.session.commit()
