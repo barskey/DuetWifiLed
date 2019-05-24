@@ -17,7 +17,6 @@ class ActionThread(threading.Thread):
 
         self.n = app.config['NEO_PIXELS'] # for convenience
         self.order = app.config['ORDER'] # for convenience
-        self.inv_dir = app.config['INV_DIR'] # for convenience
 
         self._pixels = pixels
         self._printer = printer
@@ -81,6 +80,7 @@ class ActionThread(threading.Thread):
             c = c + (0,)
             b = b + (0,)
 
+        inv_dir = app.config['INV_DIR']
         loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
             if test is True and loop_counter <= 0:
@@ -88,7 +88,7 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
-            for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
+            for i in reversed(range(self.n)) if inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
                 pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
                 pix_percent = (percent - i/self.n)/(1/self.n) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
@@ -101,6 +101,7 @@ class ActionThread(threading.Thread):
                     cx = tuple(round(x * pix_percent) for x in c)
                     self._pixels[pixnum] = cx
             self._pixels.show()
+            inv_dir = app.config['INV_DIR'] # in case setting has been updated
             logger.debug('<-temp->    Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
             loop_counter = loop_counter - 1
             time.sleep(1) # update temp every 1 second
@@ -113,6 +114,7 @@ class ActionThread(threading.Thread):
             c = c + (0,)
             b = b + (0,)
 
+        inv_dir = app.config['INV_DIR']
         loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
             if test is True and loop_counter <= 0:
@@ -120,7 +122,7 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.percentComplete / 100 # need percent as decimal bet 0 and 1
-            for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
+            for i in reversed(range(self.n)) if inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
                 pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
                 pix_percent = (percent - i/self.n)/(1/self.n) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
@@ -133,6 +135,7 @@ class ActionThread(threading.Thread):
                     cx = tuple(round(x * pix_percent) for x in c)
                     self._pixels[pixnum] = cx
             self._pixels.show()
+            inv_dir = app.config['INV_DIR'] # in case setting has been updated
             logger.debug('<-print_%-> Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
             loop_counter = loop_counter - 1
             time.sleep(1) # update temp every 1 second
@@ -203,6 +206,7 @@ class ActionThread(threading.Thread):
             c = c + (0,)
             b = b + (0,)
 
+        inv_dir = app.config['INV_DIR']
         # creates easing instance for smoothing animations
         e = CubicEaseInOut(0, self._interval, self.n) # will go from 0 to interval in 16 steps
         loop_counter = 2 # use to run a certain number of loops when called with test True
@@ -212,21 +216,22 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             last_sleep = 0
-            for pos in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n):
-                for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n): # step through all pixels in this ring
+            for pos in reversed(range(self.n)) if inv_dir == 1 else range(self.n):
+                for i in reversed(range(self.n)) if inv_dir == 1 else range(self.n): # step through all pixels in this ring
                     pixnum = i + self.n * (self._ringnum - 1)
                     self._pixels[pixnum] = c if i == pos else b
                 self._pixels.show()
-                p = self.n - (pos - 1) if self.inv_dir == 1 else pos
+                p = self.n - (pos - 1) if inv_dir == 1 else pos
                 s = e.ease(p) - last_sleep # gets the sleep time using cubic ease-in/out
                 last_sleep = e.ease(p) # save this sleep time for subtracting from next round
                 #print ('pos:{} sleep:{}'.format(pos, s)) # debug
                 time.sleep(s)
-            self.inv_dir = app.config['INV_DIR']
+            inv_dir = app.config['INV_DIR']
             logger.debug('<-chase->   Ring:{} loop completed - chase color:{}'.format(self._ringnum, c))
             loop_counter = loop_counter - 1
 
     def rainbow(self, test=False):
+        inv_dir = app.config['INV_DIR']
         loop_counter = 2 # use to run a certain number of loops when called with test True
         wait = self._interval / 255 # one rainbow cycle is 255 colors
         while True:
@@ -235,12 +240,13 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             for j in range(255):
-                for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n):
+                for i in reversed(range(self.n)) if inv_dir == 1 else range(self.n):
                     pixnum = i + self.n * (self._ringnum - 1)
                     pixel_index = (i * 256 // self.n) + j # // is floor division
                     self._pixels[pixnum] = self.wheel(pixel_index & 255) # bitwise and makes sure it is always less than 255
                 self._pixels.show()
                 time.sleep(wait)
+            inv_dir = app.config['INV_DIR'] # in case inv_dir has been changed
             logger.debug('<-rainbow-> Ring:{} loop completed'.format(self._ringnum))
             loop_counter = loop_counter - 1
 
