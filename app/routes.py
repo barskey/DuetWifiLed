@@ -36,6 +36,7 @@ def update_settings():
     s.brightness = float(request.form.get('brightness'))
     pixels.brightness = s.brightness
     s.invert_dir = 1 if request.form.get('invert-dir') == 'true' else 0
+    app.config['INV_DIR'] = s.invert_dir
 
     s.order = request.form.get('order')
     if s.order == 'RGB':
@@ -208,7 +209,9 @@ def reset_to_defaults():
         interval = defaults['interval'],
         order = defaults['order'],
         num_pixels = defaults['num_pixels'],
-        num_rings = defaults['num_rings']
+        num_rings = defaults['num_rings'],
+        brightness = defaults['brightness'],
+        invert_dir = defaults['invert_dir']
     )
     db.session.add(s)
     db.session.commit()

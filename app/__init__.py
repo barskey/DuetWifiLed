@@ -102,6 +102,7 @@ def startup():
         pixels.brightness = s.brightness
         app.config['NEO_PIXELS'] = s.num_pixels
         app.config['NUM_RINGS'] = s.num_rings
+        app.config['INV_DIR'] = s.invert_dir
         if s.order == 'RGB':
             app.config['ORDER'] = neopixel.RGB
         elif s.order == 'RGBW':

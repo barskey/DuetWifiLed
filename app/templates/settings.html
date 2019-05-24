@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-row mb-2">
                         <div class="col">
-                            <label for="order" class="custom-label">RGB Order</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="Order/number of colors in LED ring/strip."></span>
+                            <label for="order" class="custom-label">Order</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="Order/number of colors in LED ring/strip."></span>
                             <select class="custom-select pdwn-setting" id="order" name="order">
                                 <option {% if settings.order == 'RGB' %}selected{% endif %}>RGB</option>
                                 <option {% if settings.order == 'GRB' %}selected{% endif %}>GRB</option>
@@ -59,7 +59,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <label for="invert-dir" class="custom-label">Invert Dir</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="If your rings count up from 0 in CCW direction, set this to reverse."></span>
+                            <label for="invert-dir" class="custom-label">Invert</label>&nbsp;<span data-feather="help-circle" class="text-warning" data-toggle="tooltip" title="If your rings count up from 0 in CCW direction, set this to reverse."></span>
                             <input type="checkbox" name="invert-dir" id="invert-dir" data-toggle="toggle" {% if settings.invert_dir == 1 %}checked{% endif %}>
                         </div>
                     </div>
