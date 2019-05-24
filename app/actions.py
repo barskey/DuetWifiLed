@@ -115,9 +115,9 @@ class ActionThread(threading.Thread):
                 return
             if self.stopped():
                 return
-            percent = self._printer.percentComplete
+            percent = self._printer.percentComplete / 100 # need percent as decimal bet 0 and 1
             for i in range(app.config['NEO_PIXELS']): # repeat 16 times - once for each pixel in ring
-                pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1) # adjust pixnum for ring number
+                pixnum = app.config['NEO_PIXELS'] - (i + app.config['NEO_PIXELS'] * (self._ringnum - 1)) # adjust pixnum for ring number
                 pix_percent = (percent - i/app.config['NEO_PIXELS'])/(1/app.config['NEO_PIXELS']) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
                     self._pixels[pixnum] = b
