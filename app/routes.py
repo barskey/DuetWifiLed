@@ -43,7 +43,7 @@ def update_settings():
         app.config['ORDER'] = neopixel.GRB
     elif s.order == 'GRBW':
         app.config['ORDER'] = neopixel.GRBW
-    pixels.pixel_order = app.config['ORDER']
+    pixels.order = app.config['ORDER']
     
     if s.pixel_pin == 10:
         app.config['PIXEL_PIN'] = board.D10
@@ -53,7 +53,7 @@ def update_settings():
         app.config['PIXEL_PIN'] = board.D18
     elif s.pixel_pin == 21:
         app.config['PIXEL_PIN'] = board.D21
-    pixels.pixel_pin = app.config['PIXEL_PIN']
+    pixels.pin = app.config['PIXEL_PIN']
 
     db.session.add(s)
     db.session.commit()
