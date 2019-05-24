@@ -212,16 +212,17 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             last_sleep = 0
-            for pos in reversed(range(self.n)) if app.config['INV_DIR'] == 1 else range(self.n):
-                for i in reversed(range(self.n)) if app.config['INV_DIR'] == 1 else range(self.n): # step through all pixels in this ring
+            for pos in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n):
+                for i in reversed(range(self.n)) if self.inv_dir == 1 else range(self.n): # step through all pixels in this ring
                     pixnum = i + self.n * (self._ringnum - 1)
                     self._pixels[pixnum] = c if i == pos else b
                 self._pixels.show()
-                p = self.n - (pos - 1) if app.config['INV_DIR'] == 1 else pos
+                p = self.n - (pos - 1) if self.inv_dir == 1 else pos
                 s = e.ease(p) - last_sleep # gets the sleep time using cubic ease-in/out
                 last_sleep = e.ease(p) # save this sleep time for subtracting from next round
                 #print ('pos:{} sleep:{}'.format(pos, s)) # debug
                 time.sleep(s)
+            self.inv_dir = app.config['INVERT_DIR']
             logger.debug('<-chase->   Ring:{} loop completed - chase color:{}'.format(self._ringnum, c))
             loop_counter = loop_counter - 1
 
