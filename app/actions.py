@@ -126,10 +126,10 @@ class ActionThread(threading.Thread):
                 pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
                 pix_percent = (percent - i/self.n)/(1/self.n) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
-                    self._pixels[pixnum] = b
+                    self._pixels[pixnum] = c if inv_dir == 1 else b
                     pass
                 elif pix_percent >= 1: # full percent pixel
-                    self._pixels[pixnum] = c
+                    self._pixels[pixnum] = b if inv_dir == 1 else c
                     pass
                 else: # fade color from off (0) to full color
                     cx = tuple(round(x * pix_percent) for x in c)
