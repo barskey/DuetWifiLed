@@ -122,14 +122,15 @@ class ActionThread(threading.Thread):
             if self.stopped():
                 return
             percent = self._printer.percentComplete / 100 # need percent as decimal bet 0 and 1
-            for i in reversed(range(self.n)) if inv_dir == 1 else range(self.n): # repeat 16 times - once for each pixel in ring
-                pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
+            for i in range(self.n): # repeat 16 times - once for each pixel in ring
+                ix = self.n - i - 1 if inv_dir == 1 else i
+                pixnum = ix + self.n * (self._ringnum - 1) # adjust pixnum for ring number
                 pix_percent = (percent - i/self.n)/(1/self.n) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
-                    self._pixels[pixnum] = c if inv_dir == 1 else b
+                    self._pixels[pixnum] = b
                     pass
                 elif pix_percent >= 1: # full percent pixel
-                    self._pixels[pixnum] = b if inv_dir == 1 else c
+                    self._pixels[pixnum] = c
                     pass
                 else: # fade color from off (0) to full color
                     cx = tuple(round(x * pix_percent) for x in c)
