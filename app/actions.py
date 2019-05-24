@@ -26,6 +26,7 @@ class ActionThread(threading.Thread):
         """ Stop the thread. """
         logger.debug('<-ActionThread-> Stopping thread {}...'.format(self.getName()))
         self._stopevent.set()
+        sef.clean_up()
         threading.Thread.join(self, timeout)
 
     def run(self):
@@ -85,7 +86,6 @@ class ActionThread(threading.Thread):
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
             for i in range(app.config['NEO_PIXELS']): # repeat 16 times - once for each pixel in ring
                 pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1) # adjust pixnum for ring number
-                threshold = (i + 1)/app.config['NEO_PIXELS'] # threshold before changing to next pixel
                 pix_percent = (percent - i/app.config['NEO_PIXELS'])/(1/app.config['NEO_PIXELS']) # normalize percentage complete to this pixel range
                 if pix_percent < 0: # background pixel
                     self._pixels[pixnum] = b
@@ -259,3 +259,9 @@ class ActionThread(threading.Thread):
             g = int(pos*3)
             b = int(255 - pos*3)
         return (r, g, b) if app.config['ORDER'] == neopixel.RGB or app.config['ORDER'] == neopixel.GRB else (r, g, b, 0)
+
+    def clean_up(self):
+        for i in range(app.config['NEO_PIXELS']): # repeat 16 times - once for each pixel in ring
+            pixnum = i + app.config['NEO_PIXELS'] * (self._ringnum - 1) # adjust pixnum for ring number
+            self._pixels[pixnum] = (0, 0, 0) if app.config['ORDER'] == neopixel.RGB or app.config['ORDER'] == neopixel.GRB else (0, 0, 0, 0)
+        self._pixels.show()

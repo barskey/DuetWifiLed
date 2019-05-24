@@ -169,7 +169,7 @@ def update_rings():
         action_params = events[printer.get_event()] #  get params for action to take for current printer state
         t = printer.get_task(ring_num - 1)
         if t is not None:
-            t.join()
+            t.join() # joining a task will stop it and wait until it is done
         t = ActionThread(action_params, printer, pixels, ring_num)
         t.setName('ring{}'.format(ring_num))
         t.daemon = True
