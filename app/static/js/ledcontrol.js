@@ -63,6 +63,13 @@ $( document ).ready( function() {
         $modal.find( '#color1' ).spectrum( 'set', params.color1 );
         $modal.find( '#color2' ).spectrum( 'set', params.color2 );
         $modal.find( '#interval' ).val( params.interval );
+
+        $.post( '/led-stop-ring', {ring: ring} )
+        .done( function( response ) {
+            $( '#status' ).text( response.msg );
+            console.log(response.msg);
+        });
+
         $modal.modal( 'show' );
     }
 
@@ -107,14 +114,6 @@ $( document ).ready( function() {
         // update the params and start test event
         var params = $modal.find( 'form' ).serialize();
         $.post( '/led-change-event', params )
-        .done( function( response ) {
-            $( '#status' ).text( response.msg );
-            console.log(response.msg);
-        });
-    });
-
-    $( '#paramModal' ).on( 'show.bs.modal', function(e) {
-        $.post( '/led-stop-ring', {ringnum: $( '#ring' )} )
         .done( function( response ) {
             $( '#status' ).text( response.msg );
             console.log(response.msg);
