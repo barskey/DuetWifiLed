@@ -108,7 +108,7 @@ $( document ).ready( function() {
         $.post( '/led-change-event', params )
         .done( function( response ) {
             $( '#status' ).text( response.msg );
-            console.log(response.msg);
+            console.log( response.msg );
         });
     }
 
@@ -133,7 +133,11 @@ $( document ).ready( function() {
             e.stopImmediatePropagation();
             return false;
         }
-        saveParams();
+        $.post( '/led-done-change', { ring: $( '#ring' ).val() } )
+        .done( function( response ) {
+            $( '#status' ).text( response.msg );
+            console.log( response.msg );
+        });
     });
 
 });

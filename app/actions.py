@@ -227,7 +227,6 @@ class ActionThread(threading.Thread):
                 time.sleep(wait)
             inv_dir = app.config['INV_DIR'] # in case inv_dir has been changed
             logger.debug('<-rainbow-> Ring:{} loop completed'.format(self._ringnum))
-            loop_counter = loop_counter - 1
 
     def wheel(self, pos):
         # Input a value 0 to 255 to get a color value.
@@ -255,5 +254,4 @@ class ActionThread(threading.Thread):
         for i in range(self.n): # repeat 16 times - once for each pixel in ring
             pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
             self._pixels[pixnum] = (0, 0, 0) if self.order == neopixel.RGB or self.order == neopixel.GRB else (0, 0, 0, 0)
-            print(self._ringnum, self.order)
         self._pixels.show()

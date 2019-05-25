@@ -94,7 +94,7 @@ def get_action_params():
     params = Param.query.filter_by(ringnum=int(request.form.get('ring')), event=request.form.get('event')).first().get_obj()
     return jsonify({'params': params})
 
-@app.route('/led-change-event', methods=['GET', 'POST'])
+@app.route('/led-change-event', methods=['POST'])
 def led_change_event():
     ring_num = int(request.form.get('ring'))
     # save params
@@ -126,6 +126,29 @@ def led_change_event():
     logger.info('<-led_change_event-> {} started.'.format(t.getName()))
     printer.set_task(ring_num - 1, t) # store task in printer
     return jsonify({'msg': 'Settings saved.'})
+
+@app.route('/led-change-done', methods=['POST'])
+def led_done_change():
+    ring_num = int(request.form.get('ring'))
+    params = Param.query.filter_by(ringnum=ring_num, event=printer.get_event()).first()
+    # create dict for new task
+    action_params = {
+        'action': params.action,
+        'color1': params.color1,
+        'color2': params.color2,
+        'interval': params.interval
+    }
+    t = printer.get_task(ring_num - 1)
+    if t is not None:
+        t.join() # joining a task will stop it and wait until it is done
+    t = ActionThread(action_params, printer, pixels, ring_num)
+    t.setName('ring{}'.format(ring_num))
+    t.daemon = True
+    t.start() # start it
+    logger.info('<-led_change_event-> {} started.'.format(t.getName()))
+    printer.set_task(ring_num - 1, t) # store task in printer
+    return jsonify({'msg': '{} started.'.format(t.getName())})
+
 
 @app.route('/led-stop-ring', methods=['POST'])
 def led_stop_ring():
