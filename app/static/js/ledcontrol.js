@@ -104,7 +104,7 @@ $( document ).ready( function() {
 
     function saveParams() {
         // update the params and start test event
-        var params = $modal.find( 'form' ).serialize();
+        var params = $( '#paramModal' ).find( 'form' ).serialize();
         $.post( '/led-change-event', params )
         .done( function( response ) {
             $( '#status' ).text( response.msg );
