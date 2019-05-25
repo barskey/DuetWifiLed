@@ -129,6 +129,8 @@ $( document ).ready( function() {
         if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) &&
         ($modal.find( '#interval' ).val() == ''  || $modal.find( '#interval' ).val() == '0')) {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
+            e.preventDefault();
+            e.stopImmediatePropagation();
             return false;
         }
         saveParams();
