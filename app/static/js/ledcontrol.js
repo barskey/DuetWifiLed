@@ -113,6 +113,14 @@ $( document ).ready( function() {
         });
     });
 
+    $( '#paramModal' ).on( 'show.bs.modal', function(e) {
+        $.post( '/led-stop-ring', {ringnum: $( '#ring' )} )
+        .done( function( response ) {
+            $( '#status' ).text( response.msg );
+            console.log(response.msg);
+        });
+    });
+
     $( '#paramModal' ).on( 'hide.bs.modal', function(e) {
         var $modal = $( '#paramModal' );
         // actions 6,7,8,9 need interval, hence can't be blank

@@ -127,6 +127,15 @@ def led_change_event():
     printer.set_task(ring_num - 1, t) # store task in printer
     return jsonify({'msg': 'Settings saved.'})
 
+@app.route('/led-stop-ring', methods=['POST'])
+def led_stop_ring():
+    ring_num = int(request.form.get('ring'))
+    # find and stop the current task
+    t = printer.get_task(ring_num - 1)
+    if t is not None:
+        t.join() # joining a task will stop it and wait until it is done
+    return jsonify({'msg': 'Ring {} stopped.'.format(ring_num)})
+
 
 ###########################
 ####    debug routes   ####
