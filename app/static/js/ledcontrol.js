@@ -133,7 +133,7 @@ $( document ).ready( function() {
             e.stopImmediatePropagation();
             return false;
         }
-        $.post( '/led-done-change', { ring: $( '#ring' ).val() } )
+        $.post( '/led-change-done', { ring: $( '#ring' ).val() } )
         .done( function( response ) {
             $( '#status' ).text( response.msg );
             console.log( response.msg );
