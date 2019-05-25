@@ -41,6 +41,7 @@ $( document ).ready( function() {
         $modal.find( '#ring' ).val( ring );
         $modal.find( '#event' ).val( evnt );
         $modal.find( '#action' ).val( action );
+        $modal.find( '#modal-note' ).removeClass( 'd-none' );
 
         //console.log(action < 5);
         if( action < 6 ) { // disable interval for these
@@ -54,6 +55,7 @@ $( document ).ready( function() {
             $modal.find( '#color2' ).spectrum( 'disable' );
         } else if ( action == 9 ) { // disable both colors for 9-rainbow
             $modal.find( '#color1,#color2' ).spectrum( 'disable' );
+            $modal.find( '#modal-note' ).addClass( 'd-none' );
         } else {
             $modal.find( '#color1,#color2' ).spectrum( 'enable' );
         }
@@ -93,22 +95,7 @@ $( document ).ready( function() {
         }
     });
 
-    $( '#testEvent' ).click( function() {
-        var $modal = $( '#paramModal' );
-        // actions 6,7,8,9 need interval, hence can't be blank
-        if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) && $modal.find( '#interval' ).val() == '' ) {
-            $modal.find( '#interval' ).addClass( 'is-invalid' );
-            return false;
-        }
-        console.log($modal.find('form').serialize());
-        $.post( '/test_event', $modal.find('form').serialize() )
-        .done( function( response ) {
-            $( '#status' ).text( response.msg );
-            console.log(response.msg);
-        });
-    });
-
-    $( '#modalDone' ).click( function() {
+    $( '.pdwn-modal' ).change( function() {
         var $modal = $( '#paramModal' );
         // actions 6,7,8,9 need interval, hence can't be blank
         if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) &&
@@ -116,12 +103,24 @@ $( document ).ready( function() {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             return false;
         }
-        console.log($modal.find('form').serialize());
-        $.post( '/update_action', $modal.find('form').serialize() )
+        //console.log($modal.find('form').serialize());
+        // update the params and start test event
+        var params = $modal.find( 'form' ).serialize();
+        $.post( '/led-change-event', params )
         .done( function( response ) {
             $( '#status' ).text( response.msg );
             console.log(response.msg);
         });
+    });
+
+    $( '#paramModal' ).on( 'hide.bs.modal', function(e) {
+        var $modal = $( '#paramModal' );
+        // actions 6,7,8,9 need interval, hence can't be blank
+        if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) &&
+        ($modal.find( '#interval' ).val() == ''  || $modal.find( '#interval' ).val() == '0')) {
+            $modal.find( '#interval' ).addClass( 'is-invalid' );
+            return false;
+        }
         $modal.modal( 'hide' );
     });
 

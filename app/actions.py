@@ -274,6 +274,7 @@ class ActionThread(threading.Thread):
         return (r, g, b) if self.order == neopixel.RGB or self.order == neopixel.GRB else (r, g, b, 0)
 
     def clean_up(self):
+        logger.debug('<-ActionThread-> {} clean_up. Setting all pixels off.'.format(self.getName()))
         for i in range(self.n): # repeat 16 times - once for each pixel in ring
             pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
             self._pixels[pixnum] = (0, 0, 0) if self.order == neopixel.RGB or self.order == neopixel.GRB else (0, 0, 0, 0)

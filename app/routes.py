@@ -94,35 +94,38 @@ def get_action_params():
     params = Param.query.filter_by(ringnum=int(request.form.get('ring')), event=request.form.get('event')).first().get_obj()
     return jsonify({'params': params})
 
-@app.route('/update_action', methods=['GET', 'POST'])
-def update_action():
-    params = Param.query.filter_by(ringnum=int(request.form.get('ring')), event=request.form.get('event')).first()
+@app.route('/led-change-event', methods=['GET', 'POST'])
+def led_change_event():
+    ring_num = int(request.form.get('ring'))
+    # save params
+    params = Param.query.filter_by(ringnum=ring_num, event=request.form.get('event')).first()
     params.action = int(request.form.get('action'))
     params.color1 = request.form.get('color1', 'rgb(0, 0, 0)')
     params.color2 = request.form.get('color2','rgb(0, 0, 0)')
     params.interval = float(request.form.get('interval'))
     db.session.add(params)
     db.session.commit()
-    logger.info('<-update_action-> Param updated.')
-    printer.needs_update = True
-    return jsonify({'msg': 'Action saved.'})
+    logger.info('<-update_action-> Params updated.')
 
-@app.route('/test_event', methods=['GET', 'POST'])
-def test_event():
-    settings = Settings.query.first()
-    ring_num = int(request.form.get('ring'))
+    # create dict for new task
     action_params = {
-        'action': int(request.form.get('action')),
-        'color1': request.form.get('color1'),
-        'color2': request.form.get('color2'),
-        'interval': float(request.form.get('interval'))
+        'action': params.action,
+        'color1': params.color1,
+        'color2': params.color2,
+        'interval': params.interval
     }
-    at = ActionThread(action_params, printer, pixels, ring_num)
-    at.setName('test{}'.format(ring_num))
-    at.daemon = True
-    at.start()
-    logger.info('<-test_event-> Test Started.')
-    return jsonify({'msg': 'Test Started!'})
+    # find and stop the current task
+    t = printer.get_task(ring_num - 1)
+    if t is not None:
+        t.join() # joining a task will stop it and wait until it is done
+    # create a new task with the current params
+    t = ActionThread(action_params, printer, pixels, ring_num)
+    t.setName('ring{}'.format(ring_num))
+    t.daemon = True
+    t.start() # start task
+    logger.info('<-led_change_event-> {} started.'.format(t.getName()))
+    printer.set_task(ring_num - 1, t) # store task in printer
+    return jsonify({'msg': 'Settings saved.'})
 
 
 ###########################

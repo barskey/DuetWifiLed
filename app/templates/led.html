@@ -18,7 +18,7 @@
                     <input type="hidden" name="action" id="action" />
                     <div class="form-row">
                         <p id="action-desc" class="form-text"></p>
-                        <p class="form-text">&nbsp;Use Black for off.</p>
+                        <p class="form-text" id="modal-note">&nbsp;Use Black for off.</p>
                     </div>
                     <hr>
                     <div class="form-row">
@@ -34,14 +34,14 @@
                     </div>
                     <div class="form-row">
                         <div class="col text-center">
-                            <input type="text" name="color1" id="color1" value="rgb(0, 0, 0)" />
+                            <input class="pdwn-modal" type="text" name="color1" id="color1" value="rgb(0, 0, 0)" />
                         </div>
                         <div class="col text-center">
-                            <input type="text" name="color2" id="color2" value="rgb(0, 0, 0)" />
+                            <input class="pdwn-modal" type="text" name="color2" id="color2" value="rgb(0, 0, 0)" />
                         </div>
                         <div class="col text-center">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control w-25" name="interval" id="interval" value="0" />
+                                <input class="pdwn-modal" type="text" class="form-control w-25" name="interval" id="interval" value="0" />
                                 <div class="input-group-append">
                                     <span class="input-group-text">s</span>
                                 </div>
@@ -51,8 +51,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-info" id="testEvent">Test</button>
-                <button type="button" class="btn btn-primary" id="modalDone">Done</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
             </div>
         </div>
     </div>

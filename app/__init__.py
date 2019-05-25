@@ -152,6 +152,7 @@ def get_status():
                     logger.debug('<-get_duet_status-> Printer needs update. Running update_rings')
                     update_rings()
                     printer.needs_update = False
+                    logger.debug('<-get_duet_status-> update_rings done. Printer no longer needs update.')
 
 from app.actions import ActionThread
 
@@ -175,5 +176,6 @@ def update_rings():
         t = ActionThread(action_params, printer, pixels, ring_num)
         t.setName('ring{}'.format(ring_num))
         t.daemon = True
-        t.start()
-        printer.set_task(ring_num - 1, t)
+        t.start() # start it
+        logger.info('<-update_rings-> {} started.'.format(t.getName()))
+        printer.set_task(ring_num - 1, t) # store task in printer
