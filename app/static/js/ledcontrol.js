@@ -102,6 +102,16 @@ $( document ).ready( function() {
         }
     });
 
+    function saveParams() {
+        // update the params and start test event
+        var params = $modal.find( 'form' ).serialize();
+        $.post( '/led-change-event', params )
+        .done( function( response ) {
+            $( '#status' ).text( response.msg );
+            console.log(response.msg);
+        });
+    }
+
     $( '.pdwn-modal' ).change( function() {
         var $modal = $( '#paramModal' );
         // actions 6,7,8,9 need interval, hence can't be blank
@@ -110,14 +120,7 @@ $( document ).ready( function() {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             return false;
         }
-        //console.log($modal.find('form').serialize());
-        // update the params and start test event
-        var params = $modal.find( 'form' ).serialize();
-        $.post( '/led-change-event', params )
-        .done( function( response ) {
-            $( '#status' ).text( response.msg );
-            console.log(response.msg);
-        });
+        saveParams();
     });
 
     $( '#paramModal' ).on( 'hide.bs.modal', function(e) {
@@ -128,6 +131,7 @@ $( document ).ready( function() {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             return false;
         }
+        saveParams();
     });
 
 });
