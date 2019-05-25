@@ -71,7 +71,7 @@ class ActionThread(threading.Thread):
         self._pixels.show()
         logger.debug('<-solid->   Ring:{} color:{}'.format(self._ringnum, c))
 
-    def temp(self, source, test=False):
+    def temp(self, source):
         # self._color: like 'rgb(#, #, #)'
         # source: 'h' for hotend 'b' for heatbed
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
@@ -81,10 +81,7 @@ class ActionThread(threading.Thread):
             b = b + (0,)
 
         inv_dir = app.config['INV_DIR']
-        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
-            if test is True and loop_counter <= 0:
-                return
             if self.stopped():
                 return
             percent = self._printer.heatbedTemp if source == 'b' else self._printer.hotendTemp
@@ -104,10 +101,9 @@ class ActionThread(threading.Thread):
             self._pixels.show()
             inv_dir = app.config['INV_DIR'] # in case setting has been updated
             logger.debug('<-temp->    Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
-            loop_counter = loop_counter - 1
             time.sleep(1) # update temp every 1 second
 
-    def print_percent(self, test=False):
+    def print_percent(self):
         # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
@@ -116,10 +112,7 @@ class ActionThread(threading.Thread):
             b = b + (0,)
 
         inv_dir = app.config['INV_DIR']
-        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
-            if test is True and loop_counter <= 0:
-                return
             if self.stopped():
                 return
             percent = self._printer.percentComplete / 100 # need percent as decimal bet 0 and 1
@@ -139,10 +132,9 @@ class ActionThread(threading.Thread):
             self._pixels.show()
             inv_dir = app.config['INV_DIR'] # in case setting has been updated
             logger.debug('<-print_%-> Ring:{} %:{} color:{} background:{}'.format(self._ringnum, percent, c, b))
-            loop_counter = loop_counter - 1
             time.sleep(1) # update temp every 1 second
 
-    def flash(self, test=False):
+    def flash(self):
         # self._color: like 'rgb(#, #, #)'
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
@@ -150,10 +142,7 @@ class ActionThread(threading.Thread):
             c1 = c1 + (0,)
             c2 = c2 + (0,)
 
-        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
-            if test is True and loop_counter <= 0:
-                return
             if self.stopped():
                 return
             for i in range(self.n):
@@ -163,10 +152,9 @@ class ActionThread(threading.Thread):
             # swap colors
             c1, c2 = c2, c1
             time.sleep(self._interval)
-            loop_counter = loop_counter - 1
             logger.debug('<-flash->   Ring:{} color:{}'.format(self._ringnum, c1))
 
-    def breathe(self, test=False):
+    def breathe(self):
         # self._color: like 'rgb(#, #, #)'
         c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
@@ -177,10 +165,7 @@ class ActionThread(threading.Thread):
         num_steps = 100 # convenience for changing number of steps for color change
         # create easing instance for smoothing animations
         e = CubicEaseInOut(0, self._interval, num_steps) # will go from 0 to interval in num_steps steps
-        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
-            if test is True and loop_counter <= 0:
-                return
             if self.stopped():
                 return
             last_sleep = 0
@@ -198,9 +183,8 @@ class ActionThread(threading.Thread):
             # swap colors for next loop so it goes back and forth
             logger.debug('<-breathe-> Ring:{} color:{}'.format(self._ringnum, c1))
             c1, c2 = c2, c1
-            loop_counter = loop_counter - 1
 
-    def chase(self, test=False):
+    def chase(self):
         # self._color: like 'rgb(#, #, #)'
         c = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
         b = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
@@ -211,10 +195,7 @@ class ActionThread(threading.Thread):
         inv_dir = app.config['INV_DIR']
         # creates easing instance for smoothing animations
         e = CubicEaseInOut(0, self._interval, self.n) # will go from 0 to interval in 16 steps
-        loop_counter = 2 # use to run a certain number of loops when called with test True
         while True:
-            if test is True and loop_counter <= 0:
-                return
             if self.stopped():
                 return
             last_sleep = 0
@@ -230,15 +211,11 @@ class ActionThread(threading.Thread):
                 time.sleep(s)
             inv_dir = app.config['INV_DIR']
             logger.debug('<-chase->   Ring:{} loop completed - chase color:{}'.format(self._ringnum, c))
-            loop_counter = loop_counter - 1
 
-    def rainbow(self, test=False):
+    def rainbow(self):
         inv_dir = app.config['INV_DIR']
-        loop_counter = 2 # use to run a certain number of loops when called with test True
         wait = self._interval / 255 # one rainbow cycle is 255 colors
         while True:
-            if test is True and loop_counter <= 0:
-                return
             if self.stopped():
                 return
             for j in range(255):
@@ -278,4 +255,5 @@ class ActionThread(threading.Thread):
         for i in range(self.n): # repeat 16 times - once for each pixel in ring
             pixnum = i + self.n * (self._ringnum - 1) # adjust pixnum for ring number
             self._pixels[pixnum] = (0, 0, 0) if self.order == neopixel.RGB or self.order == neopixel.GRB else (0, 0, 0, 0)
+            print(self._ringnum, self.order)
         self._pixels.show()
