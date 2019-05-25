@@ -145,7 +145,7 @@ def led_done_change():
     t.setName('ring{}'.format(ring_num))
     t.daemon = True
     t.start() # start it
-    logger.info('<-led_change_event-> {} started.'.format(t.getName()))
+    logger.info('<-led_done_change-> {} started on action {}.'.format(t.getName(), action_params['action']))
     printer.set_task(ring_num - 1, t) # store task in printer
     return jsonify({'msg': '{} started.'.format(t.getName())})
 
