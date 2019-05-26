@@ -30,7 +30,7 @@ class ActionThread(threading.Thread):
         logger.debug('<-ActionThread-> Stopping thread {}...'.format(self.getName()))
         self._stopevent.set()
         self.clean_up()
-        threading.Thread.join(self, 0)
+        threading.Thread.join(self, self._interval)
 
     def run(self):
         if self._action_num in [0,1]:
