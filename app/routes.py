@@ -106,6 +106,7 @@ def led_change_event():
     db.session.add(params)
     db.session.commit()
     logger.info('<-update_action-> Params updated.')
+    print(printer.get_status())
 
     # create dict for new task
     action_params = {
@@ -131,6 +132,7 @@ def led_change_event():
 def led_done_change():
     ring_num = int(request.form.get('ring'))
     params = Param.query.filter_by(ringnum=ring_num, event=printer.get_event()).first()
+    print(printer.get_status())
     # create dict for new task
     action_params = {
         'action': params.action,
@@ -145,7 +147,7 @@ def led_done_change():
     t.setName('ring{}'.format(ring_num))
     t.daemon = True
     t.start() # start it
-    logger.info('<-led_done_change-> {} started on action {}.'.format(t.getName(), action_params['action']))
+    logger.info('<-led_change_done-> {} started on action {}.'.format(t.getName(), action_params['action']))
     printer.set_task(ring_num - 1, t) # store task in printer
     return jsonify({'msg': '{} started.'.format(t.getName())})
 
