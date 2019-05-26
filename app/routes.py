@@ -132,7 +132,7 @@ def led_change_event():
 def led_done_change():
     ring_num = int(request.form.get('ring'))
     params = Param.query.filter_by(ringnum=ring_num, event=printer.get_event()).first()
-    print(printer.get_event())
+    print(ring_num, params)
     # create dict for new task
     action_params = {
         'action': params.action,
