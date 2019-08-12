@@ -77,7 +77,7 @@ $( document ).ready( function() {
         var action = $( this ).parent().parent().find( 'select option:selected' ).val();
         var ring = $( this ).attr( 'id' ).split( '-' )[1];
         var evnt = $( this ).attr( 'id' ).split( '-' )[2];
-        //console.log(action, ring, evnt);
+        console.log(action, ring, evnt);
         if ( action > 1 ) {
             $.post( '/get_action_params', {'ring': ring, 'event': evnt} )
             .done( function( response ) {
