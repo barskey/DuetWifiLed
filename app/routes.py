@@ -106,7 +106,6 @@ def led_change_event():
     db.session.add(params)
     db.session.commit()
     logger.info('<-update_action-> Params updated.')
-    print(printer.get_event())
 
     # create dict for new task
     action_params = {
@@ -132,7 +131,6 @@ def led_change_event():
 def led_done_change():
     ring_num = int(request.form.get('ring'))
     params = Param.query.filter_by(ringnum=ring_num, event=printer.get_event()).first()
-    print(ring_num, params)
     # create dict for new task
     action_params = {
         'action': params.action,
