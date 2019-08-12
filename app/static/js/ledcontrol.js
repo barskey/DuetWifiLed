@@ -64,6 +64,8 @@ $( document ).ready( function() {
         $modal.find( '#color2' ).spectrum( 'set', params.color2 );
         $modal.find( '#interval' ).val( params.interval );
 
+        saveParams();
+        
         $.post( '/led-stop-ring', {ring: ring} )
         .done( function( response ) {
             $( '#status' ).text( response.msg );
