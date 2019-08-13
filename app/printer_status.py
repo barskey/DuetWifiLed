@@ -24,6 +24,7 @@ class PrinterStatus:
         self._heatbedTarget = -1
         self._percentComplete = -1
         self._state = ''
+        self._prev_state = ''
         self.needs_update = False
         self._tasks = [None for i in range(3)]
         self.last_status = ''
@@ -83,7 +84,8 @@ class PrinterStatus:
         if value != self._state:
             logger.debug('<-set state-> Printer state change detected!')
             self.needs_update = True
-        self._state = value
+            self._prev_state = self._state
+        self._state = 'complete' if self._prev_state == 'P' else value
 
     def get_task(self, ringnum):
         return self._tasks[ringnum]
