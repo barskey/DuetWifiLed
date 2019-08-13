@@ -57,6 +57,9 @@ class ActionThread(threading.Thread):
             logger.debug('<-ActionThread-> {} running chase.'.format(self.getName()))
             self.chase()
         elif self._action_num == 9:
+            logger.debug('<-ActionThread-> {} running chase_fill.'.format(self.getName()))
+            self.chase_fill()
+        elif self._action_num == 10:
             logger.debug('<-ActionThread-> {} running rainbow.'.format(self.getName()))
             self.rainbow()
 
@@ -211,6 +214,36 @@ class ActionThread(threading.Thread):
                 time.sleep(s)
             inv_dir = app.config['INV_DIR']
             logger.debug('<-chase->   Ring:{} loop completed - chase color:{}'.format(self._ringnum, c))
+
+    def chase_fill(self):
+        # self._color: like 'rgb(#, #, #)'
+        c1 = tuple(int(x.strip()) for x in self._color1[4:-1].split(','))
+        c2 = tuple(int(x.strip()) for x in self._color2[4:-1].split(','))
+        if self.order == neopixel.RGBW or self.order == neopixel.GRBW:
+            c1 = c1 + (0,)
+            c2 = c2 + (0,)
+
+        inv_dir = app.config['INV_DIR']
+        # creates easing instance for smoothing animations
+        e = CubicEaseInOut(0, self._interval, self.n) # will go from 0 to interval in 16 steps
+        while True:
+            if self.stopped():
+                return
+            last_sleep = 0
+            for pos in reversed(range(self.n)) if inv_dir == 1 else range(self.n):
+                for i in reversed(range(self.n)) if inv_dir == 1 else range(self.n): # step through all pixels in this ring
+                    pixnum = i + self.n * (self._ringnum - 1)
+                    self._pixels[pixnum] = c1 if i >= pos else c2
+                self._pixels.show()
+                p = self.n - (pos - 1) if inv_dir == 1 else pos
+                s = e.ease(p) - last_sleep # gets the sleep time using cubic ease-in/out
+                last_sleep = e.ease(p) # save this sleep time for subtracting from next round
+                #print ('pos:{} sleep:{}'.format(pos, s)) # debug
+                time.sleep(s)
+            inv_dir = app.config['INV_DIR']
+            # swap colors for next loop so it goes back and forth
+            logger.debug('<-chase_fill->Ring:{} loop completed - chase color:{}'.format(self._ringnum, c1))
+            c1, c2 = c2, c1
 
     def rainbow(self):
         inv_dir = app.config['INV_DIR']

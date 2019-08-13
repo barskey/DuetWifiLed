@@ -14,6 +14,7 @@ $( document ).ready( function() {
         ['Ring changes between two colors switching at specified interval.', 'Color 1:', 'Color 2:'],
         ['Ring fades gradually between two colors over specified interval.', 'Color 1:', 'Color 2:'],
         ['Chase color spins around ring completing one rotation in specified interval.', 'Chase:', 'Background:'],
+        ['Spins around ring completing one rotation in specified interval.', 'Color 1:', 'Color 2:'],
         ['It\'s a double rainbow!!!', 'Not Used:', 'Not Used:']
     ]
 
@@ -53,7 +54,7 @@ $( document ).ready( function() {
         if ( action == 2 ) { // disable second color for 2-solid
             $modal.find( '#color1' ).spectrum( 'enable' );
             $modal.find( '#color2' ).spectrum( 'disable' );
-        } else if ( action == 9 ) { // disable both colors for 9-rainbow
+        } else if ( action == 10 ) { // disable both colors for 10-rainbow
             $modal.find( '#color1,#color2' ).spectrum( 'disable' );
             $modal.find( '#modal-note' ).addClass( 'd-none' );
         } else {
@@ -65,7 +66,7 @@ $( document ).ready( function() {
         $modal.find( '#interval' ).val( params.interval );
 
         saveParams();
-        
+
         $.post( '/led-stop-ring', {ring: ring} )
         .done( function( response ) {
             $( '#status' ).text( response.msg );
@@ -116,8 +117,8 @@ $( document ).ready( function() {
 
     $( '.pdwn-modal' ).change( function() {
         var $modal = $( '#paramModal' );
-        // actions 6,7,8,9 need interval, hence can't be blank
-        if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) &&
+        // actions 6,7,8,9,10 need interval, hence can't be blank
+        if( ['6','7','8','9','10'].includes( $modal.find( '#action' ).val() ) &&
         ($modal.find( '#interval' ).val() == ''  || $modal.find( '#interval' ).val() == '0')) {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             return false;
@@ -127,8 +128,8 @@ $( document ).ready( function() {
 
     $( '#paramModal' ).on( 'hide.bs.modal', function(e) {
         var $modal = $( '#paramModal' );
-        // actions 6,7,8,9 need interval, hence can't be blank
-        if( ['6','7','8','9'].includes( $modal.find( '#action' ).val() ) &&
+        // actions 6,7,8,9,10 need interval, hence can't be blank
+        if( ['6','7','8','9','10'].includes( $modal.find( '#action' ).val() ) &&
         ($modal.find( '#interval' ).val() == ''  || $modal.find( '#interval' ).val() == '0')) {
             $modal.find( '#interval' ).addClass( 'is-invalid' );
             e.preventDefault();
