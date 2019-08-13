@@ -5,7 +5,7 @@ from app import logger
 state_events = {
     'C': 'config', # (configuration file is being processed)
     'I': 'idle', # (idle, no movement or code is being performed)
-    'B': 'print', # (busy, live movement is in progress or a macro file is being run)
+    'B': 'config', # (busy, live movement is in progress or a macro file is being run)
     'P': 'print', # (printing a file)
     'D': 'pause', # (decelerating, pausing a running print)
     'S': 'pause', # (stopped, live print has been paused)
