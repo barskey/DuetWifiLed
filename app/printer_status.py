@@ -85,10 +85,10 @@ class PrinterStatus:
         if value != self._state:
             logger.debug('<-set state-> Printer state change detected!')
             # set to 'complete' state if changing to Idle from Print, else set to new state
-            #if value == 'I': # if changing to idle
-            #    if self._state == 'P': # if changing from P
-            #        self._state = 'Z' # set to complete state instead of I
-            #        self.needs_update = True
+            if value == 'I': # if changing to idle
+                if self._state == 'P': # if changing from P
+                    self._state = 'Z' # set to complete state instead of I
+                    self.needs_update = True
             #    elif self._state != 'Z': # but don't change to idle if print is complete
             #        self._state = value
             #        self.needs_update = True
