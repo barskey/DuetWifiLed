@@ -24,8 +24,8 @@ class PrinterStatus:
         self._heatbedTemp = -1
         self._heatbedTarget = -1
         self._percentComplete = -1
-        self._state = ''
-        self._prev_state = ''
+        self._state = 'I'
+        self._prev_state = 'I'
         self.needs_update = False
         self._tasks = [None for i in range(3)]
         self.last_status = ''
