@@ -89,9 +89,9 @@ class PrinterStatus:
                 if self._state == 'P': # if changing from P
                     self._state = 'Z' # set to complete state instead of I
                     self.needs_update = True
-            #    elif self._state != 'Z': # but don't change to idle if print is complete
-            #        self._state = value
-            #        self.needs_update = True
+                elif self._state != 'Z': # but don't change to idle if print is complete
+                    self._state = value
+                    self.needs_update = True
             #else: # otherwise change to new state
             #    self._state = value
             #    self.needs_update = True
