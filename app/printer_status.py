@@ -92,9 +92,9 @@ class PrinterStatus:
                 elif self._state != 'Z': # but don't change to idle if print is complete
                     self._state = value
                     self.needs_update = True
-            #else: # otherwise change to new state
-            #    self._state = value
-            #    self.needs_update = True
+            else: # otherwise change to new state
+                self._state = value
+                self.needs_update = True
 
     def get_task(self, ringnum):
         return self._tasks[ringnum]
