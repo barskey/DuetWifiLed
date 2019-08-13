@@ -13,7 +13,8 @@ state_events = {
     'H': 'error', # (halted, after emergency stop)
     'F': 'config', # (flashing new firmware)
     'T': 'print', # (changing tool, new in 1.17b)
-    'O': 'config' # unknown
+    'O': 'config', # unknown
+    'Z': 'complete' # special state used when changing from P to I
 }
 
 class PrinterStatus:
@@ -85,7 +86,8 @@ class PrinterStatus:
             logger.debug('<-set state-> Printer state change detected!')
             self.needs_update = True
             self._prev_state = self._state
-        self._state = 'complete' if self._prev_state == 'P' else value
+            # set to 'complete' state if changing to Idle from Print, else set to new state
+            self._state = 'Z' if self._prev_state == 'P' and value == 'I' else value
 
     def get_task(self, ringnum):
         return self._tasks[ringnum]
